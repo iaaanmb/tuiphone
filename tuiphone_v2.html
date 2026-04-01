@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TuiPhone · Tienda Apple Colombia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f5f5f7;
+  --white:#fff;
+  --dark:#1d1d1f;
+  --mid:#424245;
+  --muted:#6e6e73;
+  --light:#86868b;
+  --blue:#0071e3;
+  --blue-hover:#0077ed;
+  --border:#d2d2d7;
+  --card:#fbfbfd;
+  --radius:18px;
+  --font:'Sora',sans-serif;
+  --body:'Inter',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--dark);font-family:var(--body);font-size:17px;line-height:1.5;overflow-x:hidden}
+
+/* NAV */
+nav{
+  position:sticky;top:0;z-index:200;
+  background:rgba(245,245,247,0.92);
+  backdrop-filter:saturate(180%) blur(20px);
+  -webkit-backdrop-filter:saturate(180%) blur(20px);
+  border-bottom:1px solid rgba(0,0,0,0.08);
+  height:64px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 2.5rem;
+}
+.nav-logo{font-family:var(--font);font-weight:600;font-size:1.1rem;color:var(--dark);text-decoration:none;letter-spacing:-0.02em}
+.nav-logo span{color:var(--blue)}
+.nav-links{display:flex;gap:1.8rem;list-style:none}
+.nav-links a{font-size:0.82rem;color:var(--mid);text-decoration:none;transition:color .2s;font-weight:400;height:64px;display:flex;align-items:center}
+.nav-links a:hover{color:var(--dark)}
+.nav-right{display:flex;gap:1.2rem;align-items:center}
+.nav-icon{color:var(--mid);text-decoration:none;font-size:0.82rem;display:flex;align-items:center;gap:0.3rem;transition:color .2s}
+.nav-icon:hover{color:var(--dark)}
+
+/* OFFER STRIP */
+.offer-strip{background:var(--blue);color:#fff;text-align:center;padding:0.9rem 1rem;font-size:0.85rem}
+.offer-strip strong{font-weight:600}
+.offer-strip a{color:#fff;font-weight:500;text-decoration:underline}
+
+/* HERO VIDEO */
+.hero{position:relative;width:100%;height:100vh;min-height:620px;overflow:hidden;display:flex;align-items:flex-end}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.82) 0%,rgba(0,0,0,0.38) 45%,rgba(0,0,0,0.12) 100%);z-index:1}
+.hero-content{position:relative;z-index:2;padding:3.5rem 3.5rem;width:100%;display:flex;align-items:flex-end;justify-content:space-between;gap:2rem}
+.hero-eyebrow{font-size:0.78rem;font-weight:500;color:#6ea8ff;letter-spacing:0.06em;margin-bottom:0.7rem;text-transform:uppercase}
+.hero h1{font-family:var(--font);font-size:clamp(3rem,6vw,6rem);font-weight:700;line-height:1.0;letter-spacing:-0.03em;color:#fff;margin-bottom:1rem}
+.hero h1 span{color:var(--blue)}
+.hero-sub{font-size:1rem;color:rgba(255,255,255,0.58);font-weight:300;max-width:420px;line-height:1.65;margin-bottom:2rem}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-primary{background:var(--blue);color:#fff;border:none;border-radius:980px;padding:0.75rem 1.8rem;font-size:0.88rem;font-weight:500;cursor:pointer;text-decoration:none;display:inline-block;transition:background .2s,transform .15s;font-family:var(--body)}
+.btn-primary:hover{background:var(--blue-hover);transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,0.4);border-radius:980px;padding:0.73rem 1.8rem;font-size:0.88rem;font-weight:500;cursor:pointer;text-decoration:none;display:inline-block;transition:border-color .2s;font-family:var(--body)}
+.btn-ghost:hover{border-color:#fff}
+.hero-stats{display:flex;flex-direction:column;gap:1.2rem;text-align:right;min-width:160px}
+.hero-stat-num{font-family:var(--font);font-size:2rem;font-weight:700;color:var(--blue);line-height:1}
+.hero-stat-label{font-size:0.72rem;color:rgba(255,255,255,0.38);margin-top:0.1rem}
+/* sound btn */
+.sound-btn{position:absolute;top:1.4rem;right:1.8rem;z-index:10;background:rgba(0,0,0,0.4);border:1px solid rgba(255,255,255,0.2);color:#fff;width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s;backdrop-filter:blur(8px)}
+.sound-btn:hover{background:rgba(255,255,255,0.15)}
+.sound-btn svg{width:18px;height:18px}
+/* scroll hint */
+.scroll-hint{position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);z-index:3;display:flex;flex-direction:column;align-items:center;gap:0.3rem;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.3);animation:bob 2.5s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(7px)}}
+/* video showcase */
+.vid-showcase{
+  padding:1rem 2.5rem 5rem;
+  max-width:1200px;margin:0 auto;
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr;
+  gap:1.2rem;
+  align-items:start;
+}
+.vid-card{
+  position:relative;overflow:hidden;
+  border-radius:16px;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  text-decoration:none;
+  box-shadow:0 4px 24px rgba(0,0,0,0.08);
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+.vid-card:first-child{height:420px}
+.vid-card:not(:first-child){height:300px}
+.vid-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.14)}
+.vid-card video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.vid-card:hover video{transform:scale(1.03)}
+.vid-card-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(0,0,0,0.72) 0%,rgba(0,0,0,0.1) 60%,transparent 100%);
+}
+.vid-card-content{position:relative;z-index:2;padding:1.4rem 1.6rem 1.6rem;color:#fff}
+.vid-eyebrow{font-size:0.68rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:0.25rem}
+.vid-title{font-family:var(--font);font-size:clamp(1.2rem,2vw,1.8rem);font-weight:700;letter-spacing:-0.02em;line-height:1.1;margin-bottom:0.6rem}
+.vid-cta{font-size:0.78rem;font-weight:500;color:rgba(255,255,255,0.6);display:inline-flex;align-items:center;gap:0.3rem;opacity:0;transform:translateY(5px);transition:opacity .25s,transform .25s}
+.vid-card:hover .vid-cta{opacity:1;transform:translateY(0)}
+.play-dot{
+  position:absolute;top:1rem;right:1rem;z-index:3;
+  width:34px;height:34px;border-radius:50%;
+  background:rgba(255,255,255,0.15);backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,0.2);
+  display:flex;align-items:center;justify-content:center;
+  transition:background .2s;
+}
+.vid-card:hover .play-dot{background:var(--blue);border-color:var(--blue)}
+.play-dot svg{width:12px;height:12px;fill:#fff;margin-left:2px}
+/* macbook banner */
+.mac-banner{position:relative;min-height:500px;overflow:hidden;display:flex;align-items:center}
+.mac-banner video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(0.5)}
+.mac-banner-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,0.78) 0%,rgba(0,0,0,0.18) 65%,transparent 100%)}
+.mac-banner-content{position:relative;z-index:2;padding:5rem 3.5rem;color:#fff;max-width:560px}
+.mac-eyebrow{font-size:0.75rem;font-weight:500;color:#6ea8ff;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:0.7rem}
+.mac-h2{font-family:var(--font);font-size:clamp(2.5rem,5vw,5rem);font-weight:700;letter-spacing:-0.03em;line-height:1.0;margin-bottom:1rem}
+.mac-sub{font-size:0.95rem;color:rgba(255,255,255,0.55);line-height:1.7;margin-bottom:2rem;max-width:400px}
+.btn-white{background:#fff;color:var(--dark);border-radius:980px;padding:0.75rem 1.8rem;font-size:0.88rem;font-weight:500;text-decoration:none;display:inline-block;transition:opacity .2s,transform .15s;font-family:var(--body)}
+.btn-white:hover{opacity:0.88;transform:translateY(-1px)}
+
+/* PROMO GRID */
+.promo-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;padding:0 2.5rem;max-width:1200px;margin:3rem auto 1.2rem}
+.promo-card{border-radius:var(--radius);padding:3rem 2.5rem;min-height:380px;display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;overflow:hidden;text-decoration:none;transition:transform .25s}
+.promo-card:hover{transform:scale(1.01)}
+.promo-card.dark{background:#1d1d1f;color:#fff}
+.promo-card.light{background:var(--white);color:var(--dark);border:1px solid rgba(0,0,0,0.06)}
+.promo-card.blue-grad{background:linear-gradient(160deg,#e8f0fe 0%,#d2e3fc 100%);color:var(--dark)}
+.promo-card.warm{background:linear-gradient(160deg,#fce8e6 0%,#fad2cf 100%);color:var(--dark)}
+.promo-eye{font-size:0.78rem;font-weight:500;margin-bottom:0.6rem;opacity:0.6;letter-spacing:0.03em}
+.promo-card.dark .promo-eye{color:#f5f5f7}
+.promo-title{font-family:var(--font);font-size:clamp(1.5rem,3vw,2.4rem);font-weight:700;letter-spacing:-0.025em;margin-bottom:0.5rem;line-height:1.1}
+.promo-sub{font-size:0.88rem;opacity:0.65;margin-bottom:1.2rem;line-height:1.5}
+.promo-cta{font-size:0.85rem;font-weight:500;color:var(--blue)}
+.promo-card.dark .promo-cta{color:#2997ff}
+.promo-visual{margin-top:auto;padding-top:2rem;width:100%}
+
+/* FULL BANNER */
+.full-banner{background:var(--dark);color:#f5f5f7;padding:5rem 2.5rem;text-align:center;position:relative;overflow:hidden}
+.full-banner::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 100%,rgba(0,113,227,0.25) 0%,transparent 70%);pointer-events:none}
+.full-banner-eye{font-size:0.82rem;color:#6e6e73;font-weight:500;margin-bottom:0.8rem;letter-spacing:0.04em}
+.full-banner h2{font-family:var(--font);font-size:clamp(2.5rem,6vw,5rem);font-weight:700;letter-spacing:-0.03em;line-height:1.05;margin-bottom:1rem}
+.full-banner h2 span{background:linear-gradient(90deg,#2997ff,#64acff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.full-banner p{font-size:1rem;color:#86868b;max-width:500px;margin:0 auto 2rem}
+.banner-phones{display:flex;justify-content:center;align-items:flex-end;gap:1.5rem;margin-top:3rem}
+
+/* CATEGORIES */
+.section{padding:4rem 2.5rem;max-width:1200px;margin:0 auto}
+.section-title{font-family:var(--font);font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;letter-spacing:-0.025em;margin-bottom:0.4rem;color:var(--dark)}
+.section-sub{font-size:1rem;color:var(--muted);margin-bottom:2rem}
+.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
+.cat-card{background:var(--white);border-radius:var(--radius);padding:2rem 1.5rem 1.5rem;text-decoration:none;color:var(--dark);transition:transform .25s,box-shadow .25s;display:flex;flex-direction:column;align-items:center;text-align:center;border:1px solid rgba(0,0,0,0.04)}
+.cat-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.1)}
+.cat-card-img{width:110px;height:110px;display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem}
+.cat-card-img svg{width:100%;height:auto}
+.cat-card h3{font-family:var(--font);font-size:1rem;font-weight:600;margin-bottom:0.3rem}
+.cat-card p{font-size:0.78rem;color:var(--muted);line-height:1.4;margin-bottom:1rem}
+.cat-link{font-size:0.82rem;color:var(--blue);font-weight:500}
+
+/* WHY */
+.why-section{padding:4rem 2.5rem;max-width:1200px;margin:0 auto}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.why-card{background:var(--white);border-radius:var(--radius);padding:2.5rem 2rem;border:1px solid rgba(0,0,0,0.04)}
+.why-icon{width:44px;height:44px;background:#e8f0fe;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem}
+.why-icon svg{width:22px;height:22px}
+.why-card h3{font-family:var(--font);font-size:1rem;font-weight:600;margin-bottom:0.4rem}
+.why-card p{font-size:0.83rem;color:var(--muted);line-height:1.6}
+
+/* TESTIMONIALS */
+.testi-section{padding:4rem 2.5rem;max-width:1200px;margin:0 auto}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.testi-card{background:var(--white);border-radius:var(--radius);padding:2rem;border:1px solid rgba(0,0,0,0.05)}
+.stars{color:#ff9500;font-size:0.85rem;margin-bottom:0.8rem;letter-spacing:0.05em}
+.testi-text{font-size:0.86rem;color:var(--mid);line-height:1.7;margin-bottom:1rem}
+.testi-author{font-size:0.78rem;font-weight:600;color:var(--dark)}
+.testi-city{font-size:0.74rem;color:var(--light)}
+
+/* INSTAGRAM */
+.ig-section{background:linear-gradient(135deg,#405de6,#5851db,#833ab4,#c13584,#e1306c,#fd1d1d,#f56040,#f77737,#fcaf45);padding:5rem 2.5rem;text-align:center;color:#fff}
+.ig-section h2{font-family:var(--font);font-size:clamp(2rem,4vw,3.2rem);font-weight:700;letter-spacing:-0.025em;margin-bottom:0.8rem}
+.ig-section p{font-size:1rem;opacity:0.85;margin-bottom:2rem}
+.btn-white{background:#fff;color:var(--dark);border-radius:980px;padding:0.8rem 2rem;font-size:0.88rem;font-weight:600;text-decoration:none;display:inline-block;transition:opacity .2s,transform .15s}
+.btn-white:hover{opacity:0.9;transform:translateY(-1px)}
+.ig-handle{margin-top:1rem;font-size:0.85rem;opacity:0.7}
+
+/* FOOTER */
+footer{background:var(--dark);color:#86868b;padding:3rem 2.5rem 1rem}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem;max-width:1200px;margin:0 auto;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,0.1)}
+.footer-brand-name{font-family:var(--font);font-size:1.1rem;font-weight:600;color:#f5f5f7;margin-bottom:0.8rem}
+.footer-brand-name span{color:#2997ff}
+.footer-brand p{font-size:0.82rem;line-height:1.6;max-width:240px}
+.footer-col h4{font-size:0.78rem;font-weight:600;color:#f5f5f7;margin-bottom:1rem;letter-spacing:0.02em}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:0.6rem}
+.footer-col ul li a{font-size:0.82rem;color:#86868b;text-decoration:none;transition:color .2s}
+.footer-col ul li a:hover{color:#f5f5f7}
+.footer-bottom{max-width:1200px;margin:1.5rem auto 0;display:flex;justify-content:space-between;align-items:center;font-size:0.78rem;flex-wrap:wrap;gap:1rem}
+.footer-bottom a{color:#86868b;text-decoration:none}
+.footer-bottom a:hover{color:#f5f5f7;text-decoration:underline}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav{padding:0 1.2rem}
+  .nav-links{display:none}
+  .cat-grid{grid-template-columns:repeat(2,1fr)}
+  .promo-grid{grid-template-columns:1fr;padding:0 1.2rem}
+  .why-grid,.testi-grid{grid-template-columns:1fr}
+  .section,.why-section,.testi-section{padding:3rem 1.2rem}
+  .footer-grid{grid-template-columns:1fr}
+  footer{padding:2.5rem 1.2rem 1rem}
+  .footer-bottom{flex-direction:column;align-items:flex-start}
+  .full-banner{padding:4rem 1.2rem}
+  .promo-card{min-height:280px;padding:2.5rem 1.5rem}
+  .hero-content{flex-direction:column;align-items:flex-start;padding:2rem 1.5rem}
+  .hero-stats{display:none}
+  .vid-showcase{grid-template-columns:1fr;padding:1rem 1.2rem 3rem}
+  .vid-card:first-child,.vid-card:not(:first-child){height:280px}
+  .mac-banner-content{padding:3rem 1.5rem}
+}
+</style>
+</head>
+<body>
+
+<div class="offer-strip">
+  <strong>Envío gratis</strong> en pedidos desde $90.000 COP &nbsp;·&nbsp; <a href="https://www.instagram.com/tuiphone.co/" target="_blank">Ver todos los productos →</a>
+</div>
+
+<nav>
+  <a href="#" class="nav-logo" style="display:flex;align-items:center"><img src="data:image/png;base64,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" alt="TuiPhone" style="height:44px;width:auto;"></a>
+  <ul class="nav-links">
+    <li><a href="#categorias">iPhone</a></li>
+    <li><a href="#categorias">AirPods</a></li>
+    <li><a href="#categorias">iPad</a></li>
+    <li><a href="#categorias">Mac</a></li>
+    <li><a href="#categorias">Watch</a></li>
+    <li><a href="#ig">Nosotros</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="https://www.instagram.com/tuiphone.co/" target="_blank" class="nav-icon">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      @tuiphone.co
+    </a>
+  </div>
+</nav>
+
+<!-- HERO VIDEO -->
+<section class="hero">
+  <video class="hero-video" id="heroVid" autoplay loop playsinline muted>
+    <source src="hero.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+
+  <button class="sound-btn" id="soundBtn" onclick="toggleSound()" title="Activar audio">
+    <svg id="iconMute" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/>
+    </svg>
+    <svg id="iconSound" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" style="display:none">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/>
+    </svg>
+  </button>
+
+  <div class="hero-content">
+    <div>
+      <p class="hero-eyebrow">Tu tienda Apple de confianza en Colombia</p>
+      <h1>Apple. Original.<br><span>A tu alcance.</span></h1>
+      <p class="hero-sub">iPhones, AirPods, iPad, Mac y Watch con garantía real, envío a todo el país y atención personalizada.</p>
+      <div class="hero-ctas">
+        <a href="#categorias" class="btn-primary">Ver productos</a>
+        <a href="https://www.instagram.com/tuiphone.co/" target="_blank" class="btn-ghost">Ir a Instagram</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num">100%</div>
+        <div class="hero-stat-label">Original Apple</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">48h</div>
+        <div class="hero-stat-label">Envío express</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">★★★★★</div>
+        <div class="hero-stat-label">Clientes felices</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    Scroll
+  </div>
+</section>
+
+<!-- VIDEO SHOWCASE — iPhone 17 -->
+<div style="background:var(--bg);padding:5rem 2.5rem 0;max-width:1200px;margin:0 auto">
+  <h2 class="section-title reveal" style="margin-bottom:0.3rem">iPhone 17 Pro.<br><span style="color:var(--blue)">En acción.</span></h2>
+  <p class="section-sub reveal" style="margin-bottom:0">Los colores más esperados del año — míralo antes de pedirlo.</p>
+</div>
+<div style="background:var(--bg)">
+<div class="vid-showcase">
+  <!-- Deep Blue — grande -->
+  <a href="https://www.instagram.com/tuiphone.co/" target="_blank" class="vid-card">
+    <video autoplay loop muted playsinline>
+      <source src="iphone17-blue.mp4" type="video/mp4">
+    </video>
+    <div class="vid-card-overlay"></div>
+    <div class="play-dot"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+    <div class="vid-card-content">
+      <div class="vid-eyebrow">iPhone 17 Pro · 2025</div>
+      <div class="vid-title">Deep Blue</div>
+      <div class="vid-cta">Consultar precio →</div>
+    </div>
+  </a>
+  <!-- Silver -->
+  <a href="https://www.instagram.com/tuiphone.co/" target="_blank" class="vid-card">
+    <video autoplay loop muted playsinline>
+      <source src="iphone17-silver.mp4" type="video/mp4">
+    </video>
+    <div class="vid-card-overlay"></div>
+    <div class="play-dot"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+    <div class="vid-card-content">
+      <div class="vid-eyebrow">iPhone 17 Pro · 2025</div>
+      <div class="vid-title">Silver</div>
+      <div class="vid-cta">Consultar precio →</div>
+    </div>
+  </a>
+  <!-- Cosmic Orange -->
+  <a href="https://www.instagram.com/tuiphone.co/" target="_blank" class="vid-card">
+    <video autoplay loop muted playsinline>
+      <source src="iphone17-orange.mp4" type="video/mp4">
+    </video>
+    <div class="vid-card-overlay"></div>
+    <div class="play-dot"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+    <div class="vid-card-content">
+      <div class="vid-eyebrow">iPhone 17 Pro · 2025</div>
+      <div class="vid-title">Cosmic Orange</div>
+      <div class="vid-cta">Consultar precio →</div>
+    </div>
+  </a>
+</div>
+</div>
+
+<!-- MACBOOK VIDEO BANNER -->
+<section class="mac-banner">
+  <video autoplay loop muted playsinline>
+    <source src="macbook.mp4" type="video/mp4">
+  </video>
+  <div class="mac-banner-overlay"></div>
+  <div class="mac-banner-content">
+    <p class="mac-eyebrow">Productividad · M4</p>
+    <h2 class="mac-h2">MacBook Air M4.</h2>
+    <p class="mac-sub">El portátil más delgado de Apple. Chip M4, batería de 18 horas y pantalla Liquid Retina. Trabaja sin límites, desde donde quieras.</p>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap">
+      <a href="https://www.instagram.com/tuiphone.co/" target="_blank" class="btn-primary">Consultar precio</a>
+      <a href="https://www.instagram.com/tuiphone.co/" target="_blank" class="btn-white">Ver especificaciones</a>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- CATEGORIES -->
+<div class="section" id="categorias">
+  <h2 class="section-title reveal">Todo el ecosistema Apple</h2>
+  <p class="section-sub reveal">Encuentra tu dispositivo con garantía, precio justo y envío seguro.</p>
+  <div class="cat-grid">
+    <a href="https://www.instagram.com/tuiphone.co/" target="_blank" class="cat-card reveal">
+      <div class="cat-card-img">
+        <svg viewBox="0 0 110 110" fill="none">
+          <rect x="30" y="6" width="50" height="98" rx="12" fill="#1d1d1f"/>
+          <rect x="34" y="10" width="42" height="90" rx="9" fill="#000"/>
+          <rect x="44" y="14" width="22" height="9" rx="4.5" fill="#333"/>
+          <rect x="34" y="10" width="42" height="90" rx="9" fill="url(#icg)" opacity="0.85"/>
+          <defs>
+            <linearGradient id="icg" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#1c3a6e"/>
+              <stop offset="100%" stop-color="#0071e3"/>
+            </linearGradient>
+          </defs>
+          <rect x="47" y="95" width="16" height="2.5" rx="1.25" fill="white" opacity="0.3"/>
+          <rect x="28" y="30" width="2" height="18" rx="1" fill="#333"/>
+          <rect x="80" y="26" width="2" height="26" rx="1" fill="#333"/>
+        </svg>
+      </div>
+      <h3>iPhone</h3>
+      <p>Del 13 al 17 Pro Max. Todos los modelos disponibles.</p>
+      <span class="cat-link">Ver modelos →</span>
+    </a>
+    <a href="https://www.instagram.com/tuiphone.co/" target="_blank" class="cat-card reveal" style="transition-delay:.08s">
+      <div class="cat-card-img">
+        <svg viewBox="0 0 110 110" fill="none">
+          <rect x="25" y="30" width="60" height="50" rx="16" fill="#e8e8ed" stroke="#d2d2d7" stroke-width="1.5"/>
+          <circle cx="55" cy="73" r="4" fill="#34c759" opacity="0.7"/>
+          <rect x="52" y="26" width="6" height="6" rx="3" fill="#d2d2d7"/>
+          <ellipse cx="38" cy="53" rx="7" ry="10" fill="white" stroke="#d2d2d7" stroke-width="1"/>
+          <rect x="36" y="38" width="4" height="12" rx="2" fill="#e8e8ed"/>
+          <ellipse cx="72" cy="53" rx="7" ry="10" fill="white" stroke="#d2d2d7" stroke-width="1"/>
+          <rect x="70" y="38" width="4" height="12" rx="2" fill="#e8e8ed"/>
+        </svg>
+      </div>
+      <h3>AirPods</h3>
+      <p>AirPods 4, Pro 3 y AirPods Max con cancelación de ruido.</p>
+      <span class="cat-link">Ver modelos →</span>
+    </a>
+    <a href="https://www.instagram.com/tuiphone.co/" target="_blank" class="cat-card reveal" style="transition-delay:.16s">
+      <div class="cat-card-img">
+        <svg viewBox="0 0 110 110" fill="none">
+          <rect x="10" y="24" width="90" height="56" rx="7" fill="#e8e8ed" stroke="#d2d2d7" stroke-width="1.5"/>
+          <rect x="15" y="28" width="80" height="48" rx="4" fill="#1d1d1f"/>
+          <circle cx="55" cy="30" r="2" fill="#424245"/>
+          <rect x="15" y="28" width="80" height="48" rx="4" fill="url(#mcg)" opacity="0.5"/>
+          <defs>
+            <linearGradient id="mcg" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#1c3a6e"/>
+              <stop offset="100%" stop-color="#0071e3"/>
+            </linearGradient>
+          </defs>
+          <rect x="6" y="82" width="98" height="6" rx="3" fill="#e8e8ed" stroke="#d2d2d7" stroke-width="1"/>
+          <rect x="34" y="85" width="42" height="3" rx="1.5" fill="#d2d2d7"/>
+        </svg>
+      </div>
+      <h3>Mac</h3>
+      <p>MacBook Air M1 a M4. Potencia todo el día.</p>
+      <span class="cat-link">Ver modelos →</span>
+    </a>
+    <a href="https://www.instagram.com/tuiphone.co/" target="_blank" class="cat-card reveal" style="transition-delay:.24s">
+      <div class="cat-card-img">
+        <svg viewBox="0 0 110 110" fill="none">
+          <rect x="18" y="10" width="74" height="90" rx="10" fill="#e8e8ed" stroke="#d2d2d7" stroke-width="1.5"/>
+          <rect x="23" y="15" width="64" height="80" rx="7" fill="#1d1d1f"/>
+          <rect x="40" y="13" width="30" height="7" rx="3.5" fill="#d2d2d7"/>
+          <rect x="23" y="15" width="64" height="80" rx="7" fill="url(#ipg)" opacity="0.7"/>
+          <defs>
+            <linearGradient id="ipg" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#1c3a6e"/>
+              <stop offset="100%" stop-color="#0071e3"/>
+            </linearGradient>
+          </defs>
+          <circle cx="55" cy="99" r="4" fill="#d2d2d7"/>
+        </svg>
+      </div>
+      <h3>iPad</h3>
+      <p>iPad A16, Air M3, Mini A17 y Pro M4.</p>
+      <span class="cat-link">Ver modelos →</span>
+    </a>
+    <a href="https://www.instagram.com/tuiphone.co/" target="_blank" class="cat-card reveal" style="transition-delay:.08s">
+      <div class="cat-card-img">
+        <svg viewBox="0 0 110 110" fill="none">
+          <rect x="36" y="26" width="38" height="58" rx="14" fill="#1d1d1f" stroke="#424245" stroke-width="1"/>
+          <rect x="41" y="31" width="28" height="48" rx="10" fill="#000"/>
+          <rect x="37" y="8" width="36" height="22" rx="8" fill="#ff3b30" opacity="0.8"/>
+          <rect x="37" y="80" width="36" height="22" rx="8" fill="#ff3b30" opacity="0.8"/>
+          <rect x="41" y="31" width="28" height="48" rx="10" fill="url(#awg)" opacity="0.85"/>
+          <defs>
+            <linearGradient id="awg" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#ff6b6b" stop-opacity="0.5"/>
+              <stop offset="100%" stop-color="#ff3b30" stop-opacity="0.2"/>
+            </linearGradient>
+          </defs>
+          <rect x="74" y="44" width="4" height="16" rx="2" fill="#424245"/>
+        </svg>
+      </div>
+      <h3>Apple Watch</h3>
+      <p>Series 10, 11, SE 3 y Ultra 3. Salud en tu muñeca.</p>
+      <span class="cat-link">Ver modelos →</span>
+    </a>
+    <a href="https://www.instagram.com/tuiphone.co/" target="_blank" class="cat-card reveal" style="transition-delay:.16s">
+      <div class="cat-card-img">
+        <svg viewBox="0 0 110 110" fill="none">
+          <rect x="50" y="10" width="12" height="60" rx="5" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.2"/>
+          <rect x="50" y="10" width="12" height="14" rx="5" fill="#d2d2d7"/>
+          <rect x="54" y="66" width="4" height="8" rx="2" fill="#a2845e"/>
+          <circle cx="56" cy="90" r="14" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.2"/>
+          <circle cx="56" cy="90" r="8" fill="#e8e8ed"/>
+          <circle cx="56" cy="90" r="3" fill="#d2d2d7"/>
+          <rect x="24" y="48" width="10" height="24" rx="4" fill="#ffe033" opacity="0.9" stroke="#f5c518" stroke-width="0.8"/>
+        </svg>
+      </div>
+      <h3>Accesorios</h3>
+      <p>Magic Keyboard, Pencil, AirTags, cargadores y más.</p>
+      <span class="cat-link">Ver accesorios →</span>
+    </a>
+  </div>
+</div>
+
+<!-- WHY US -->
+<div class="why-section">
+  <h2 class="section-title reveal">¿Por qué TuiPhone?</h2>
+  <p class="section-sub reveal" style="margin-bottom:2rem">Seguridad, garantía y atención real desde el primer mensaje.</p>
+  <div class="why-grid">
+    <div class="why-card reveal">
+      <div class="why-icon">
+        <svg viewBox="0 0 22 22" fill="none" stroke="#0071e3" stroke-width="2" stroke-linecap="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+      </div>
+      <h3>100% Originales</h3>
+      <p>Todos los dispositivos son originales Apple. Caja sellada, todos sus accesorios incluidos.</p>
+    </div>
+    <div class="why-card reveal" style="transition-delay:.1s">
+      <div class="why-icon">
+        <svg viewBox="0 0 22 22" fill="none" stroke="#0071e3" stroke-width="2" stroke-linecap="round"><rect x="3" y="11" width="16" height="10" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+      </div>
+      <h3>Garantía respaldada</h3>
+      <p>Garantía de fábrica en equipos nuevos. Te acompañamos en todo el proceso post-compra.</p>
+    </div>
+    <div class="why-card reveal" style="transition-delay:.2s">
+      <div class="why-icon">
+        <svg viewBox="0 0 22 22" fill="none" stroke="#0071e3" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </div>
+      <h3>Envío a todo el país</h3>
+      <p>Despacho rápido desde Bogotá. Gratis en pedidos desde $90.000 COP.</p>
+    </div>
+    <div class="why-card reveal" style="transition-delay:.05s">
+      <div class="why-icon">
+        <svg viewBox="0 0 22 22" fill="none" stroke="#0071e3" stroke-width="2" stroke-linecap="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+      </div>
+      <h3>Asesoría personalizada</h3>
+      <p>¿No sabes cuál elegir? Te ayudamos a encontrar el equipo perfecto para ti.</p>
+    </div>
+    <div class="why-card reveal" style="transition-delay:.15s">
+      <div class="why-icon">
+        <svg viewBox="0 0 22 22" fill="none" stroke="#0071e3" stroke-width="2" stroke-linecap="round"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></svg>
+      </div>
+      <h3>Cuotas disponibles</h3>
+      <p>Paga en cuotas con tu tarjeta. Tu iPhone de hoy, a pagarlo como más te convenga.</p>
+    </div>
+    <div class="why-card reveal" style="transition-delay:.25s">
+      <div class="why-icon">
+        <svg viewBox="0 0 22 22" fill="none" stroke="#0071e3" stroke-width="2" stroke-linecap="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <h3>Miles de clientes felices</h3>
+      <p>Comunidad activa en Instagram. Vendemos con transparencia y honestidad desde el primer día.</p>
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<div class="testi-section">
+  <h2 class="section-title reveal">Lo dicen nuestros clientes</h2>
+  <div class="testi-grid" style="margin-top:2rem">
+    <div class="testi-card reveal">
+      <div class="stars">★★★★★</div>
+      <p class="testi-text">"Mi iPhone 16 Pro llegó sellado y en perfectas condiciones. Atención excelente desde el primer mensaje. Totalmente recomendados."</p>
+      <div class="testi-author">Mariana G.</div>
+      <div class="testi-city">Bogotá, Colombia</div>
+    </div>
+    <div class="testi-card reveal" style="transition-delay:.12s">
+      <div class="stars">★★★★★</div>
+      <p class="testi-text">"Me asesoraron para escoger entre el Pro y el Pro Max según mi uso diario. Proceso rapidísimo y el equipo llegó antes de lo esperado."</p>
+      <div class="testi-author">Camilo R.</div>
+      <div class="testi-city">Medellín, Colombia</div>
+    </div>
+    <div class="testi-card reveal" style="transition-delay:.24s">
+      <div class="stars">★★★★★</div>
+      <p class="testi-text">"Pedí los AirPods Pro 3 y llegaron en 2 días a Cali. Confiables y rápidos. Ya les hice la segunda compra con total tranquilidad."</p>
+      <div class="testi-author">Valentina S.</div>
+      <div class="testi-city">Cali, Colombia</div>
+    </div>
+  </div>
+</div>
+
+<!-- INSTAGRAM CTA -->
+<section class="ig-section" id="ig">
+  <h2>Síguenos en Instagram</h2>
+  <p>Novedades, lanzamientos, promociones y contenido exclusivo todos los días.</p>
+  <a href="https://www.instagram.com/tuiphone.co/" target="_blank" class="btn-white">Ir a @tuiphone.co</a>
+  <div class="ig-handle">@tuiphone.co</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-brand-name"><img src="data:image/png;base64,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" alt="TuiPhone" style="height:52px;width:auto;"></div>
+      <p>Tu tienda Apple de confianza en Colombia. Productos originales, garantía respaldada y envío a todo el país.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Productos</h4>
+      <ul>
+        <li><a href="#">iPhone</a></li>
+        <li><a href="#">AirPods</a></li>
+        <li><a href="#">Mac</a></li>
+        <li><a href="#">iPad</a></li>
+        <li><a href="#">Apple Watch</a></li>
+        <li><a href="#">Accesorios</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Comprar</h4>
+      <ul>
+        <li><a href="#">Cómo comprar</a></li>
+        <li><a href="#">Envíos</a></li>
+        <li><a href="#">Garantías</a></li>
+        <li><a href="#">Devoluciones</a></li>
+        <li><a href="#">Cuotas</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <ul>
+        <li><a href="https://www.instagram.com/tuiphone.co/" target="_blank">Instagram</a></li>
+        <li><a href="#">WhatsApp</a></li>
+        <li><a href="#">Soporte</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>Copyright © 2025 TuiPhone. Todos los derechos reservados.</span>
+    <div style="display:flex;gap:1.5rem">
+      <a href="#">Privacidad</a>
+      <a href="#">Términos de uso</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Sound toggle
+  const vid = document.getElementById('heroVid');
+  const iMute = document.getElementById('iconMute');
+  const iSound = document.getElementById('iconSound');
+  function toggleSound(){
+    vid.muted = !vid.muted;
+    iMute.style.display = vid.muted ? 'block' : 'none';
+    iSound.style.display = vid.muted ? 'none' : 'block';
+  }
+
+  // Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}});
+  },{threshold:0.08});
+  reveals.forEach(r=>io.observe(r));
+</script>
+</body>
+</html>

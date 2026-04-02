@@ -3,1082 +3,1594 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TuiPhone · Tienda Apple Colombia</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>minime lovers — Labial en Polvo Colombia | Maquillaje Mini</title>
+<meta name="description" content="Labial en polvo colombiano. Ligero, pigmentado y perfecto para retoques rápidos. 6 tonos disponibles. Bolsos mini y kits. Envíos a toda Colombia. Cruelty free.">
+<meta name="keywords" content="labial en polvo, labial colombia, maquillaje colombiano, labial mini, labial pigmentado, maquillaje cruelty free colombia, labial polvo bogota, minime, minime lovers, bolso mini maquillaje, kit labial colombia">
+<meta name="author" content="minime lovers">
+<meta name="robots" content="index, follow">
+<meta name="language" content="Spanish">
+<meta name="geo.region" content="CO">
+<meta name="geo.placename" content="Colombia">
+
+<!-- Open Graph (para compartir en redes sociales) -->
+<meta property="og:title" content="minime lovers — Labial en Polvo Colombia">
+<meta property="og:description" content="El primer labial en polvo colombiano. Ligero, pigmentado y perfecto para retoques rápidos. 6 tonos, bolsos mini y kits. Envíos a toda Colombia.">
+<meta property="og:image" content="https://minime.com.co/6_tonos.JPG">
+<meta property="og:url" content="https://minime.com.co">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CO">
+<meta property="og:site_name" content="minime lovers">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="minime lovers — Labial en Polvo Colombia">
+<meta name="twitter:description" content="Labial en polvo colombiano. 6 tonos, bolsos mini y kits. Envíos a toda Colombia.">
+<meta name="twitter:image" content="https://minime.com.co/6_tonos.JPG">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://minime.com.co">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+<!-- Schema.org structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Store",
+  "name": "minime lovers",
+  "description": "Labial en polvo colombiano. Ligero, pigmentado y perfecto para retoques rápidos.",
+  "url": "https://minime.com.co",
+  "logo": "https://minime.com.co/logo.png",
+  "image": "https://minime.com.co/6_tonos.JPG",
+  "telephone": "+573226473031",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "CO",
+    "addressRegion": "Colombia"
+  },
+  "priceRange": "$25.000 - $180.000 COP",
+  "currenciesAccepted": "COP",
+  "paymentAccepted": "MercadoPago, WhatsApp",
+  "sameAs": [
+    "https://www.instagram.com/minime_store_"
+  ]
+}
+</script>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>emailjs.init("f5J7OB5n6jACg3FcX");</script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --bg:#f5f5f7;
-  --white:#fff;
-  --dark:#1d1d1f;
-  --mid:#424245;
-  --muted:#6e6e73;
-  --light:#86868b;
-  --blue:#0071e3;
-  --blue-hover:#0077ed;
-  --border:#d2d2d7;
-  --card:#fbfbfd;
-  --radius:18px;
-  --font:'Sora',sans-serif;
-  --body:'Inter',sans-serif;
-}
+:root{--hot:#B8003E;--rose:#D4005A;--blush:#F2C4D8;--petal:#FDF0F6;--cream:#FBF6F9;--dark:#160810;--mid:#6B2A44;--muted:#B07090}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--dark);font-family:var(--body);font-size:17px;line-height:1.5;overflow-x:hidden}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);overflow-x:hidden}
 
-/* NAV */
-nav{
-  position:sticky;top:0;z-index:200;
-  background:rgba(245,245,247,0.92);
-  backdrop-filter:saturate(180%) blur(20px);
-  -webkit-backdrop-filter:saturate(180%) blur(20px);
-  border-bottom:1px solid rgba(0,0,0,0.08);
-  height:64px;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:0 2.5rem;
-}
-.nav-logo{font-family:var(--font);font-weight:600;font-size:1.1rem;color:var(--dark);text-decoration:none;letter-spacing:-0.02em}
-.nav-logo span{color:var(--blue)}
-.nav-links{display:flex;gap:1.8rem;list-style:none}
-.nav-links a{font-size:0.82rem;color:var(--mid);text-decoration:none;transition:color .2s;font-weight:400;height:64px;display:flex;align-items:center}
-.nav-links a:hover{color:var(--dark)}
-.nav-right{display:flex;gap:1.2rem;align-items:center}
-.nav-icon{color:var(--mid);text-decoration:none;font-size:0.82rem;display:flex;align-items:center;gap:0.3rem;transition:color .2s}
-.nav-icon:hover{color:var(--dark)}
+.reveal{opacity:0;transform:translateY(48px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+.reveal.from-left{transform:translateX(-48px)}
+.reveal.from-right{transform:translateX(48px)}
+.reveal.scale-in{transform:scale(.93)}
+.reveal.visible{opacity:1!important;transform:none!important}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}.d5{transition-delay:.5s}
 
-/* OFFER STRIP */
-.offer-strip{background:var(--blue);color:#fff;text-align:center;padding:0.9rem 1rem;font-size:0.85rem}
-.offer-strip strong{font-weight:600}
-.offer-strip a{color:#fff;font-weight:500;text-decoration:underline}
+nav{position:fixed;top:0;left:0;right:0;z-index:300;display:flex;align-items:center;justify-content:space-between;padding:22px 6%;transition:all .4s ease}
+nav.scrolled{background:rgba(251,246,249,.96);backdrop-filter:blur(20px);padding:14px 6%;border-bottom:1px solid rgba(184,0,62,.08)}
+.nav-logo img{height:38px;filter:brightness(0) invert(1);transition:filter .3s}
+nav.scrolled .nav-logo img{filter:none}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.82);text-decoration:none;font-weight:400;transition:color .2s}
+nav.scrolled .nav-links a{color:var(--mid)}
+.nav-links a:hover,nav.scrolled .nav-links a:hover{color:var(--hot)}
+.nav-right{display:flex;align-items:center;gap:14px}
+.cart-icon-btn{position:relative;background:none;border:none;cursor:pointer;color:rgba(255,255,255,.85);font-size:20px;padding:4px;transition:color .3s}
+nav.scrolled .cart-icon-btn{color:var(--mid)}
+.cart-badge{position:absolute;top:-5px;right:-5px;background:var(--hot);color:#fff;width:17px;height:17px;border-radius:50%;font-size:9px;font-weight:600;font-family:'DM Sans',sans-serif;display:none;align-items:center;justify-content:center}
+.cart-badge.show{display:flex}
+.nav-btn{padding:9px 22px;border-radius:50px;border:1px solid rgba(255,255,255,.3);color:#fff;background:rgba(255,255,255,.1);font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:all .25s;backdrop-filter:blur(4px)}
+nav.scrolled .nav-btn{border-color:var(--hot);background:var(--hot)}
+.nav-btn:hover{background:rgba(255,255,255,.25)}
+nav.scrolled .nav-btn:hover{background:var(--rose)}
 
-/* HERO VIDEO */
-.hero{position:relative;width:100%;height:100vh;min-height:620px;overflow:hidden;display:flex;align-items:flex-end}
-.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.82) 0%,rgba(0,0,0,0.38) 45%,rgba(0,0,0,0.12) 100%);z-index:1}
-.hero-content{position:relative;z-index:2;padding:3.5rem 3.5rem;width:100%;display:flex;align-items:flex-end;justify-content:space-between;gap:2rem}
-.hero-eyebrow{font-size:0.78rem;font-weight:500;color:#6ea8ff;letter-spacing:0.06em;margin-bottom:0.7rem;text-transform:uppercase}
-.hero h1{font-family:var(--font);font-size:clamp(3rem,6vw,6rem);font-weight:700;line-height:1.0;letter-spacing:-0.03em;color:#fff;margin-bottom:1rem}
-.hero h1 span{color:var(--blue)}
-.hero-sub{font-size:1rem;color:rgba(255,255,255,0.58);font-weight:300;max-width:420px;line-height:1.65;margin-bottom:2rem}
-.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap}
-.btn-primary{background:var(--blue);color:#fff;border:none;border-radius:980px;padding:0.75rem 1.8rem;font-size:0.88rem;font-weight:500;cursor:pointer;text-decoration:none;display:inline-block;transition:background .2s,transform .15s;font-family:var(--body)}
-.btn-primary:hover{background:var(--blue-hover);transform:translateY(-1px)}
-.btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,0.4);border-radius:980px;padding:0.73rem 1.8rem;font-size:0.88rem;font-weight:500;cursor:pointer;text-decoration:none;display:inline-block;transition:border-color .2s;font-family:var(--body)}
-.btn-ghost:hover{border-color:#fff}
-.hero-stats{display:flex;flex-direction:column;gap:1.2rem;text-align:right;min-width:160px}
-.hero-stat-num{font-family:var(--font);font-size:2rem;font-weight:700;color:var(--blue);line-height:1}
-.hero-stat-label{font-size:0.72rem;color:rgba(255,255,255,0.38);margin-top:0.1rem}
-/* sound btn */
-.sound-btn{position:absolute;top:1.4rem;right:1.8rem;z-index:10;background:rgba(0,0,0,0.4);border:1px solid rgba(255,255,255,0.2);color:#fff;width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s;backdrop-filter:blur(8px)}
-.sound-btn:hover{background:rgba(255,255,255,0.15)}
-.sound-btn svg{width:18px;height:18px}
-/* scroll hint */
-.scroll-hint{position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);z-index:3;display:flex;flex-direction:column;align-items:center;gap:0.3rem;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.3);animation:bob 2.5s ease-in-out infinite}
-@keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(7px)}}
-/* video showcase */
-.vid-showcase{
-  padding:1rem 2.5rem 5rem;
-  max-width:1200px;margin:0 auto;
-  display:grid;
-  grid-template-columns:1.4fr 1fr 1fr;
-  gap:1.2rem;
-  align-items:start;
-}
-.vid-card{
-  position:relative;overflow:hidden;
-  border-radius:16px;
-  display:flex;flex-direction:column;justify-content:flex-end;
-  text-decoration:none;
-  box-shadow:0 4px 24px rgba(0,0,0,0.08);
-  transition:transform .3s ease, box-shadow .3s ease;
-}
-.vid-card:first-child{height:420px}
-.vid-card:not(:first-child){height:300px}
-.vid-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.14)}
-.vid-card video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
-.vid-card:hover video{transform:scale(1.03)}
-.vid-card-overlay{
-  position:absolute;inset:0;
-  background:linear-gradient(to top,rgba(0,0,0,0.72) 0%,rgba(0,0,0,0.1) 60%,transparent 100%);
-}
-.vid-card-content{position:relative;z-index:2;padding:1.4rem 1.6rem 1.6rem;color:#fff}
-.vid-eyebrow{font-size:0.68rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:0.25rem}
-.vid-title{font-family:var(--font);font-size:clamp(1.2rem,2vw,1.8rem);font-weight:700;letter-spacing:-0.02em;line-height:1.1;margin-bottom:0.6rem}
-.vid-cta{font-size:0.78rem;font-weight:500;color:rgba(255,255,255,0.6);display:inline-flex;align-items:center;gap:0.3rem;opacity:0;transform:translateY(5px);transition:opacity .25s,transform .25s}
-.vid-card:hover .vid-cta{opacity:1;transform:translateY(0)}
-.play-dot{
-  position:absolute;top:1rem;right:1rem;z-index:3;
-  width:34px;height:34px;border-radius:50%;
-  background:rgba(255,255,255,0.15);backdrop-filter:blur(8px);
-  border:1px solid rgba(255,255,255,0.2);
-  display:flex;align-items:center;justify-content:center;
-  transition:background .2s;
-}
-.vid-card:hover .play-dot{background:var(--blue);border-color:var(--blue)}
-.play-dot svg{width:12px;height:12px;fill:#fff;margin-left:2px}
-/* macbook banner */
-.mac-banner{position:relative;min-height:500px;overflow:hidden;display:flex;align-items:center}
-.mac-banner video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(0.5)}
-.mac-banner-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,0.78) 0%,rgba(0,0,0,0.18) 65%,transparent 100%)}
-.mac-banner-content{position:relative;z-index:2;padding:5rem 3.5rem;color:#fff;max-width:560px}
-.mac-eyebrow{font-size:0.75rem;font-weight:500;color:#6ea8ff;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:0.7rem}
-.mac-h2{font-family:var(--font);font-size:clamp(2.5rem,5vw,5rem);font-weight:700;letter-spacing:-0.03em;line-height:1.0;margin-bottom:1rem}
-.mac-sub{font-size:0.95rem;color:rgba(255,255,255,0.55);line-height:1.7;margin-bottom:2rem;max-width:400px}
-.btn-white{background:#fff;color:var(--dark);border-radius:980px;padding:0.75rem 1.8rem;font-size:0.88rem;font-weight:500;text-decoration:none;display:inline-block;transition:opacity .2s,transform .15s;font-family:var(--body)}
-.btn-white:hover{opacity:0.88;transform:translateY(-1px)}
+.hero{min-height:100vh;position:relative;display:flex;align-items:flex-end;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('6_tonos.JPG') center 30%/cover no-repeat;transform:scale(1.06);transition:transform 12s ease}
+.hero-bg.ready{transform:scale(1)}
+.hero-tint{position:absolute;inset:0;background:linear-gradient(160deg,rgba(22,8,16,.75) 0%,rgba(22,8,16,.2) 50%,transparent 75%),linear-gradient(to top,rgba(22,8,16,.98) 0%,rgba(22,8,16,.55) 35%,transparent 65%)}
+.hero-content{position:relative;z-index:1;padding:0 6% 90px;max-width:820px}
+.hero-label{display:inline-flex;align-items:center;gap:12px;color:var(--blush);font-size:10px;letter-spacing:3.5px;text-transform:uppercase;margin-bottom:28px;opacity:0;animation:fadeup .8s .3s forwards}
+.hero-label::before{content:'';width:32px;height:1px;background:var(--blush)}
+.hero-h1{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(64px,9.5vw,128px);color:#fff;font-weight:300;line-height:.92;margin-bottom:36px;opacity:0;animation:fadeup .9s .5s forwards}
+.hero-h1 em{font-style:italic;color:var(--blush);display:block}
+.hero-h1 strong{font-weight:600}
+.hero-p{font-size:16px;color:rgba(255,255,255,.6);line-height:1.82;max-width:440px;margin-bottom:52px;font-weight:300;opacity:0;animation:fadeup .9s .7s forwards}
+.hero-actions{display:flex;gap:24px;align-items:center;flex-wrap:wrap;opacity:0;animation:fadeup .9s .9s forwards}
+.btn-primary{background:var(--hot);color:#fff;padding:17px 42px;border-radius:50px;border:none;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;cursor:pointer;letter-spacing:2px;text-transform:uppercase;transition:all .3s;text-decoration:none;display:inline-block}
+.btn-primary:hover{background:var(--rose);transform:translateY(-3px);box-shadow:0 20px 40px rgba(184,0,62,.4)}
+.btn-ghost-light{color:rgba(255,255,255,.72);font-size:14px;text-decoration:none;display:flex;align-items:center;gap:10px;letter-spacing:.5px;transition:all .25s}
+.btn-ghost-light:hover{color:#fff;gap:18px}
+.hero-scroll{position:absolute;right:6%;bottom:40px;z-index:1;display:flex;flex-direction:column;align-items:center;gap:10px}
+.scroll-txt{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.3)}
+.scroll-line{width:1px;height:48px;background:rgba(255,255,255,.15);position:relative;overflow:hidden}
+.scroll-line::after{content:'';position:absolute;top:-100%;width:100%;height:100%;background:rgba(255,255,255,.5);animation:scrollani 2s ease infinite}
+@keyframes scrollani{0%{top:-100%}100%{top:200%}}
+@keyframes fadeup{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
 
-/* PROMO GRID */
-.promo-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;padding:0 2.5rem;max-width:1200px;margin:3rem auto 1.2rem}
-.promo-card{border-radius:var(--radius);padding:3rem 2.5rem;min-height:380px;display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;overflow:hidden;text-decoration:none;transition:transform .25s}
-.promo-card:hover{transform:scale(1.01)}
-.promo-card.dark{background:#1d1d1f;color:#fff}
-.promo-card.light{background:var(--white);color:var(--dark);border:1px solid rgba(0,0,0,0.06)}
-.promo-card.blue-grad{background:linear-gradient(160deg,#e8f0fe 0%,#d2e3fc 100%);color:var(--dark)}
-.promo-card.warm{background:linear-gradient(160deg,#fce8e6 0%,#fad2cf 100%);color:var(--dark)}
-.promo-eye{font-size:0.78rem;font-weight:500;margin-bottom:0.6rem;opacity:0.6;letter-spacing:0.03em}
-.promo-card.dark .promo-eye{color:#f5f5f7}
-.promo-title{font-family:var(--font);font-size:clamp(1.5rem,3vw,2.4rem);font-weight:700;letter-spacing:-0.025em;margin-bottom:0.5rem;line-height:1.1}
-.promo-sub{font-size:0.88rem;opacity:0.65;margin-bottom:1.2rem;line-height:1.5}
-.promo-cta{font-size:0.85rem;font-weight:500;color:var(--blue)}
-.promo-card.dark .promo-cta{color:#2997ff}
-.promo-visual{margin-top:auto;padding-top:2rem;width:100%}
+.ticker{background:var(--hot);padding:13px 0;overflow:hidden;white-space:nowrap}
+.ticker-track{display:inline-flex;animation:ticker 28s linear infinite}
+.ticker-item{font-size:10px;color:rgba(255,255,255,.88);letter-spacing:3px;text-transform:uppercase;padding:0 46px}
+.ticker-dot{color:rgba(255,255,255,.3)}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
-/* FULL BANNER */
-.full-banner{background:var(--dark);color:#f5f5f7;padding:5rem 2.5rem;text-align:center;position:relative;overflow:hidden}
-.full-banner::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 100%,rgba(0,113,227,0.25) 0%,transparent 70%);pointer-events:none}
-.full-banner-eye{font-size:0.82rem;color:#6e6e73;font-weight:500;margin-bottom:0.8rem;letter-spacing:0.04em}
-.full-banner h2{font-family:var(--font);font-size:clamp(2.5rem,6vw,5rem);font-weight:700;letter-spacing:-0.03em;line-height:1.05;margin-bottom:1rem}
-.full-banner h2 span{background:linear-gradient(90deg,#2997ff,#64acff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.full-banner p{font-size:1rem;color:#86868b;max-width:500px;margin:0 auto 2rem}
-.banner-phones{display:flex;justify-content:center;align-items:flex-end;gap:1.5rem;margin-top:3rem}
+.about-strip{display:grid;grid-template-columns:1fr 1fr;min-height:85vh;overflow:hidden}
+.about-img{position:relative;overflow:hidden}
+.about-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .9s ease}
+.about-img:hover img{transform:scale(1.04)}
+.about-text{padding:100px 8%;display:flex;flex-direction:column;justify-content:center;background:#fff}
+.label-tag{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--hot);margin-bottom:18px;font-weight:400}
+.about-text h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(38px,4vw,58px);font-weight:300;color:var(--dark);line-height:1.08;margin-bottom:26px}
+.about-text h2 em{font-style:italic;color:var(--hot)}
+.about-text p{font-size:15px;color:var(--mid);line-height:1.85;font-weight:300;margin-bottom:38px}
+.pillars{display:flex;flex-direction:column;gap:20px}
+.pillar{display:flex;gap:16px;align-items:flex-start}
+.pillar-dot{width:38px;height:38px;border-radius:50%;background:var(--petal);display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;margin-top:2px}
+.pillar-txt h4{font-size:14px;font-weight:500;color:var(--dark);margin-bottom:3px}
+.pillar-txt p{font-size:13px;color:var(--muted);font-weight:300;line-height:1.6}
 
-/* CATEGORIES */
-.section{padding:4rem 2.5rem;max-width:1200px;margin:0 auto}
-.section-title{font-family:var(--font);font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;letter-spacing:-0.025em;margin-bottom:0.4rem;color:var(--dark)}
-.section-sub{font-size:1rem;color:var(--muted);margin-bottom:2rem}
-.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
-.cat-card{background:var(--white);border-radius:var(--radius);padding:2rem 1.5rem 1.5rem;text-decoration:none;color:var(--dark);transition:transform .25s,box-shadow .25s;display:flex;flex-direction:column;align-items:center;text-align:center;border:1px solid rgba(0,0,0,0.04)}
-.cat-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.1)}
-.cat-card-img{width:110px;height:110px;display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem}
-.cat-card-img svg{width:100%;height:auto}
-.cat-card h3{font-family:var(--font);font-size:1rem;font-weight:600;margin-bottom:0.3rem}
-.cat-card p{font-size:0.78rem;color:var(--muted);line-height:1.4;margin-bottom:1rem}
-.cat-link{font-size:0.82rem;color:var(--blue);font-weight:500}
+.products{padding:100px 6%}
+.section-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px}
+.section-header h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(36px,4vw,54px);font-weight:300;color:var(--dark);line-height:1.1}
+.section-header h2 em{font-style:italic;color:var(--hot)}
+.section-header p{font-size:13px;color:var(--muted);max-width:220px;text-align:right;line-height:1.7}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}@media(max-width:1100px){.grid{grid-template-columns:repeat(3,1fr)}}
+.p-card{cursor:pointer;transition:transform .35s cubic-bezier(.16,1,.3,1)}
+.p-card:hover{transform:translateY(-8px)}
+.p-img{position:relative;overflow:hidden;border-radius:3px;aspect-ratio:4/5;background:#f0e0e8;margin-bottom:16px}
+.p-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s cubic-bezier(.16,1,.3,1)}
+.p-card:hover .p-img img{transform:scale(1.08)}
+.p-badge{position:absolute;top:12px;left:12px;background:var(--hot);color:#fff;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;padding:4px 11px;border-radius:50px;font-weight:500}
+.p-add{position:absolute;bottom:12px;right:12px;width:38px;height:38px;border-radius:50%;background:rgba(22,8,16,.78);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.15);color:#fff;font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(8px);transition:all .28s}
+.p-card:hover .p-add{opacity:1;transform:translateY(0)}
+.p-add:hover{background:var(--hot)}
+.p-name{font-size:14px;font-weight:500;color:var(--dark);margin-bottom:3px}
+.p-shade{font-size:12px;color:var(--muted);margin-bottom:10px}
+.p-row{display:flex;justify-content:space-between;align-items:center}
+.p-price{font-family:'Cormorant Garamond',Georgia,serif;font-size:22px;font-weight:600;color:var(--hot)}
+.p-swatch{width:14px;height:14px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1.5px rgba(0,0,0,.12)}
 
-/* WHY */
-.why-section{padding:4rem 2.5rem;max-width:1200px;margin:0 auto}
-.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
-.why-card{background:var(--white);border-radius:var(--radius);padding:2.5rem 2rem;border:1px solid rgba(0,0,0,0.04)}
-.why-icon{width:44px;height:44px;background:#e8f0fe;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem}
-.why-icon svg{width:22px;height:22px}
-.why-card h3{font-family:var(--font);font-size:1rem;font-weight:600;margin-bottom:0.4rem}
-.why-card p{font-size:0.83rem;color:var(--muted);line-height:1.6}
+.kit{margin:0 6% 100px;display:grid;grid-template-columns:55% 1fr;border-radius:4px;overflow:hidden;min-height:520px;background:linear-gradient(135deg,#1A0510,#3D0A20)}
+.kit-img{position:relative;overflow:hidden}
+.kit-img img{width:100%;height:100%;object-fit:cover;display:block;opacity:.75;transition:transform .8s ease}
+.kit:hover .kit-img img{transform:scale(1.04)}
+.kit-text{padding:72px 60px;display:flex;flex-direction:column;justify-content:center}
+.kit-eyebrow{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--blush);margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.kit-eyebrow::before{content:'';width:24px;height:1px;background:var(--blush)}
+.kit-text h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(34px,3.5vw,52px);font-weight:300;color:#fff;line-height:1.1;margin-bottom:18px}
+.kit-text h2 em{font-style:italic;color:var(--blush)}
+.kit-text p{font-size:14px;color:rgba(255,255,255,.55);line-height:1.8;margin-bottom:38px;font-weight:300}
+.kit-price-row{display:flex;align-items:baseline;gap:12px;margin-bottom:30px}
+.kit-price{font-family:'Cormorant Garamond',Georgia,serif;font-size:42px;font-weight:600;color:#fff}
+.kit-price-sub{font-size:12px;color:rgba(255,255,255,.38);letter-spacing:1px}
 
-/* TESTIMONIALS */
-.testi-section{padding:4rem 2.5rem;max-width:1200px;margin:0 auto}
-.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
-.testi-card{background:var(--white);border-radius:var(--radius);padding:2rem;border:1px solid rgba(0,0,0,0.05)}
-.stars{color:#ff9500;font-size:0.85rem;margin-bottom:0.8rem;letter-spacing:0.05em}
-.testi-text{font-size:0.86rem;color:var(--mid);line-height:1.7;margin-bottom:1rem}
-.testi-author{font-size:0.78rem;font-weight:600;color:var(--dark)}
-.testi-city{font-size:0.74rem;color:var(--light)}
+.testimonials{padding:100px 6%;background:#fff}
+.testi-header{text-align:center;margin-bottom:64px}
+.testi-header h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(36px,4vw,54px);font-weight:300;color:var(--dark)}
+.testi-header h2 em{font-style:italic;color:var(--hot)}
+.testi-header p{font-size:14px;color:var(--muted);margin-top:12px;font-weight:300}
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.t-card{padding:36px 30px;border:1px solid rgba(184,0,62,.08);border-radius:4px;transition:all .3s;background:var(--cream)}
+.t-card:hover{border-color:rgba(184,0,62,.2);transform:translateY(-4px);box-shadow:0 16px 40px rgba(184,0,62,.06)}
+.t-stars{color:var(--hot);font-size:13px;letter-spacing:3px;margin-bottom:16px}
+.t-text{font-family:'Cormorant Garamond',Georgia,serif;font-size:19px;font-style:italic;font-weight:400;color:var(--dark);line-height:1.55;margin-bottom:24px}
+.t-author{display:flex;align-items:center;gap:12px}
+.t-avatar{width:38px;height:38px;border-radius:50%;background:var(--blush);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500;color:var(--hot);flex-shrink:0}
+.t-name{font-size:13px;font-weight:500;color:var(--dark)}
+.t-city{font-size:12px;color:var(--muted)}
 
-/* INSTAGRAM */
-.ig-section{background:linear-gradient(135deg,#405de6,#5851db,#833ab4,#c13584,#e1306c,#fd1d1d,#f56040,#f77737,#fcaf45);padding:5rem 2.5rem;text-align:center;color:#fff}
-.ig-section h2{font-family:var(--font);font-size:clamp(2rem,4vw,3.2rem);font-weight:700;letter-spacing:-0.025em;margin-bottom:0.8rem}
-.ig-section p{font-size:1rem;opacity:0.85;margin-bottom:2rem}
-.btn-white{background:#fff;color:var(--dark);border-radius:980px;padding:0.8rem 2rem;font-size:0.88rem;font-weight:600;text-decoration:none;display:inline-block;transition:opacity .2s,transform .15s}
-.btn-white:hover{opacity:0.9;transform:translateY(-1px)}
-.ig-handle{margin-top:1rem;font-size:0.85rem;opacity:0.7}
+.how{padding:100px 6%}
+.how-header{text-align:center;margin-bottom:70px}
+.how-header h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(34px,3.5vw,50px);font-weight:300;color:var(--dark)}
+.how-header h2 em{font-style:italic;color:var(--hot)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
+.step{text-align:center}
+.step-num{width:56px;height:56px;border-radius:50%;border:1px solid var(--blush);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',Georgia,serif;font-size:22px;color:var(--hot);margin:0 auto 18px;transition:all .3s}
+.step:hover .step-num{background:var(--hot);color:#fff;border-color:var(--hot)}
+.step-icon{font-size:26px;margin-bottom:12px}
+.step h4{font-size:14px;font-weight:500;color:var(--dark);margin-bottom:8px}
+.step p{font-size:13px;color:var(--muted);line-height:1.65;font-weight:300}
 
-/* FOOTER */
-footer{background:var(--dark);color:#86868b;padding:3rem 2.5rem 1rem}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem;max-width:1200px;margin:0 auto;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,0.1)}
-.footer-brand-name{font-family:var(--font);font-size:1.1rem;font-weight:600;color:#f5f5f7;margin-bottom:0.8rem}
-.footer-brand-name span{color:#2997ff}
-.footer-brand p{font-size:0.82rem;line-height:1.6;max-width:240px}
-.footer-col h4{font-size:0.78rem;font-weight:600;color:#f5f5f7;margin-bottom:1rem;letter-spacing:0.02em}
-.footer-col ul{list-style:none}
-.footer-col ul li{margin-bottom:0.6rem}
-.footer-col ul li a{font-size:0.82rem;color:#86868b;text-decoration:none;transition:color .2s}
-.footer-col ul li a:hover{color:#f5f5f7}
-.footer-bottom{max-width:1200px;margin:1.5rem auto 0;display:flex;justify-content:space-between;align-items:center;font-size:0.78rem;flex-wrap:wrap;gap:1rem}
-.footer-bottom a{color:#86868b;text-decoration:none}
-.footer-bottom a:hover{color:#f5f5f7;text-decoration:underline}
+.cta-banner{margin:0 6% 100px;background:linear-gradient(135deg,#1A0510 0%,#3A0820 60%,#1A0510 100%);border-radius:4px;padding:90px 8%;display:flex;align-items:center;justify-content:space-between;gap:60px;flex-wrap:wrap;position:relative;overflow:hidden}
+.cta-banner::before{content:'';position:absolute;top:-60px;right:-60px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(184,0,62,.3),transparent 70%)}
+.cta-text h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(36px,4vw,56px);font-weight:300;color:#fff;line-height:1.1;margin-bottom:16px}
+.cta-text h2 em{font-style:italic;color:var(--blush)}
+.cta-text p{font-size:15px;color:rgba(255,255,255,.55);font-weight:300;line-height:1.7}
+.btn-white{background:#fff;color:var(--hot);padding:17px 40px;border-radius:50px;border:none;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;cursor:pointer;letter-spacing:2px;text-transform:uppercase;transition:all .3s;text-decoration:none;display:inline-block;white-space:nowrap}
+.btn-white:hover{background:var(--blush);transform:scale(1.03)}
+.btn-wa{background:#25D366;color:#fff;padding:15px 36px;border-radius:50px;border:none;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;cursor:pointer;letter-spacing:1.5px;text-transform:uppercase;transition:all .3s;text-decoration:none;display:inline-flex;align-items:center;gap:10px;white-space:nowrap;margin-top:12px}
+.btn-wa:hover{background:#1ebe5d}
+.cta-btns{display:flex;flex-direction:column;align-items:flex-start}
 
+footer{padding:70px 6% 40px;border-top:1px solid rgba(184,0,62,.08);display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px}
+.footer-brand img{height:34px;margin-bottom:18px}
+.footer-brand p{font-size:13px;color:var(--muted);line-height:1.7;font-weight:300;max-width:220px}
+.footer-col h5{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--dark);margin-bottom:20px;font-weight:500}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-col ul a{font-size:13px;color:var(--muted);text-decoration:none;transition:color .2s;font-weight:300}
+.footer-col ul a:hover{color:var(--hot)}
+.footer-bottom{padding:22px 6%;border-top:1px solid rgba(184,0,62,.06);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.footer-bottom p{font-size:12px;color:var(--muted);font-weight:300}
+.footer-badge{display:inline-flex;align-items:center;gap:8px;background:var(--petal);padding:6px 16px;border-radius:50px;font-size:11px;color:var(--hot);font-weight:500}
 
-/* ── CATALOG ── */
-.tab-btn{
-  font-family:var(--body);font-size:0.8rem;font-weight:500;
-  padding:0.45rem 1rem;border-radius:980px;
-  border:1.5px solid var(--border);background:#fff;
-  color:var(--mid);cursor:pointer;transition:all .2s;white-space:nowrap;
-}
-.tab-btn:hover{border-color:var(--blue);color:var(--blue)}
-.tab-btn.active{background:var(--blue);color:#fff;border-color:var(--blue)}
-.prod-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:1.5rem;
-}
-.prod-card{
-  background:#fff;border-radius:16px;
-  overflow:hidden;
-  box-shadow:0 2px 12px rgba(0,0,0,0.06);
-  transition:transform .25s,box-shadow .25s;
-}
-.prod-card:hover{transform:translateY(-4px);box-shadow:0 8px 32px rgba(0,0,0,0.11)}
-.prod-card.hidden{display:none}
-/* gallery */
-.prod-gallery{position:relative;aspect-ratio:1/1;overflow:hidden;background:#f5f5f7}
-.prod-imgs{display:flex;height:100%;transition:transform .35s ease}
-.prod-imgs img{min-width:100%;height:100%;object-fit:cover;flex-shrink:0}
-.g-prev,.g-next{
-  position:absolute;top:50%;transform:translateY(-50%);
-  background:rgba(255,255,255,0.85);border:none;
-  width:30px;height:30px;border-radius:50%;
-  cursor:pointer;font-size:0.9rem;
-  display:flex;align-items:center;justify-content:center;
-  opacity:0;transition:opacity .2s;z-index:2;
-  backdrop-filter:blur(4px);
-}
-.prod-gallery:hover .g-prev,.prod-gallery:hover .g-next{opacity:1}
-.g-prev{left:0.6rem}.g-next{right:0.6rem}
-.g-dots{
-  position:absolute;bottom:0.6rem;left:50%;transform:translateX(-50%);
-  display:flex;gap:4px;
-}
-.g-dot{
-  width:5px;height:5px;border-radius:50%;
-  background:rgba(255,255,255,0.5);transition:background .2s;cursor:pointer;
-}
-.g-dot.active{background:#fff}
-/* prod info */
-.prod-info{padding:1.2rem 1.4rem 1.4rem}
-.prod-name{font-family:var(--font);font-size:1.05rem;font-weight:600;margin-bottom:0.6rem;letter-spacing:-0.01em}
-.prod-specs{display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:1rem}
-.spec-chip{
-  font-size:0.72rem;font-weight:500;
-  padding:0.25rem 0.6rem;border-radius:980px;
-  background:var(--bg);color:var(--mid);
-}
-.prod-btn{
-  display:block;text-align:center;
-  background:var(--blue);color:#fff;
-  border-radius:980px;padding:0.6rem 1rem;
-  font-size:0.82rem;font-weight:500;
-  text-decoration:none;transition:background .2s;
-  font-family:var(--body);
-}
-.prod-btn:hover{background:var(--blue-hover)}
+.cart-overlay{display:none;position:fixed;inset:0;background:rgba(22,8,16,.55);z-index:400;backdrop-filter:blur(4px)}
+.cart-overlay.open{display:block}
+.cart-drawer{position:fixed;top:0;right:0;bottom:0;width:520px;max-width:100vw;background:var(--cream);z-index:401;transform:translateX(100%);transition:transform .35s cubic-bezier(.16,1,.3,1);display:flex;flex-direction:column}
+.cart-drawer.open{transform:translateX(0)}
+.cart-head{padding:28px;border-bottom:1px solid rgba(184,0,62,.08);display:flex;justify-content:space-between;align-items:center}
+.cart-head h3{font-family:'Cormorant Garamond',Georgia,serif;font-size:26px;font-weight:400;color:var(--dark);font-style:italic}
+.cart-close-btn{width:36px;height:36px;border-radius:50%;background:var(--petal);border:none;cursor:pointer;font-size:16px;color:var(--hot);display:flex;align-items:center;justify-content:center;transition:background .2s}
+.cart-close-btn:hover{background:var(--blush)}
+.cart-body{overflow-y:auto;padding:16px 24px;max-height:35vh;border-bottom:1px solid rgba(184,0,62,.08)}
+.cart-empty-state{text-align:center;padding:60px 0}
+.cart-empty-state .empty-icon{font-size:52px;margin-bottom:16px}
+.cart-empty-state p{font-size:14px;color:var(--muted)}
+.cart-item{display:flex;gap:14px;padding:18px 0;border-bottom:1px solid rgba(184,0,62,.07);align-items:center}
+.cart-item-img{width:64px;height:64px;border-radius:4px;overflow:hidden;flex-shrink:0;background:#f0e0e8}
+.cart-item-img img{width:100%;height:100%;object-fit:cover;display:block}
+.cart-item-info{flex:1}
+.cart-item-name{font-size:14px;font-weight:500;color:var(--dark);margin-bottom:2px}
+.cart-item-shade{font-size:12px;color:var(--muted);margin-bottom:8px}
+.cart-item-price{font-family:'Cormorant Garamond',Georgia,serif;font-size:18px;color:var(--hot);font-weight:600}
+.qty-row{display:flex;align-items:center;gap:10px;margin-top:8px}
+.qty-btn{width:26px;height:26px;border-radius:50%;background:var(--blush);border:none;cursor:pointer;font-size:15px;color:var(--hot);display:flex;align-items:center;justify-content:center;transition:all .15s}
+.qty-btn:hover{background:var(--hot);color:#fff}
+.qty-n{font-size:13px;font-weight:500;min-width:18px;text-align:center}
+.rm-btn{background:none;border:none;color:var(--muted);cursor:pointer;font-size:18px;padding:4px;transition:color .2s}
+.rm-btn:hover{color:var(--hot)}
+.cart-foot{padding:16px 24px;background:#fff;overflow-y:auto;flex:1}
+.cart-total-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.cart-total-lbl{font-size:13px;color:var(--muted)}
+.cart-total-val{font-family:'Cormorant Garamond',Georgia,serif;font-size:30px;font-weight:600;color:var(--hot)}
+.btn-pay{width:100%;background:#1a1a1a;color:#fff;padding:13px;border-radius:50px;border:none;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:500;cursor:pointer;letter-spacing:2px;text-transform:uppercase;transition:all .25s;margin-bottom:8px}
+.btn-pay:hover{background:#333}
+.btn-pay:disabled{opacity:.45;cursor:not-allowed}
+.btn-pay-wa{width:100%;background:#25D366;color:#fff;padding:11px;border-radius:50px;border:none;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:500;cursor:pointer;transition:all .25s;display:flex;align-items:center;justify-content:center;gap:8px}
+.btn-pay-wa:hover{background:#1ebe5d}
+.btn-pay-wa:disabled{opacity:.45;cursor:not-allowed}
+.tc-check-wrap{margin:14px 0 10px;display:flex;align-items:flex-start;gap:10px;padding:12px 14px;background:var(--petal);border-radius:10px;border:1px solid rgba(184,0,62,.12)}
+.tc-check-wrap input[type=checkbox]{margin-top:2px;accent-color:var(--hot);width:15px;height:15px;cursor:pointer;flex-shrink:0}
+.tc-check-wrap label{font-size:11px;color:var(--muted);line-height:1.6;cursor:pointer}
+.tc-check-wrap label a{color:var(--hot);text-decoration:underline}
+
+.tonos-piel{padding:80px 6%;background:linear-gradient(135deg,#f0c0d8 0%,#fbd5ea 50%,#fde8f2 100%);display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;position:relative;overflow:hidden;transition:background 0.6s cubic-bezier(.16,1,.3,1)}
+.tonos-piel::before{content:'';position:absolute;top:-80px;right:-80px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(242,196,216,.45),transparent 70%);pointer-events:none}
+.tonos-piel::after{content:'';position:absolute;bottom:-60px;left:-60px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(212,0,90,.07),transparent 70%);pointer-events:none}
+.tonos-piel-img{display:flex;justify-content:center;align-items:center;opacity:0;transform:translateX(-60px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+.tonos-piel-img.visible{opacity:1;transform:none}
+.tonos-piel-img img{width:78%;max-width:380px;display:block;object-fit:cover;border-radius:24px;box-shadow:0 24px 64px rgba(22,8,16,.13);transition:transform .9s ease}
+.tonos-piel-img:hover img{transform:scale(1.03)}
+.tonos-piel-text{opacity:0;transform:translateX(60px);transition:opacity .9s cubic-bezier(.16,1,.3,1) .15s,transform .9s cubic-bezier(.16,1,.3,1) .15s}
+.tonos-piel-text.visible{opacity:1;transform:none}
+.tonos-piel-text h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(34px,3.5vw,50px);font-weight:300;color:var(--dark);line-height:1.1;margin-bottom:20px}
+.tonos-piel-text h2 em{font-style:italic;color:var(--hot)}
+.tonos-piel-text p{font-size:15px;color:var(--mid);line-height:1.85;font-weight:300;margin-bottom:28px}
+.tonos-list{display:flex;flex-direction:column;gap:11px}
+.tono-tag{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--mid);font-weight:400;cursor:pointer;padding:8px 14px;border-radius:50px;border:1.5px solid rgba(184,0,62,.15);background:rgba(255,255,255,.6);transition:all .2s;user-select:none}
+.tono-tag:hover{background:rgba(255,255,255,.9);border-color:var(--hot);transform:translateX(4px);box-shadow:0 4px 16px rgba(184,0,62,.12)}
+.tono-tag.active{background:#fff;border-color:var(--hot);font-weight:500;color:var(--dark);transform:translateX(6px);box-shadow:0 4px 20px rgba(184,0,62,.15)}
+.tono-tag-dot{width:13px;height:13px;border-radius:50%;flex-shrink:0;border:2px solid #fff;box-shadow:0 0 0 1.5px rgba(0,0,0,.12)}
+
+.videos-section{padding:100px 6%;background:var(--cream)}
+.videos-header{text-align:center;margin-bottom:56px}
+.videos-header h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(36px,4vw,54px);font-weight:300;color:var(--dark)}
+.videos-header h2 em{font-style:italic;color:var(--hot)}
+.videos-header p{font-size:14px;color:var(--muted);margin-top:12px;font-weight:300}
+.videos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.video-card{border-radius:12px;overflow:hidden;background:#000;position:relative;aspect-ratio:9/16}
+.video-card video{width:100%;height:100%;object-fit:cover;display:block}
+@media(max-width:900px){.videos-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:540px){.videos-grid{grid-template-columns:1fr}}
+@media(max-width:900px){.tonos-piel{grid-template-columns:1fr;gap:40px}.tonos-piel-img img{width:70%;max-width:300px}}
+
 @media(max-width:900px){
-  .prod-grid{grid-template-columns:repeat(2,1fr);gap:1rem}
-  .cat-tabs{gap:0.4rem}
+  .nav-links,.nav-btn{display:none}
+  .about-strip{grid-template-columns:1fr}
+  .about-img{height:60vw}
+  .grid{grid-template-columns:1fr 1fr}
+  .kit{grid-template-columns:1fr}
+  .kit-img{height:55vw}
+  .tgrid{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  footer{grid-template-columns:1fr 1fr;gap:36px}
+  .section-header{flex-direction:column;align-items:flex-start;gap:10px}
+  .section-header p{text-align:left;max-width:none}
+  .cta-banner{padding:60px 7%}
+  .cart-drawer{width:100vw;max-width:100vw}
 }
-@media(max-width:500px){
-  .prod-grid{grid-template-columns:1fr}
+@media(max-width:540px){
+  .grid{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .hero-content{padding-bottom:72px}
+  .kit-text{padding:48px 36px}
 }
 
-/* REVEAL */
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
-.reveal.visible{opacity:1;transform:none}
+.cat-tabs{display:flex;gap:10px;margin-bottom:40px;flex-wrap:wrap}
+.cat-tab{padding:10px 24px;border-radius:50px;border:1px solid rgba(184,0,62,.2);background:transparent;font-family:'DM Sans',sans-serif;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mid);cursor:pointer;transition:all .25s;font-weight:400}
+.cat-tab:hover{border-color:var(--hot);color:var(--hot)}
+.cat-tab.active{background:var(--hot);border-color:var(--hot);color:#fff}
+.popular-badge-row{margin-top:48px;text-align:center}
+.popular-strip{display:inline-flex;align-items:center;gap:10px;background:var(--petal);border:1px solid rgba(184,0,62,.12);padding:14px 28px;border-radius:50px;font-size:13px;color:var(--mid)}
+.popular-strip strong{color:var(--hot)}
+.p-card.hidden{display:none}
 
-/* RESPONSIVE */
-@media(max-width:900px){
-  nav{padding:0 1.2rem}
-  .nav-links{display:none}
-  .cat-grid{grid-template-columns:repeat(2,1fr)}
-  .promo-grid{grid-template-columns:1fr;padding:0 1.2rem}
-  .why-grid,.testi-grid{grid-template-columns:1fr}
-  .section,.why-section,.testi-section{padding:3rem 1.2rem}
-  .footer-grid{grid-template-columns:1fr}
-  footer{padding:2.5rem 1.2rem 1rem}
-  .footer-bottom{flex-direction:column;align-items:flex-start}
-  .full-banner{padding:4rem 1.2rem}
-  .promo-card{min-height:280px;padding:2.5rem 1.5rem}
-  .hero-content{flex-direction:column;align-items:flex-start;padding:2rem 1.5rem}
-  .hero-stats{display:none}
-  .vid-showcase{grid-template-columns:1fr;padding:1rem 1.2rem 3rem}
-  .vid-card:first-child,.vid-card:not(:first-child){height:280px}
-  .mac-banner-content{padding:3rem 1.5rem}
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(22,8,16,.6);z-index:500;backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:20px}
+.modal-overlay.open{display:flex}
+.modal{background:#fff;border-radius:8px;width:100%;max-width:540px;max-height:90vh;overflow-y:auto;position:relative}
+.modal-header{padding:28px 28px 0;display:flex;justify-content:space-between;align-items:flex-start}
+.modal-header h3{font-family:'Cormorant Garamond',Georgia,serif;font-size:24px;font-weight:400;color:var(--dark);font-style:italic;line-height:1.2}
+.modal-close{width:34px;height:34px;border-radius:50%;background:var(--petal);border:none;cursor:pointer;font-size:16px;color:var(--hot);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .2s}
+.modal-close:hover{background:var(--blush)}
+.modal-body{padding:24px 28px 28px}
+.modal-section{margin-bottom:24px}
+.modal-section-title{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--hot);margin-bottom:14px;font-weight:500}
+.tone-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.tone-opt{border:2px solid transparent;border-radius:6px;overflow:hidden;cursor:pointer;transition:all .2s;position:relative}
+.tone-opt img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block}
+.tone-opt .tone-label{font-size:10px;text-align:center;padding:5px 4px;color:var(--mid);font-weight:400;background:#fff}
+.tone-opt.selected{border-color:var(--hot)}
+.tone-opt.selected::after{content:'✓';position:absolute;top:6px;right:6px;width:20px;height:20px;border-radius:50%;background:var(--hot);color:#fff;font-size:11px;display:flex;align-items:center;justify-content:center;font-weight:700}
+.tone-opt.disabled{opacity:.35;cursor:not-allowed}
+.bolso-grid{display:flex;gap:12px}
+.bolso-opt{flex:1;padding:14px 10px;border:2px solid rgba(184,0,62,.15);border-radius:6px;cursor:pointer;text-align:center;transition:all .2s}
+.bolso-opt:hover{border-color:var(--hot)}
+.bolso-opt.selected{border-color:var(--hot);background:var(--petal)}
+.bolso-circle{width:32px;height:32px;border-radius:50%;margin:0 auto 8px;border:2px solid rgba(0,0,0,.1)}
+.bolso-name{font-size:12px;color:var(--mid);font-weight:400}
+.bolso-opt.selected .bolso-name{color:var(--hot);font-weight:500}
+.modal-footer{padding:0 28px 28px;display:flex;flex-direction:column;gap:10px}
+.modal-summary{font-size:13px;color:var(--muted);text-align:center;min-height:20px}
+.btn-modal-add{width:100%;background:var(--hot);color:#fff;padding:15px;border-radius:50px;border:none;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;cursor:pointer;letter-spacing:2px;text-transform:uppercase;transition:all .25s}
+.btn-modal-add:hover{background:var(--rose)}
+.btn-modal-add:disabled{background:var(--muted);cursor:not-allowed}
+.tone-counter{font-size:12px;color:var(--muted);margin-bottom:10px}
+.tone-counter span{color:var(--hot);font-weight:500}
+
+.detail-overlay{display:none;position:fixed;inset:0;background:rgba(22,8,16,.55);z-index:600;backdrop-filter:blur(6px)}
+.detail-overlay.open{display:block}
+.detail-panel{
+  position:fixed;top:0;right:0;bottom:0;width:520px;max-width:100vw;
+  background:#fff;z-index:601;
+  transform:translateX(100%);transition:transform .35s cubic-bezier(.16,1,.3,1);
+  display:flex;flex-direction:column;overflow-y:auto;
 }
+.detail-panel.open{transform:translateX(0)}
+.detail-img-wrap{position:relative;overflow:hidden;flex-shrink:0}
+.detail-img-wrap img{width:100%;display:block;aspect-ratio:1/1;object-fit:cover}
+.detail-close{
+  position:absolute;top:16px;right:16px;
+  width:38px;height:38px;border-radius:50%;
+  background:rgba(255,255,255,.9);backdrop-filter:blur(8px);
+  border:none;cursor:pointer;font-size:18px;color:var(--dark);
+  display:flex;align-items:center;justify-content:center;
+  transition:background .2s;z-index:10;
+}
+.detail-close:hover{background:#fff}
+.detail-body{padding:32px 36px 40px;flex:1}
+.detail-badge{
+  display:inline-block;background:var(--hot);color:#fff;
+  font-size:10px;letter-spacing:1.5px;text-transform:uppercase;
+  padding:4px 12px;border-radius:50px;margin-bottom:16px;
+}
+.detail-name{
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-size:36px;font-weight:300;color:var(--dark);
+  line-height:1.1;margin-bottom:6px;
+}
+.detail-shade{font-size:14px;color:var(--muted);margin-bottom:16px;letter-spacing:.5px}
+.detail-price{
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-size:32px;font-weight:600;color:var(--hot);margin-bottom:20px;
+}
+.detail-desc{
+  font-size:15px;color:var(--mid);line-height:1.75;font-weight:300;
+  margin-bottom:28px;padding-bottom:28px;
+  border-bottom:1px solid rgba(184,0,62,.08);
+}
+.detail-features{display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
+.detail-feature{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--mid)}
+.detail-feature::before{content:'✓';color:var(--hot);font-weight:700;font-size:14px}
+.detail-qty-row{display:flex;align-items:center;gap:16px;margin-bottom:20px}
+.detail-qty-label{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted)}
+.detail-qty-ctrl{display:flex;align-items:center;gap:12px}
+.detail-qty-btn{
+  width:32px;height:32px;border-radius:50%;
+  background:var(--petal);border:none;cursor:pointer;
+  font-size:18px;color:var(--hot);
+  display:flex;align-items:center;justify-content:center;transition:all .2s;
+}
+.detail-qty-btn:hover{background:var(--hot);color:#fff}
+.detail-qty-num{font-size:16px;font-weight:500;min-width:24px;text-align:center}
+.btn-detail-add{
+  width:100%;background:var(--hot);color:#fff;
+  padding:17px;border-radius:50px;border:none;
+  font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;
+  cursor:pointer;letter-spacing:2px;text-transform:uppercase;
+  transition:all .25s;margin-bottom:12px;
+}
+.btn-detail-add:hover{background:var(--rose)}
+.btn-detail-wa{
+  width:100%;background:transparent;color:var(--hot);
+  padding:14px;border-radius:50px;
+  border:1px solid rgba(184,0,62,.25);
+  font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;
+  cursor:pointer;letter-spacing:1.5px;text-transform:uppercase;
+  transition:all .25s;display:flex;align-items:center;justify-content:center;gap:8px;
+}
+.btn-detail-wa:hover{background:var(--petal)}
+@media(max-width:540px){.detail-panel{width:100vw}.detail-body{padding:24px 20px 32px}}
 </style>
 </head>
 <body>
 
-<div class="offer-strip">
-  <strong>Envío gratis</strong> en pedidos desde $90.000 COP &nbsp;·&nbsp; <a href="https://www.instagram.com/tuiphone.co/" target="_blank">Ver todos los productos →</a>
+
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
+  <div class="modal" id="modal">
+    <div class="modal-header">
+      <h3 id="modalTitle">Personaliza tu kit</h3>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-section" id="toneSection" style="display:none">
+        <div class="modal-section-title">Elige tus tonos</div>
+        <div class="tone-counter">Seleccionados: <span id="toneCount">0</span> de <span id="toneMax">0</span></div>
+        <div class="tone-grid" style="grid-template-columns:repeat(3,1fr)">
+          <div class="tone-opt" data-tone="1" data-name="Mini Drama" onclick="selectTone(this)">
+            <img src="tono_1.JPG" alt="Mini Drama">
+            <div class="tone-label">Mini Drama</div>
+          </div>
+          <div class="tone-opt" data-tone="2" data-name="Sweet Sunset" onclick="selectTone(this)">
+            <img src="tono_2.JPG" alt="Sweet Sunset">
+            <div class="tone-label">Sweet Sunset</div>
+          </div>
+          <div class="tone-opt" data-tone="3" data-name="Blush Crush" onclick="selectTone(this)">
+            <img src="tono_3.JPG" alt="Blush Crush">
+            <div class="tone-label">Blush Crush</div>
+          </div>
+          <div class="tone-opt" data-tone="4" data-name="Latte Kiss" onclick="selectTone(this)">
+            <img src="tono_4.JPG" alt="Latte Kiss">
+            <div class="tone-label">Latte Kiss</div>
+          </div>
+          <div class="tone-opt" data-tone="5" data-name="Pink Whisper" onclick="selectTone(this)">
+            <img src="tono_5.JPG" alt="Pink Whisper">
+            <div class="tone-label">Pink Whisper</div>
+          </div>
+          <div class="tone-opt" data-tone="6" data-name="Tiny Flame" onclick="selectTone(this)">
+            <img src="tono_6.JPG" alt="Tiny Flame">
+            <div class="tone-label">Tiny Flame</div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-section" id="bolsoSection" style="display:none">
+        <div class="modal-section-title">Elige el color de tu bolso</div>
+        <div class="bolso-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px">
+          <div class="bolso-opt" data-color="Negro" onclick="selectBolso(this)">
+            <div style="border-radius:6px;overflow:hidden;margin-bottom:8px;aspect-ratio:1/1"><img src="bolso_negro.JPG" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+            <div class="bolso-name">Negro</div>
+          </div>
+          <div class="bolso-opt" data-color="Blanco" onclick="selectBolso(this)">
+            <div style="border-radius:6px;overflow:hidden;margin-bottom:8px;aspect-ratio:1/1"><img src="bolso_blanco.JPG" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+            <div class="bolso-name">Blanco</div>
+          </div>
+          <div class="bolso-opt" data-color="Rojo" onclick="selectBolso(this)">
+            <div style="border-radius:6px;overflow:hidden;margin-bottom:8px;aspect-ratio:1/1"><img src="bolso_rojo.JPG" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+            <div class="bolso-name">Rojo</div>
+          </div>
+          <div class="bolso-opt" data-color="Rosa" onclick="selectBolso(this)">
+            <div style="border-radius:6px;overflow:hidden;margin-bottom:8px;aspect-ratio:1/1"><img src="bolso_rosa.JPG" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+            <div class="bolso-name">Rosa</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <div class="modal-summary" id="modalSummary"></div>
+      <button class="btn-modal-add" id="btnModalAdd" onclick="addModalToCart()" disabled>Selecciona tus opciones</button>
+    </div>
+  </div>
 </div>
 
-<nav>
-  <a href="#" class="nav-logo" style="display:flex;align-items:center"><img src="data:image/png;base64,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" alt="TuiPhone" style="height:44px;width:auto;"></a>
+
+<div class="detail-overlay" id="detailOverlay" onclick="closeDetail()"></div>
+<div class="detail-panel" id="detailPanel">
+  <div class="detail-img-wrap">
+    <img id="detailImg" src="" alt="">
+    <button class="detail-close" onclick="closeDetail()">✕</button>
+  </div>
+  <div class="detail-body">
+    <div id="detailBadge" class="detail-badge" style="display:none"></div>
+    <div class="detail-name" id="detailName"></div>
+    <div class="detail-shade" id="detailShade"></div>
+    <div class="detail-price" id="detailPrice"></div>
+    <div class="detail-desc" id="detailDesc"></div>
+    <div class="detail-features">
+      <div class="detail-feature">Labial en polvo — textura ligera y difuminada</div>
+      <div class="detail-feature">Cruelty Free · Sin parabenos</div>
+      <div class="detail-feature">Formulado en laboratorio colombiano</div>
+      <div class="detail-feature">Perfecto para retoques rápidos</div>
+    </div>
+    <div class="detail-qty-row">
+      <span class="detail-qty-label">Cantidad</span>
+      <div class="detail-qty-ctrl">
+        <button class="detail-qty-btn" onclick="changeDetailQty(-1)">−</button>
+        <span class="detail-qty-num" id="detailQty">1</span>
+        <button class="detail-qty-btn" onclick="changeDetailQty(1)">+</button>
+      </div>
+    </div>
+    <button class="btn-detail-add" id="btnDetailAdd" onclick="addDetailToCart()">Agregar al carrito</button>
+    <button class="btn-detail-wa" onclick="contactWA()">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="#B8003E"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.118 1.525 5.847L.057 23.882l6.206-1.445A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.372l-.36-.213-3.682.857.925-3.578-.233-.369A9.818 9.818 0 1112 21.818z"/></svg>
+      Consultar por WhatsApp
+    </button>
+  </div>
+</div>
+
+<div class="cart-overlay" id="cOverlay" onclick="closeCart()"></div>
+<div class="cart-drawer" id="cDrawer">
+  <div class="cart-head">
+    <h3>Mi carrito</h3>
+    <button class="cart-close-btn" onclick="closeCart()">✕</button>
+  </div>
+  <div class="cart-body" id="cBody"></div>
+  <div class="cart-foot">
+    <div id="freeShipBanner" style="display:none;font-size:11px;font-weight:500;text-align:center;padding:6px 10px;background:var(--petal);border-radius:10px;margin-bottom:8px"></div>
+    <div id="shippingBox" style="margin-bottom:10px">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:6px">
+        <div>
+          <label style="font-size:9px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:3px">Ciudad / Municipio</label>
+          <select id="citySelect" onchange="updateShipping()" style="width:100%;padding:6px 10px;border:1px solid rgba(184,0,62,.2);border-radius:10px;font-family:'DM Sans',sans-serif;font-size:12px;color:var(--dark);background:#fff;cursor:pointer;outline:none;appearance:none">
+            <option value="">Selecciona tu ciudad</option>
+            <optgroup label="— Bogotá">
+              <option value="bogota">Bogotá — $10.000</option>
+            </optgroup>
+            <optgroup label="— Ciudades principales">
+              <option value="principal">Medellín — $15.000</option>
+              <option value="principal">Cali — $15.000</option>
+              <option value="principal">Barranquilla — $15.000</option>
+              <option value="principal">Cartagena — $15.000</option>
+              <option value="principal">Bucaramanga — $15.000</option>
+              <option value="principal">Pereira — $15.000</option>
+              <option value="principal">Manizales — $15.000</option>
+              <option value="principal">Santa Marta — $15.000</option>
+              <option value="principal">Cúcuta — $15.000</option>
+              <option value="principal">Ibagué — $15.000</option>
+              <option value="principal">Pasto — $15.000</option>
+              <option value="principal">Neiva — $15.000</option>
+              <option value="principal">Villavicencio — $15.000</option>
+              <option value="principal">Armenia — $15.000</option>
+              <option value="principal">Montería — $15.000</option>
+              <option value="principal">Valledupar — $15.000</option>
+              <option value="principal">Sincelejo — $15.000</option>
+              <option value="principal">Popayán — $15.000</option>
+              <option value="principal">Tunja — $15.000</option>
+              <option value="principal">Florencia — $15.000</option>
+              <option value="principal">Riohacha — $15.000</option>
+              <option value="principal">Quibdó — $15.000</option>
+              <option value="principal">Yopal — $15.000</option>
+              <option value="principal">Arauca — $15.000</option>
+              <option value="principal">Mitú — $15.000</option>
+              <option value="principal">Puerto Inírida — $15.000</option>
+              <option value="principal">San José del Guaviare — $15.000</option>
+              <option value="principal">Mocoa — $15.000</option>
+              <option value="principal">Leticia — $15.000</option>
+              <option value="principal">Puerto Carreño — $15.000</option>
+            </optgroup>
+            <optgroup label="— Cundinamarca">
+              <option value="otro">Soacha — $20.000</option>
+              <option value="otro">Chía — $20.000</option>
+              <option value="otro">Zipaquirá — $20.000</option>
+              <option value="otro">Facatativá — $20.000</option>
+              <option value="otro">Fusagasugá — $20.000</option>
+              <option value="otro">Girardot — $20.000</option>
+              <option value="otro">Mosquera — $20.000</option>
+              <option value="otro">Madrid — $20.000</option>
+              <option value="otro">Funza — $20.000</option>
+              <option value="otro">Cajicá — $20.000</option>
+              <option value="otro">Tocancipá — $20.000</option>
+              <option value="otro">Sopó — $20.000</option>
+            </optgroup>
+            <optgroup label="— Antioquia">
+              <option value="otro">Bello — $20.000</option>
+              <option value="otro">Itagüí — $20.000</option>
+              <option value="otro">Envigado — $20.000</option>
+              <option value="otro">Sabaneta — $20.000</option>
+              <option value="otro">Rionegro — $20.000</option>
+              <option value="otro">Apartadó — $20.000</option>
+              <option value="otro">Turbo — $20.000</option>
+              <option value="otro">Caucasia — $20.000</option>
+              <option value="otro">La Estrella — $20.000</option>
+              <option value="otro">Copacabana — $20.000</option>
+            </optgroup>
+            <optgroup label="— Valle del Cauca">
+              <option value="otro">Buenaventura — $20.000</option>
+              <option value="otro">Palmira — $20.000</option>
+              <option value="otro">Tuluá — $20.000</option>
+              <option value="otro">Cartago — $20.000</option>
+              <option value="otro">Buga — $20.000</option>
+              <option value="otro">Jamundí — $20.000</option>
+              <option value="otro">Yumbo — $20.000</option>
+            </optgroup>
+            <optgroup label="— Atlántico">
+              <option value="otro">Soledad — $20.000</option>
+              <option value="otro">Malambo — $20.000</option>
+              <option value="otro">Sabanalarga — $20.000</option>
+              <option value="otro">Baranoa — $20.000</option>
+            </optgroup>
+            <optgroup label="— Bolívar">
+              <option value="otro">Magangué — $20.000</option>
+              <option value="otro">Turbaco — $20.000</option>
+              <option value="otro">El Carmen de Bolívar — $20.000</option>
+            </optgroup>
+            <optgroup label="— Santander">
+              <option value="otro">Floridablanca — $20.000</option>
+              <option value="otro">Girón — $20.000</option>
+              <option value="otro">Piedecuesta — $20.000</option>
+              <option value="otro">Barrancabermeja — $20.000</option>
+              <option value="otro">San Gil — $20.000</option>
+            </optgroup>
+            <optgroup label="— Boyacá">
+              <option value="otro">Duitama — $20.000</option>
+              <option value="otro">Sogamoso — $20.000</option>
+              <option value="otro">Chiquinquirá — $20.000</option>
+            </optgroup>
+            <optgroup label="— Tolima">
+              <option value="otro">Espinal — $20.000</option>
+              <option value="otro">Honda — $20.000</option>
+              <option value="otro">Melgar — $20.000</option>
+            </optgroup>
+            <optgroup label="— Huila">
+              <option value="otro">Pitalito — $20.000</option>
+              <option value="otro">Garzón — $20.000</option>
+            </optgroup>
+            <optgroup label="— Nariño">
+              <option value="otro">Tumaco — $20.000</option>
+              <option value="otro">Ipiales — $20.000</option>
+            </optgroup>
+            <optgroup label="— Córdoba">
+              <option value="otro">Cereté — $20.000</option>
+              <option value="otro">Lorica — $20.000</option>
+            </optgroup>
+            <optgroup label="— Cesar">
+              <option value="otro">Aguachica — $20.000</option>
+            </optgroup>
+            <optgroup label="— Magdalena">
+              <option value="otro">Ciénaga — $20.000</option>
+              <option value="otro">Fundación — $20.000</option>
+            </optgroup>
+            <optgroup label="— Caldas">
+              <option value="otro">La Dorada — $20.000</option>
+              <option value="otro">Riosucio — $20.000</option>
+            </optgroup>
+            <optgroup label="— Risaralda">
+              <option value="otro">Dosquebradas — $20.000</option>
+              <option value="otro">La Virginia — $20.000</option>
+            </optgroup>
+            <optgroup label="— Meta">
+              <option value="otro">Acacías — $20.000</option>
+              <option value="otro">Granada — $20.000</option>
+            </optgroup>
+          </select>
+        </div>
+        <div>
+          <label style="font-size:9px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:3px">Teléfono</label>
+          <input id="phoneInput" type="tel" placeholder="300 000 0000" style="width:100%;padding:6px 10px;border:1px solid rgba(184,0,62,.2);border-radius:10px;font-family:'DM Sans',sans-serif;font-size:12px;color:var(--dark);background:#fff;outline:none">
+        </div>
+      </div>
+      <div style="margin-bottom:6px">
+        <label style="font-size:9px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:3px">Correo (para confirmación)</label>
+        <input id="emailInput" type="email" placeholder="tucorreo@gmail.com" style="width:100%;padding:6px 10px;border:1px solid rgba(184,0,62,.2);border-radius:10px;font-family:'DM Sans',sans-serif;font-size:12px;color:var(--dark);background:#fff;outline:none">
+      </div>
+      <div style="margin-bottom:6px">
+      </div>
+      <div style="margin-bottom:6px">
+        <label style="font-size:9px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:3px">Nombre completo</label>
+        <input id="nameInput" type="text" placeholder="Tu nombre completo" style="width:100%;padding:6px 10px;border:1px solid rgba(184,0,62,.2);border-radius:10px;font-family:'DM Sans',sans-serif;font-size:12px;color:var(--dark);background:#fff;outline:none">
+      </div>
+      <div style="margin-bottom:6px">
+        <label style="font-size:9px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:3px">Dirección</label>
+        <input id="addressInput" type="text" placeholder="Ej: Calle 116 # 77b-42" style="width:100%;padding:6px 10px;border:1px solid rgba(184,0,62,.2);border-radius:10px;font-family:'DM Sans',sans-serif;font-size:12px;color:var(--dark);background:#fff;outline:none">
+        <div id="addressHint" style="font-size:10px;color:var(--muted);padding:0 4px"></div>
+      </div>
+      <div>
+        <label style="font-size:9px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:3px">Barrio / Referencia</label>
+        <input id="barrioInput" type="text" placeholder="Ej: Barrio Chapinero, cerca al parque" style="width:100%;padding:6px 10px;border:1px solid rgba(184,0,62,.2);border-radius:10px;font-family:'DM Sans',sans-serif;font-size:12px;color:var(--dark);background:#fff;outline:none">
+      </div>
+    </div>
+    <div class="cart-total-row">
+      <span class="cart-total-lbl">Subtotal productos</span>
+      <span id="cSubtotal" style="font-size:15px;color:var(--mid)">$0</span>
+    </div>
+    <div class="cart-total-row" id="shippingRow" style="display:none">
+      <span class="cart-total-lbl">Envío</span>
+      <span id="cShipping" style="font-size:15px;color:var(--mid)">$0</span>
+    </div>
+    <div class="cart-total-row" style="border-top:1px solid rgba(184,0,62,.08);padding-top:12px;margin-top:4px">
+      <span class="cart-total-lbl" style="font-weight:500;color:var(--dark)">Total</span>
+      <span class="cart-total-val" id="cTotal">$0</span>
+    </div>
+    <div class="tc-check-wrap">
+      <input type="checkbox" id="tcCheck" onchange="togglePayBtns()">
+      <label for="tcCheck">He leído y acepto los <a href="terminos.html" target="_blank">términos y condiciones</a>, la <a href="terminos.html#privacidad" target="_blank">política de privacidad</a> y las políticas de envío y garantías de minime lovers.</label>
+    </div>
+    <button class="btn-pay" id="btnPay" onclick="payMP()" disabled>Pagar con Bold</button>
+    <button class="btn-pay-wa" id="btnPayWA" onclick="payWA()" disabled>
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.118 1.525 5.847L.057 23.882l6.206-1.445A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.372l-.36-.213-3.682.857.925-3.578-.233-.369A9.818 9.818 0 1112 21.818z"/></svg>
+      Pedir por WhatsApp
+    </button>
+  </div>
+</div>
+
+<nav id="mainNav">
+  <a href="#" class="nav-logo"><img src="logo.png" alt="minime lovers"></a>
   <ul class="nav-links">
-    <li><a href="#categorias">iPhone</a></li>
-    <li><a href="#categorias">AirPods</a></li>
-    <li><a href="#categorias">iPad</a></li>
-    <li><a href="#categorias">Mac</a></li>
-    <li><a href="#categorias">Watch</a></li>
-    <li><a href="#ig">Nosotros</a></li>
+    <li><a href="#nosotras">Nosotras</a></li>
+    <li><a href="#productos">Colección</a></li>
+    <li><a href="#testimonios">Reseñas</a></li>
+    <li><a href="#contacto">Contacto</a></li>
   </ul>
   <div class="nav-right">
-    <a href="https://www.instagram.com/tuiphone.co/" target="_blank" class="nav-icon">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-      @tuiphone.co
-    </a>
+    <button class="cart-icon-btn" onclick="openCart()">
+      🛍️<span class="cart-badge" id="cBadge">0</span>
+    </button>
+    <button class="nav-btn" onclick="document.getElementById('productos').scrollIntoView({behavior:'smooth'})">Comprar</button>
   </div>
 </nav>
 
-<!-- HERO VIDEO -->
 <section class="hero">
-  <video class="hero-video" id="heroVid" autoplay loop playsinline muted>
-    <source src="https://res.cloudinary.com/ddozaur5c/video/upload/v1775010965/hero_kywe61.mp4" type="video/mp4">
-  </video>
-  <div class="hero-overlay"></div>
-
-  <button class="sound-btn" id="soundBtn" onclick="toggleSound()" title="Activar audio">
-    <svg id="iconMute" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round">
-      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/>
-    </svg>
-    <svg id="iconSound" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" style="display:none">
-      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/>
-    </svg>
-  </button>
-
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-tint"></div>
   <div class="hero-content">
-    <div>
-      <p class="hero-eyebrow">Tu tienda Apple de confianza en Colombia</p>
-      <h1>Apple. Original.<br><span>A tu alcance.</span></h1>
-      <p class="hero-sub">iPhones, AirPods, iPad, Mac y Watch con garantía real, envío a todo el país y atención personalizada.</p>
-      <div class="hero-ctas">
-        <a href="#categorias" class="btn-primary">Ver productos</a>
-        <a href="https://www.instagram.com/tuiphone.co/" target="_blank" class="btn-ghost">Ir a Instagram</a>
-      </div>
-    </div>
-    <div class="hero-stats">
-      <div>
-        <div class="hero-stat-num">100%</div>
-        <div class="hero-stat-label">Original Apple</div>
-      </div>
-      <div>
-        <div class="hero-stat-num">48h</div>
-        <div class="hero-stat-label">Envío express</div>
-      </div>
-      <div>
-        <div class="hero-stat-num">★★★★★</div>
-        <div class="hero-stat-label">Clientes felices</div>
-      </div>
+    <div class="hero-label">Cruelty Free · Hecho en Colombia</div>
+    <h1 class="hero-h1"><strong>Labial</strong><em>en polvo</em></h1>
+    <p class="hero-p">Pequeño en tamaño, grande en pigmento.<br>Un labial en polvo ligero y fácil de aplicar, creado para retocar tu color en cualquier momento.<br>Su textura se difumina suavemente en los labios, dejando un acabado natural, cómodo y perfecto para llevar siempre contigo.</p>
+    <div class="hero-actions">
+      <a href="#tonos-piel" class="btn-primary">Descubrir tonos</a>
+      <a href="#nosotras" class="btn-ghost-light">Nuestra historia →</a>
     </div>
   </div>
-
-  <div class="scroll-hint">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-    Scroll
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span class="scroll-txt">Scroll</span>
   </div>
 </section>
 
-<!-- VIDEO SHOWCASE — iPhone 17 -->
-<div style="background:var(--bg);padding:5rem 2.5rem 0;max-width:1200px;margin:0 auto">
-  <h2 class="section-title reveal" style="margin-bottom:0.3rem">iPhone 17 Pro.<br><span style="color:var(--blue)">En acción.</span></h2>
-  <p class="section-sub reveal" style="margin-bottom:0">Los colores más esperados del año — míralo antes de pedirlo.</p>
-</div>
-<div style="background:var(--bg)">
-<div class="vid-showcase">
-  <!-- Deep Blue — grande -->
-  <a href="https://www.instagram.com/tuiphone.co/" target="_blank" class="vid-card">
-    <video autoplay loop muted playsinline>
-      <source src="https://res.cloudinary.com/ddozaur5c/video/upload/v1775010973/iphone17-blue_td6gbv.mp4" type="video/mp4">
-    </video>
-    <div class="vid-card-overlay"></div>
-    <div class="play-dot"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-    <div class="vid-card-content">
-      <div class="vid-eyebrow">iPhone 17 Pro · 2025</div>
-      <div class="vid-title">Deep Blue</div>
-      <div class="vid-cta">Consultar precio →</div>
-    </div>
-  </a>
-  <!-- Silver -->
-  <a href="https://www.instagram.com/tuiphone.co/" target="_blank" class="vid-card">
-    <video autoplay loop muted playsinline>
-      <source src="https://res.cloudinary.com/ddozaur5c/video/upload/v1775010970/iphone17-silver_e6fpou.mp4" type="video/mp4">
-    </video>
-    <div class="vid-card-overlay"></div>
-    <div class="play-dot"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-    <div class="vid-card-content">
-      <div class="vid-eyebrow">iPhone 17 Pro · 2025</div>
-      <div class="vid-title">Silver</div>
-      <div class="vid-cta">Consultar precio →</div>
-    </div>
-  </a>
-  <!-- Cosmic Orange -->
-  <a href="https://www.instagram.com/tuiphone.co/" target="_blank" class="vid-card">
-    <video autoplay loop muted playsinline>
-      <source src="https://res.cloudinary.com/ddozaur5c/video/upload/v1775010974/iphone17-orange_aiga1a.mp4" type="video/mp4">
-    </video>
-    <div class="vid-card-overlay"></div>
-    <div class="play-dot"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-    <div class="vid-card-content">
-      <div class="vid-eyebrow">iPhone 17 Pro · 2025</div>
-      <div class="vid-title">Cosmic Orange</div>
-      <div class="vid-cta">Consultar precio →</div>
-    </div>
-  </a>
-</div>
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="ticker-item">Labial en polvo <span class="ticker-dot">✦</span></span>
+    <span class="ticker-item">Cruelty Free <span class="ticker-dot">✦</span></span>
+    <span class="ticker-item">Hecho en Colombia <span class="ticker-dot">✦</span></span>
+    <span class="ticker-item">Ultra pigmentado <span class="ticker-dot">✦</span></span>
+    <span class="ticker-item">Retoques rápidos <span class="ticker-dot">✦</span></span>
+    <span class="ticker-item">6 tonos disponibles <span class="ticker-dot">✦</span></span>
+    <span class="ticker-item">Envíos a toda Colombia <span class="ticker-dot">✦</span></span>
+    <span class="ticker-item">Labial en polvo <span class="ticker-dot">✦</span></span>
+    <span class="ticker-item">Cruelty Free <span class="ticker-dot">✦</span></span>
+    <span class="ticker-item">Hecho en Colombia <span class="ticker-dot">✦</span></span>
+    <span class="ticker-item">Ultra pigmentado <span class="ticker-dot">✦</span></span>
+    <span class="ticker-item">Retoques rápidos <span class="ticker-dot">✦</span></span>
+    <span class="ticker-item">6 tonos disponibles <span class="ticker-dot">✦</span></span>
+    <span class="ticker-item">Envíos a toda Colombia <span class="ticker-dot">✦</span></span>
+  </div>
 </div>
 
-<!-- MACBOOK VIDEO BANNER -->
-<section class="mac-banner">
-  <video autoplay loop muted playsinline>
-    <source src="https://res.cloudinary.com/ddozaur5c/video/upload/v1775010970/macbook_rithat.mp4" type="video/mp4">
-  </video>
-  <div class="mac-banner-overlay"></div>
-  <div class="mac-banner-content">
-    <p class="mac-eyebrow">Productividad · M4</p>
-    <h2 class="mac-h2">MacBook Air M4.</h2>
-    <p class="mac-sub">El portátil más delgado de Apple. Chip M4, batería de 18 horas y pantalla Liquid Retina. Trabaja sin límites, desde donde quieras.</p>
-    <div style="display:flex;gap:1rem;flex-wrap:wrap">
-      <a href="https://www.instagram.com/tuiphone.co/" target="_blank" class="btn-primary">Consultar precio</a>
-      <a href="https://www.instagram.com/tuiphone.co/" target="_blank" class="btn-white">Ver especificaciones</a>
+<section class="about-strip" id="nosotras">
+  <div class="about-img reveal from-left">
+    <img src="tono_1.JPG" alt="minimee Mini Drama">
+  </div>
+  <div class="about-text">
+    <div class="label-tag reveal">Nuestra historia</div>
+    <h2 class="reveal d1">Belleza que<br><em>sí cabe en tu vida</em></h2>
+    <p class="reveal d2">MiniMe nació de una idea simple:<br>¿por qué el maquillaje tiene que ser grande, pesado o difícil de llevar?<br><br>Creamos un labial en polvo ligero, práctico y ultra pigmentado, diseñado para acompañarte a donde vayas.<br><br>Un formato mini que cabe en tu bolso, tu bolsillo o tu día — para retocar tu color cuando quieras, sin complicaciones.</p>
+    <div class="pillars">
+      <div class="pillar reveal d3"><div class="pillar-dot">🐇</div><div class="pillar-txt"><h4>100% Cruelty Free</h4><p>Ningún animalito fue lastimado. Sin excepciones, siempre.</p></div></div>
+      <div class="pillar reveal d4"><div class="pillar-dot">🇨🇴</div><div class="pillar-txt"><h4>Hecho en Colombia</h4><p>Formulado y producido en laboratorio colombiano bajo normativas cosméticas estrictas.</p></div></div>
+      <div class="pillar reveal d5"><div class="pillar-dot">✨</div><div class="pillar-txt"><h4>Fórmula única en polvo</h4><p>Una textura ligera de pigmento puro que transforma la forma de usar labial. Color difuminado y perfecto para retoques rápidos donde estés.</p></div></div>
     </div>
   </div>
 </section>
 
-
-
-<!-- CATEGORIES -->
-<div class="section" id="categorias">
-  <h2 class="section-title reveal">Todo el ecosistema Apple</h2>
-  <p class="section-sub reveal">Encuentra tu dispositivo con garantía, precio justo y envío seguro.</p>
-  <div class="cat-grid">
-    <a href="https://www.instagram.com/tuiphone.co/" target="_blank" class="cat-card reveal">
-      <div class="cat-card-img">
-        <svg viewBox="0 0 110 110" fill="none">
-          <rect x="30" y="6" width="50" height="98" rx="12" fill="#1d1d1f"/>
-          <rect x="34" y="10" width="42" height="90" rx="9" fill="#000"/>
-          <rect x="44" y="14" width="22" height="9" rx="4.5" fill="#333"/>
-          <rect x="34" y="10" width="42" height="90" rx="9" fill="url(#icg)" opacity="0.85"/>
-          <defs>
-            <linearGradient id="icg" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#1c3a6e"/>
-              <stop offset="100%" stop-color="#0071e3"/>
-            </linearGradient>
-          </defs>
-          <rect x="47" y="95" width="16" height="2.5" rx="1.25" fill="white" opacity="0.3"/>
-          <rect x="28" y="30" width="2" height="18" rx="1" fill="#333"/>
-          <rect x="80" y="26" width="2" height="26" rx="1" fill="#333"/>
-        </svg>
-      </div>
-      <h3>iPhone</h3>
-      <p>Del 13 al 17 Pro Max. Todos los modelos disponibles.</p>
-      <span class="cat-link">Ver modelos →</span>
-    </a>
-    <a href="https://www.instagram.com/tuiphone.co/" target="_blank" class="cat-card reveal" style="transition-delay:.08s">
-      <div class="cat-card-img">
-        <svg viewBox="0 0 110 110" fill="none">
-          <rect x="25" y="30" width="60" height="50" rx="16" fill="#e8e8ed" stroke="#d2d2d7" stroke-width="1.5"/>
-          <circle cx="55" cy="73" r="4" fill="#34c759" opacity="0.7"/>
-          <rect x="52" y="26" width="6" height="6" rx="3" fill="#d2d2d7"/>
-          <ellipse cx="38" cy="53" rx="7" ry="10" fill="white" stroke="#d2d2d7" stroke-width="1"/>
-          <rect x="36" y="38" width="4" height="12" rx="2" fill="#e8e8ed"/>
-          <ellipse cx="72" cy="53" rx="7" ry="10" fill="white" stroke="#d2d2d7" stroke-width="1"/>
-          <rect x="70" y="38" width="4" height="12" rx="2" fill="#e8e8ed"/>
-        </svg>
-      </div>
-      <h3>AirPods</h3>
-      <p>AirPods 4, Pro 3 y AirPods Max con cancelación de ruido.</p>
-      <span class="cat-link">Ver modelos →</span>
-    </a>
-    <a href="https://www.instagram.com/tuiphone.co/" target="_blank" class="cat-card reveal" style="transition-delay:.16s">
-      <div class="cat-card-img">
-        <svg viewBox="0 0 110 110" fill="none">
-          <rect x="10" y="24" width="90" height="56" rx="7" fill="#e8e8ed" stroke="#d2d2d7" stroke-width="1.5"/>
-          <rect x="15" y="28" width="80" height="48" rx="4" fill="#1d1d1f"/>
-          <circle cx="55" cy="30" r="2" fill="#424245"/>
-          <rect x="15" y="28" width="80" height="48" rx="4" fill="url(#mcg)" opacity="0.5"/>
-          <defs>
-            <linearGradient id="mcg" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#1c3a6e"/>
-              <stop offset="100%" stop-color="#0071e3"/>
-            </linearGradient>
-          </defs>
-          <rect x="6" y="82" width="98" height="6" rx="3" fill="#e8e8ed" stroke="#d2d2d7" stroke-width="1"/>
-          <rect x="34" y="85" width="42" height="3" rx="1.5" fill="#d2d2d7"/>
-        </svg>
-      </div>
-      <h3>Mac</h3>
-      <p>MacBook Air M1 a M4. Potencia todo el día.</p>
-      <span class="cat-link">Ver modelos →</span>
-    </a>
-    <a href="https://www.instagram.com/tuiphone.co/" target="_blank" class="cat-card reveal" style="transition-delay:.24s">
-      <div class="cat-card-img">
-        <svg viewBox="0 0 110 110" fill="none">
-          <rect x="18" y="10" width="74" height="90" rx="10" fill="#e8e8ed" stroke="#d2d2d7" stroke-width="1.5"/>
-          <rect x="23" y="15" width="64" height="80" rx="7" fill="#1d1d1f"/>
-          <rect x="40" y="13" width="30" height="7" rx="3.5" fill="#d2d2d7"/>
-          <rect x="23" y="15" width="64" height="80" rx="7" fill="url(#ipg)" opacity="0.7"/>
-          <defs>
-            <linearGradient id="ipg" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#1c3a6e"/>
-              <stop offset="100%" stop-color="#0071e3"/>
-            </linearGradient>
-          </defs>
-          <circle cx="55" cy="99" r="4" fill="#d2d2d7"/>
-        </svg>
-      </div>
-      <h3>iPad</h3>
-      <p>iPad A16, Air M3, Mini A17 y Pro M4.</p>
-      <span class="cat-link">Ver modelos →</span>
-    </a>
-    <a href="https://www.instagram.com/tuiphone.co/" target="_blank" class="cat-card reveal" style="transition-delay:.08s">
-      <div class="cat-card-img">
-        <svg viewBox="0 0 110 110" fill="none">
-          <rect x="36" y="26" width="38" height="58" rx="14" fill="#1d1d1f" stroke="#424245" stroke-width="1"/>
-          <rect x="41" y="31" width="28" height="48" rx="10" fill="#000"/>
-          <rect x="37" y="8" width="36" height="22" rx="8" fill="#ff3b30" opacity="0.8"/>
-          <rect x="37" y="80" width="36" height="22" rx="8" fill="#ff3b30" opacity="0.8"/>
-          <rect x="41" y="31" width="28" height="48" rx="10" fill="url(#awg)" opacity="0.85"/>
-          <defs>
-            <linearGradient id="awg" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#ff6b6b" stop-opacity="0.5"/>
-              <stop offset="100%" stop-color="#ff3b30" stop-opacity="0.2"/>
-            </linearGradient>
-          </defs>
-          <rect x="74" y="44" width="4" height="16" rx="2" fill="#424245"/>
-        </svg>
-      </div>
-      <h3>Apple Watch</h3>
-      <p>Series 10, 11, SE 3 y Ultra 3. Salud en tu muñeca.</p>
-      <span class="cat-link">Ver modelos →</span>
-    </a>
-    <a href="https://www.instagram.com/tuiphone.co/" target="_blank" class="cat-card reveal" style="transition-delay:.16s">
-      <div class="cat-card-img">
-        <svg viewBox="0 0 110 110" fill="none">
-          <rect x="50" y="10" width="12" height="60" rx="5" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.2"/>
-          <rect x="50" y="10" width="12" height="14" rx="5" fill="#d2d2d7"/>
-          <rect x="54" y="66" width="4" height="8" rx="2" fill="#a2845e"/>
-          <circle cx="56" cy="90" r="14" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.2"/>
-          <circle cx="56" cy="90" r="8" fill="#e8e8ed"/>
-          <circle cx="56" cy="90" r="3" fill="#d2d2d7"/>
-          <rect x="24" y="48" width="10" height="24" rx="4" fill="#ffe033" opacity="0.9" stroke="#f5c518" stroke-width="0.8"/>
-        </svg>
-      </div>
-      <h3>Accesorios</h3>
-      <p>Magic Keyboard, Pencil, AirTags, cargadores y más.</p>
-      <span class="cat-link">Ver accesorios →</span>
-    </a>
+<section class="tonos-piel" id="tonos-piel">
+  <div class="tonos-piel-img" id="tonosPielImg">
+    <img src="tonos_en_piel_.jpeg" alt="Tonos minime lovers en piel">
   </div>
-</div>
-
-
-<!-- ═══ CATÁLOGO DE PRODUCTOS ═══ -->
-<section id="catalogo" style="background:var(--bg);padding:5rem 0 6rem">
-  <div style="max-width:1200px;margin:0 auto;padding:0 2.5rem">
-    <p class="section-sub reveal" style="color:var(--blue);font-weight:500;font-size:0.8rem;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:0.5rem">Catálogo</p>
-    <h2 class="section-title reveal" style="margin-bottom:0.4rem">Nuestro stock <span style="color:var(--blue)">disponible.</span></h2>
-    <p class="section-sub reveal">Todos los equipos son usados/reacondicionados · Garantía incluida · Envío a todo Colombia</p>
-
-    <!-- FILTER TABS -->
-    <div class="cat-tabs reveal" style="display:flex;gap:0.5rem;flex-wrap:wrap;margin:2.5rem 0 2rem">
-      <button class="tab-btn active" onclick="filterCat('all')">Todos</button>
-      <button class="tab-btn" onclick="filterCat('iphone11')">iPhone 11</button>
-      <button class="tab-btn" onclick="filterCat('iphone12')">iPhone 12</button>
-      <button class="tab-btn" onclick="filterCat('iphone13')">iPhone 13</button>
-      <button class="tab-btn" onclick="filterCat('iphone13pro')">iPhone 13 Pro</button>
-      <button class="tab-btn" onclick="filterCat('iphone13promax')">iPhone 13 Pro Max</button>
-      <button class="tab-btn" onclick="filterCat('iphone14')">iPhone 14</button>
-      <button class="tab-btn" onclick="filterCat('iphone15')">iPhone 15</button>
-      <button class="tab-btn" onclick="filterCat('iphone15pro')">iPhone 15 Pro</button>
-      <button class="tab-btn" onclick="filterCat('iphone15promax')">iPhone 15 Pro Max</button>
-      <button class="tab-btn" onclick="filterCat('iphone16')">iPhone 16</button>
-      <button class="tab-btn" onclick="filterCat('iphone17pro')">iPhone 17 Pro</button>
-      <button class="tab-btn" onclick="filterCat('iphone17promax')">iPhone 17 Pro Max</button>
+  <div class="tonos-piel-text" id="tonosPielText">
+    <div class="label-tag">Encuentra tu tono ideal</div>
+    <h2>6 tonos,<br><em>todos perfectos</em></h2>
+    <p>Desde el nude más suave hasta el rojo más intenso. Cada tono está pensado para distintos momentos, pieles y personalidades. ¿Cuál es el tuyo?</p>
+    <div class="tonos-list">
+      <p style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--hot);margin-bottom:6px;font-weight:500">✦ Toca un tono para verlo</p>
+      <div class="tono-tag" data-c1="#e8a090" data-c2="#f5c4b8" data-c3="#fde0d8" onclick="setTonoFondo(this)"><div class="tono-tag-dot" style="background:#C4503A"></div>Sweet Sunset — cálido y radiante</div>
+      <div class="tono-tag" data-c1="#e890b0" data-c2="#f5b8d0" data-c3="#fde0ec" onclick="setTonoFondo(this)"><div class="tono-tag-dot" style="background:#C4406A"></div>Blush Crush — romántico y fresco</div>
+      <div class="tono-tag" data-c1="#c8a880" data-c2="#e0c8a8" data-c3="#f5e8d8" onclick="setTonoFondo(this)"><div class="tono-tag-dot" style="background:#8B5A3A"></div>Latte Kiss — nude elegante</div>
+      <div class="tono-tag" data-c1="#c090a8" data-c2="#dbb8cc" data-c3="#f2dce8" onclick="setTonoFondo(this)"><div class="tono-tag-dot" style="background:#7A2A45"></div>Mini Drama — mauve sofisticado</div>
+      <div class="tono-tag" data-c1="#a86878" data-c2="#cc9098" data-c3="#eec0c4" onclick="setTonoFondo(this)"><div class="tono-tag-dot" style="background:#6B1A2E"></div>Tiny Flame — intenso y atrevido</div>
+      <div class="tono-tag" data-c1="#f0b0cc" data-c2="#f8cce0" data-c3="#fde8f2" onclick="setTonoFondo(this)"><div class="tono-tag-dot" style="background:#D890A8"></div>Pink Whisper — rosa sutil y femenino</div>
     </div>
-
-    <!-- PRODUCT GRID -->
-    <div class="prod-grid" id="prodGrid">
-
-      <!-- iPhone 11 -->
-      <div class="prod-card" data-cat="iphone11">
-        <div class="prod-gallery">
-          <div class="prod-imgs" id="g-ip11">
-            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085433/iphone11b_nzkyuu.jpg" alt="iPhone 11">
-            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085434/iphone11c_s6lj0p.jpg" alt="iPhone 11">
-            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085434/iphone11e_iw2neb.jpg" alt="iPhone 11">
-            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085434/iphone11A_fiouzc.jpg" alt="iPhone 11">
-            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085440/iphone11d_q3lwkf.jpg" alt="iPhone 11">
-          </div>
-          <button class="g-prev" onclick="slideGallery('g-ip11',-1)">&#8592;</button>
-          <button class="g-next" onclick="slideGallery('g-ip11',1)">&#8594;</button>
-          <div class="g-dots" id="dots-g-ip11"></div>
-        </div>
-        <div class="prod-info">
-          <h3 class="prod-name">iPhone 11</h3>
-          <div class="prod-specs">
-            <span class="spec-chip">128 GB</span>
-            <span class="spec-chip">🔋 90%</span>
-            <span class="spec-chip">Reacondicionado</span>
-          </div>
-          <a href="https://www.instagram.com/tuiphone.co/" target="_blank" class="prod-btn">Consultar precio</a>
-        </div>
-      </div>
-
-      <!-- iPhone 12 -->
-      <div class="prod-card" data-cat="iphone12">
-        <div class="prod-gallery">
-          <div class="prod-imgs" id="g-ip12">
-            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085463/iphone12A_ckb7jp.jpg" alt="iPhone 12">
-            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085465/iphone12b_ixkvzx.jpg" alt="iPhone 12">
-            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085465/iphone12c_yp53n2.jpg" alt="iPhone 12">
-            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085494/iphone12d_elzeru.jpg" alt="iPhone 12">
-          </div>
-          <button class="g-prev" onclick="slideGallery('g-ip12',-1)">&#8592;</button>
-          <button class="g-next" onclick="slideGallery('g-ip12',1)">&#8594;</button>
-          <div class="g-dots" id="dots-g-ip12"></div>
-        </div>
-        <div class="prod-info">
-          <h3 class="prod-name">iPhone 12</h3>
-          <div class="prod-specs">
-            <span class="spec-chip">128 GB</span>
-            <span class="spec-chip">🔋 90%</span>
-            <span class="spec-chip">Reacondicionado</span>
-          </div>
-          <a href="https://www.instagram.com/tuiphone.co/" target="_blank" class="prod-btn">Consultar precio</a>
-        </div>
-      </div>
-
-      <!-- iPhone 13 -->
-      <div class="prod-card" data-cat="iphone13">
-        <div class="prod-gallery">
-          <div class="prod-imgs" id="g-ip13">
-            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085509/iphone13A_gng9uv.jpg" alt="iPhone 13">
-            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085510/iphone13b_zutsgx.jpg" alt="iPhone 13">
-            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085511/iphone13c_g7afjg.jpg" alt="iPhone 13">
-            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085511/iphone13e_p5mzp0.jpg" alt="iPhone 13">
-            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085535/iphone13d_fnfa8c.jpg" alt="iPhone 13">
-          </div>
-          <button class="g-prev" onclick="slideGallery('g-ip13',-1)">&#8592;</button>
-          <button class="g-next" onclick="slideGallery('g-ip13',1)">&#8594;</button>
-          <div class="g-dots" id="dots-g-ip13"></div>
-        </div>
-        <div class="prod-info">
-          <h3 class="prod-name">iPhone 13</h3>
-          <div class="prod-specs">
-            <span class="spec-chip">128 GB</span>
-            <span class="spec-chip">🔋 90%</span>
-            <span class="spec-chip">Reacondicionado</span>
-          </div>
-          <a href="https://www.instagram.com/tuiphone.co/" target="_blank" class="prod-btn">Consultar precio</a>
-        </div>
-      </div>
-
-      <!-- iPhone 13 Pro -->
-      <div class="prod-card" data-cat="iphone13pro">
-        <div class="prod-gallery">
-          <div class="prod-imgs" id="g-ip13p">
-            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085554/iphone13pA_l4yauw.jpg" alt="iPhone 13 Pro">
-            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085553/iphone13pb_foiruo.jpg" alt="iPhone 13 Pro">
-            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085553/iphone13pc_q6lu2j.jpg" alt="iPhone 13 Pro">
-            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085561/iphone13pd_til5vn.jpg" alt="iPhone 13 Pro">
-          </div>
-          <button class="g-prev" onclick="slideGallery('g-ip13p',-1)">&#8592;</button>
-          <button class="g-next" onclick="slideGallery('g-ip13p',1)">&#8594;</button>
-          <div class="g-dots" id="dots-g-ip13p"></div>
-        </div>
-        <div class="prod-info">
-          <h3 class="prod-name">iPhone 13 Pro</h3>
-          <div class="prod-specs">
-            <span class="spec-chip">128 GB</span>
-            <span class="spec-chip">🔋 90%</span>
-            <span class="spec-chip">Reacondicionado</span>
-          </div>
-          <a href="https://www.instagram.com/tuiphone.co/" target="_blank" class="prod-btn">Consultar precio</a>
-        </div>
-      </div>
-
-      <!-- iPhone 13 Pro Max -->
-      <div class="prod-card" data-cat="iphone13promax">
-        <div class="prod-gallery">
-          <div class="prod-imgs" id="g-ip13pm">
-            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085593/iphone13pma_zixhaq.jpg" alt="iPhone 13 Pro Max">
-            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085595/iphone13pmb_qva2n2.jpg" alt="iPhone 13 Pro Max">
-            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085596/iphone13pmc_evm0om.jpg" alt="iPhone 13 Pro Max">
-            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085598/iphone13pme_xbsita.jpg" alt="iPhone 13 Pro Max">
-            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085623/iphone13pmd_dqrgah.jpg" alt="iPhone 13 Pro Max">
-          </div>
-          <button class="g-prev" onclick="slideGallery('g-ip13pm',-1)">&#8592;</button>
-          <button class="g-next" onclick="slideGallery('g-ip13pm',1)">&#8594;</button>
-          <div class="g-dots" id="dots-g-ip13pm"></div>
-        </div>
-        <div class="prod-info">
-          <h3 class="prod-name">iPhone 13 Pro Max</h3>
-          <div class="prod-specs">
-            <span class="spec-chip">128 GB</span>
-            <span class="spec-chip">🔋 90%</span>
-            <span class="spec-chip">Reacondicionado</span>
-          </div>
-          <a href="https://www.instagram.com/tuiphone.co/" target="_blank" class="prod-btn">Consultar precio</a>
-        </div>
-      </div>
-
-      <!-- iPhone 14 -->
-      <div class="prod-card" data-cat="iphone14">
-        <div class="prod-gallery">
-          <div class="prod-imgs" id="g-ip14">
-            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085638/iphone14A_fyp75f.jpg" alt="iPhone 14">
-            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085640/iphone14b_u0maip.jpg" alt="iPhone 14">
-            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085641/iphone14c_wp76zr.jpg" alt="iPhone 14">
-            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085645/iphone14e_yy9gvh.jpg" alt="iPhone 14">
-            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085648/iphone14d_jxrqzx.jpg" alt="iPhone 14">
-          </div>
-          <button class="g-prev" onclick="slideGallery('g-ip14',-1)">&#8592;</button>
-          <button class="g-next" onclick="slideGallery('g-ip14',1)">&#8594;</button>
-          <div class="g-dots" id="dots-g-ip14"></div>
-        </div>
-        <div class="prod-info">
-          <h3 class="prod-name">iPhone 14</h3>
-          <div class="prod-specs">
-            <span class="spec-chip">128 GB</span>
-            <span class="spec-chip">🔋 90%</span>
-            <span class="spec-chip">Reacondicionado</span>
-          </div>
-          <a href="https://www.instagram.com/tuiphone.co/" target="_blank" class="prod-btn">Consultar precio</a>
-        </div>
-      </div>
-
-      <!-- iPhone 15 -->
-      <div class="prod-card" data-cat="iphone15">
-        <div class="prod-gallery">
-          <div class="prod-imgs" id="g-ip15">
-            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085673/iphone15a_tqucvh.jpg" alt="iPhone 15">
-            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085673/iphone15b_nfvhil.jpg" alt="iPhone 15">
-            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085675/iphone15c_nfwfyr.jpg" alt="iPhone 15">
-            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085676/iphone15e_scdegj.jpg" alt="iPhone 15">
-            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085716/iphone15d_myyhkd.jpg" alt="iPhone 15">
-          </div>
-          <button class="g-prev" onclick="slideGallery('g-ip15',-1)">&#8592;</button>
-          <button class="g-next" onclick="slideGallery('g-ip15',1)">&#8594;</button>
-          <div class="g-dots" id="dots-g-ip15"></div>
-        </div>
-        <div class="prod-info">
-          <h3 class="prod-name">iPhone 15</h3>
-          <div class="prod-specs">
-            <span class="spec-chip">128 GB</span>
-            <span class="spec-chip">🔋 90%</span>
-            <span class="spec-chip">Reacondicionado</span>
-          </div>
-          <a href="https://www.instagram.com/tuiphone.co/" target="_blank" class="prod-btn">Consultar precio</a>
-        </div>
-      </div>
-
-      <!-- iPhone 15 Pro -->
-      <div class="prod-card" data-cat="iphone15pro">
-        <div class="prod-gallery">
-          <div class="prod-imgs" id="g-ip15p">
-            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085730/iphone15pa_sgqjfq.jpg" alt="iPhone 15 Pro">
-            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085731/iphone15pb_aiquyq.jpg" alt="iPhone 15 Pro">
-            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085732/iphone15pc_jsgpcs.jpg" alt="iPhone 15 Pro">
-            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085734/iphone15pe_rluvot.jpg" alt="iPhone 15 Pro">
-            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085747/iphone15pd_xm0gb9.jpg" alt="iPhone 15 Pro">
-          </div>
-          <button class="g-prev" onclick="slideGallery('g-ip15p',-1)">&#8592;</button>
-          <button class="g-next" onclick="slideGallery('g-ip15p',1)">&#8594;</button>
-          <div class="g-dots" id="dots-g-ip15p"></div>
-        </div>
-        <div class="prod-info">
-          <h3 class="prod-name">iPhone 15 Pro</h3>
-          <div class="prod-specs">
-            <span class="spec-chip">128 GB</span>
-            <span class="spec-chip">🔋 90%</span>
-            <span class="spec-chip">Reacondicionado</span>
-          </div>
-          <a href="https://www.instagram.com/tuiphone.co/" target="_blank" class="prod-btn">Consultar precio</a>
-        </div>
-      </div>
-
-      <!-- iPhone 15 Pro Max -->
-      <div class="prod-card" data-cat="iphone15promax">
-        <div class="prod-gallery">
-          <div class="prod-imgs" id="g-ip15pm">
-            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085772/iphone15pma_nqlqyg.jpg" alt="iPhone 15 Pro Max">
-            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085775/iphone15pmc_sihhxw.jpg" alt="iPhone 15 Pro Max">
-            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085777/iphone15pme_yjlt58.jpg" alt="iPhone 15 Pro Max">
-            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085787/iphone15pmd_aokv5e.jpg" alt="iPhone 15 Pro Max">
-          </div>
-          <button class="g-prev" onclick="slideGallery('g-ip15pm',-1)">&#8592;</button>
-          <button class="g-next" onclick="slideGallery('g-ip15pm',1)">&#8594;</button>
-          <div class="g-dots" id="dots-g-ip15pm"></div>
-        </div>
-        <div class="prod-info">
-          <h3 class="prod-name">iPhone 15 Pro Max</h3>
-          <div class="prod-specs">
-            <span class="spec-chip">128 GB</span>
-            <span class="spec-chip">🔋 90%</span>
-            <span class="spec-chip">Reacondicionado</span>
-          </div>
-          <a href="https://www.instagram.com/tuiphone.co/" target="_blank" class="prod-btn">Consultar precio</a>
-        </div>
-      </div>
-
-      <!-- iPhone 16 -->
-      <div class="prod-card" data-cat="iphone16">
-        <div class="prod-gallery">
-          <div class="prod-imgs" id="g-ip16">
-            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085843/iphone16a_wsqih0.jpg" alt="iPhone 16">
-            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085845/iphone16b_pq3b9l.jpg" alt="iPhone 16">
-            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085846/iphone16c_k8ysuw.jpg" alt="iPhone 16">
-            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085854/iphone16d_whdfab.jpg" alt="iPhone 16">
-          </div>
-          <button class="g-prev" onclick="slideGallery('g-ip16',-1)">&#8592;</button>
-          <button class="g-next" onclick="slideGallery('g-ip16',1)">&#8594;</button>
-          <div class="g-dots" id="dots-g-ip16"></div>
-        </div>
-        <div class="prod-info">
-          <h3 class="prod-name">iPhone 16</h3>
-          <div class="prod-specs">
-            <span class="spec-chip">128 GB</span>
-            <span class="spec-chip">🔋 90%</span>
-            <span class="spec-chip">Reacondicionado</span>
-          </div>
-          <a href="https://www.instagram.com/tuiphone.co/" target="_blank" class="prod-btn">Consultar precio</a>
-        </div>
-      </div>
-
-      <!-- iPhone 17 Pro -->
-      <div class="prod-card" data-cat="iphone17pro">
-        <div class="prod-gallery">
-          <div class="prod-imgs" id="g-ip17p">
-            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085879/iphone17pa_eizbwv.jpg" alt="iPhone 17 Pro">
-          </div>
-          <div class="g-dots" id="dots-g-ip17p"></div>
-        </div>
-        <div class="prod-info">
-          <h3 class="prod-name">iPhone 17 Pro</h3>
-          <div class="prod-specs">
-            <span class="spec-chip">256 GB</span>
-            <span class="spec-chip">🔋 100%</span>
-            <span class="spec-chip">Reacondicionado</span>
-          </div>
-          <a href="https://www.instagram.com/tuiphone.co/" target="_blank" class="prod-btn">Consultar precio</a>
-        </div>
-      </div>
-
-      <!-- iPhone 17 Pro Max -->
-      <div class="prod-card" data-cat="iphone17promax">
-        <div class="prod-gallery">
-          <div class="prod-imgs" id="g-ip17pm">
-            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085881/iphone17pb_klitly.jpg" alt="iPhone 17 Pro Max">
-          </div>
-          <div class="g-dots" id="dots-g-ip17pm"></div>
-        </div>
-        <div class="prod-info">
-          <h3 class="prod-name">iPhone 17 Pro Max</h3>
-          <div class="prod-specs">
-            <span class="spec-chip">256 GB</span>
-            <span class="spec-chip">🔋 100%</span>
-            <span class="spec-chip">Reacondicionado</span>
-          </div>
-          <a href="https://www.instagram.com/tuiphone.co/" target="_blank" class="prod-btn">Consultar precio</a>
-        </div>
-      </div>
-
-    </div><!-- /prod-grid -->
   </div>
 </section>
 
-<!-- WHY US -->
-<div class="why-section">
-  <h2 class="section-title reveal">¿Por qué TuiPhone?</h2>
-  <p class="section-sub reveal" style="margin-bottom:2rem">Seguridad, garantía y atención real desde el primer mensaje.</p>
-  <div class="why-grid">
-    <div class="why-card reveal">
-      <div class="why-icon">
-        <svg viewBox="0 0 22 22" fill="none" stroke="#0071e3" stroke-width="2" stroke-linecap="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
-      </div>
-      <h3>100% Originales</h3>
-      <p>Todos los dispositivos son originales Apple. Caja sellada, todos sus accesorios incluidos.</p>
-    </div>
-    <div class="why-card reveal" style="transition-delay:.1s">
-      <div class="why-icon">
-        <svg viewBox="0 0 22 22" fill="none" stroke="#0071e3" stroke-width="2" stroke-linecap="round"><rect x="3" y="11" width="16" height="10" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-      </div>
-      <h3>Garantía respaldada</h3>
-      <p>Garantía de fábrica en equipos nuevos. Te acompañamos en todo el proceso post-compra.</p>
-    </div>
-    <div class="why-card reveal" style="transition-delay:.2s">
-      <div class="why-icon">
-        <svg viewBox="0 0 22 22" fill="none" stroke="#0071e3" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </div>
-      <h3>Envío a todo el país</h3>
-      <p>Despacho rápido desde Bogotá. Gratis en pedidos desde $90.000 COP.</p>
-    </div>
-    <div class="why-card reveal" style="transition-delay:.05s">
-      <div class="why-icon">
-        <svg viewBox="0 0 22 22" fill="none" stroke="#0071e3" stroke-width="2" stroke-linecap="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-      </div>
-      <h3>Asesoría personalizada</h3>
-      <p>¿No sabes cuál elegir? Te ayudamos a encontrar el equipo perfecto para ti.</p>
-    </div>
-    <div class="why-card reveal" style="transition-delay:.15s">
-      <div class="why-icon">
-        <svg viewBox="0 0 22 22" fill="none" stroke="#0071e3" stroke-width="2" stroke-linecap="round"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></svg>
-      </div>
-      <h3>Cuotas disponibles</h3>
-      <p>Paga en cuotas con tu tarjeta. Tu iPhone de hoy, a pagarlo como más te convenga.</p>
-    </div>
-    <div class="why-card reveal" style="transition-delay:.25s">
-      <div class="why-icon">
-        <svg viewBox="0 0 22 22" fill="none" stroke="#0071e3" stroke-width="2" stroke-linecap="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-      </div>
-      <h3>Miles de clientes felices</h3>
-      <p>Comunidad activa en Instagram. Vendemos con transparencia y honestidad desde el primer día.</p>
-    </div>
+<section class="products" id="productos">
+  <div class="section-header">
+    <h2 class="reveal">Nuestra<br><em>colección</em></h2>
+    <p class="reveal d2" style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:18px;font-weight:300">Labiales en polvo, bolsos mini y kits. Todo lo que necesitas.</p>
   </div>
-</div>
-
-<!-- TESTIMONIALS -->
-<div class="testi-section">
-  <h2 class="section-title reveal">Lo dicen nuestros clientes</h2>
-  <div class="testi-grid" style="margin-top:2rem">
-    <div class="testi-card reveal">
-      <div class="stars">★★★★★</div>
-      <p class="testi-text">"Mi iPhone 16 Pro llegó sellado y en perfectas condiciones. Atención excelente desde el primer mensaje. Totalmente recomendados."</p>
-      <div class="testi-author">Mariana G.</div>
-      <div class="testi-city">Bogotá, Colombia</div>
-    </div>
-    <div class="testi-card reveal" style="transition-delay:.12s">
-      <div class="stars">★★★★★</div>
-      <p class="testi-text">"Me asesoraron para escoger entre el Pro y el Pro Max según mi uso diario. Proceso rapidísimo y el equipo llegó antes de lo esperado."</p>
-      <div class="testi-author">Camilo R.</div>
-      <div class="testi-city">Medellín, Colombia</div>
-    </div>
-    <div class="testi-card reveal" style="transition-delay:.24s">
-      <div class="stars">★★★★★</div>
-      <p class="testi-text">"Pedí los AirPods Pro 3 y llegaron en 2 días a Cali. Confiables y rápidos. Ya les hice la segunda compra con total tranquilidad."</p>
-      <div class="testi-author">Valentina S.</div>
-      <div class="testi-city">Cali, Colombia</div>
-    </div>
+  <div class="cat-tabs reveal d2">
+    <button class="cat-tab active" onclick="filterCat('all')">Todo</button>
+    <button class="cat-tab" onclick="filterCat('labial')">Labiales</button>
+    <button class="cat-tab" onclick="filterCat('bolso')">Bolsos</button>
+    <button class="cat-tab" onclick="filterCat('kit')">Kits</button>
   </div>
-</div>
-
-<!-- INSTAGRAM CTA -->
-<section class="ig-section" id="ig">
-  <h2>Síguenos en Instagram</h2>
-  <p>Novedades, lanzamientos, promociones y contenido exclusivo todos los días.</p>
-  <a href="https://www.instagram.com/tuiphone.co/" target="_blank" class="btn-white">Ir a @tuiphone.co</a>
-  <div class="ig-handle">@tuiphone.co</div>
+  <div class="grid" id="pGrid"></div>
+  <div class="popular-badge-row reveal">
+    <div class="popular-strip">⭐ Más vendido: <strong>Kit Bolso + 4 Tonos ($120.000)</strong> — la elección favorita de minime lovers</div>
+  </div>
 </section>
 
-<!-- FOOTER -->
+<div class="kit reveal scale-in">
+  <div class="kit-img"><img src="6_tonos.JPG" alt="Kit minimee 6 tonos"></div>
+  <div class="kit-text">
+    <div class="kit-eyebrow">Colección completa</div>
+    <h2>Los 6 tonos,<br><em>una sola decisión</em></h2>
+    <p>De la oficina a la rumba. El kit completo para tener el tono perfecto en cada momento de tu vida.</p>
+    <div class="kit-price-row">
+      <span class="kit-price">$120.000</span>
+      <span class="kit-price-sub">Kit 6 tonos</span>
+    </div>
+    <button class="btn-primary" onclick="openModal(15)">Personalizar y agregar kit</button>
+  </div>
+</div>
+
+<section class="testimonials" id="testimonios">
+  <div class="testi-header">
+    <h2 class="reveal">Lo que dicen<br><em>nuestras clientas</em></h2>
+    
+  </div>
+  <div class="tgrid">
+    <div class="t-card reveal d1">
+      <div class="t-stars">★★★★★</div>
+      <div class="t-text">"Me encanta lo práctico que es. Lo llevo en cualquier cartera y puedo retocar mi labial en segundos. Además el color queda precioso en los labios."</div>
+      <div class="t-author"><div class="t-avatar">VR</div><div><div class="t-name">Valentina R.</div><div class="t-city">Bogotá</div></div></div>
+    </div>
+    <div class="t-card reveal d2">
+      <div class="t-stars">★★★★★</div>
+      <div class="t-text">"El empaque mini es lo que más me gusta — cabe en cualquier cartera. Y el color es brutalmente pigmentado, no lo puedo creer."</div>
+      <div class="t-author"><div class="t-avatar">SM</div><div><div class="t-name">Sara M.</div><div class="t-city">Medellín</div></div></div>
+    </div>
+    <div class="t-card reveal d3">
+      <div class="t-stars">★★★★★</div>
+      <div class="t-text">"Pensé que por ser en polvo no iba a funcionar bien. Me equivoqué completamente. Es diferente a todo lo que he probado en mi vida."</div>
+      <div class="t-author"><div class="t-avatar">CL</div><div><div class="t-name">Camila L.</div><div class="t-city">Cali</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="videos-section">
+  <div class="videos-header">
+    <h2 class="reveal">Nuestras clientas,<br><em>en sus propias palabras</em></h2>
+    <p class="reveal d2">Momentos reales · Experiencias reales</p>
+  </div>
+  <div class="videos-grid">
+    <div class="video-card reveal d1">
+      <video src="https://res.cloudinary.com/ddozaur5c/video/upload/v1775158246/Este_a%C3%B1o_vivimos_cada_entrega_con_ilusi%C3%B3n_cada_mensaje_con_emoci%C3%B3n_y_cada_agradecimiento_com_fy4vvv.mp4" controls playsinline muted loop preload="none" poster=""></video>
+    </div>
+    <div class="video-card reveal d2">
+      <video src="https://res.cloudinary.com/ddozaur5c/video/upload/v1775158257/Las_mejores_decisiones_no_hacen_ruido_se_sienten._sebastiancarva_no_buscaba_solo_cambiar_d_odb5ht.mp4" controls playsinline muted loop preload="none" poster=""></video>
+    </div>
+    <div class="video-card reveal d3">
+      <video src="https://res.cloudinary.com/ddozaur5c/video/upload/v1775158261/No_s%C3%B3lo_entregamos_tecnolog%C3%ADa_entregamos_confianza_Gracias_yurivargas1_por_dejar_tu_e_mlzbyd.mp4" controls playsinline muted loop preload="none" poster=""></video>
+    </div>
+  </div>
+</section>
+
+<section class="how">
+  <div class="how-header"><h2 class="reveal">¿Cómo se <em>aplica?</em></h2></div>
+  <div class="steps">
+    <div class="step reveal d1"><div class="step-num">01</div><div class="step-icon">👄</div><h4>Prepara tus labios</h4><p>Hidrátalos y retira el exceso de brillo con un pañito</p></div>
+    <div class="step reveal d2"><div class="step-num">02</div><div class="step-icon">✨</div><h4>Abre el mini</h4><p>Destapa el empaque y acerca el aplicador a tus labios</p></div>
+    <div class="step reveal d3"><div class="step-num">03</div><div class="step-icon">💋</div><h4>Aplica en capas</h4><p>Una capa = look natural. Dos capas = look intenso e impactante</p></div>
+    <div class="step reveal d4"><div class="step-num">04</div><div class="step-icon">🌟</div><h4>Listo, perfecto para retoques rápidos</h4><p>Sin retoque. Sin manchas en la copa. Solo tú siendo increíble.</p></div>
+  </div>
+</section>
+
+<div class="cta-banner reveal scale-in" id="contacto">
+  <div class="cta-text">
+    <h2>¿Lista para tu<br><em>color favorito?</em></h2>
+    <p>Escríbenos y te asesoramos sin costo. Envíos a toda Colombia en 2–6 días hábiles.</p>
+  </div>
+  <div class="cta-btns">
+    <a href="#productos" class="btn-white">Ver colección</a>
+    <button class="btn-wa" onclick="contactWA()">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.118 1.525 5.847L.057 23.882l6.206-1.445A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.372l-.36-.213-3.682.857.925-3.578-.233-.369A9.818 9.818 0 1112 21.818z"/></svg>
+      Hablar por WhatsApp
+    </button>
+  </div>
+</div>
+
 <footer>
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <div class="footer-brand-name"><img src="data:image/png;base64,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" alt="TuiPhone" style="height:52px;width:auto;"></div>
-      <p>Tu tienda Apple de confianza en Colombia. Productos originales, garantía respaldada y envío a todo el país.</p>
-    </div>
-    <div class="footer-col">
-      <h4>Productos</h4>
-      <ul>
-        <li><a href="#">iPhone</a></li>
-        <li><a href="#">AirPods</a></li>
-        <li><a href="#">Mac</a></li>
-        <li><a href="#">iPad</a></li>
-        <li><a href="#">Apple Watch</a></li>
-        <li><a href="#">Accesorios</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Comprar</h4>
-      <ul>
-        <li><a href="#">Cómo comprar</a></li>
-        <li><a href="#">Envíos</a></li>
-        <li><a href="#">Garantías</a></li>
-        <li><a href="#">Devoluciones</a></li>
-        <li><a href="#">Cuotas</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Contacto</h4>
-      <ul>
-        <li><a href="https://www.instagram.com/tuiphone.co/" target="_blank">Instagram</a></li>
-        <li><a href="#">WhatsApp</a></li>
-        <li><a href="#">Soporte</a></li>
-      </ul>
-    </div>
+  <div class="footer-brand">
+    <img src="logo.png" alt="minime lovers">
+    <p>Mini makeup colombiano. Cruelty free, ultra pigmentado y hecho con amor en Colombia.</p>
   </div>
-  <div class="footer-bottom">
-    <span>Copyright © 2025 TuiPhone. Todos los derechos reservados.</span>
-    <div style="display:flex;gap:1.5rem">
-      <a href="#">Privacidad</a>
-      <a href="#">Términos de uso</a>
-    </div>
+  <div class="footer-col">
+    <h5>Tienda</h5>
+    <ul>
+      <li><a href="#productos">Colección</a></li>
+      <li><a href="#nosotras">Nosotras</a></li>
+      <li><a href="#testimonios">Reseñas</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h5>Contacto</h5>
+    <ul>
+      <li><a href="https://instagram.com/minime_store_" target="_blank">Instagram</a></li>
+      <li><a href="https://www.tiktok.com/@minime_store_" target="_blank">TikTok</a></li>
+      <li><a href="#" onclick="contactWA()">WhatsApp</a></li>
+      <li><a href="#contacto">Envíos</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h5>Legal</h5>
+    <ul>
+      <li><a href="terminos.html">Términos y condiciones</a></li>
+      <li><a href="terminos.html#privacidad">Política de privacidad</a></li>
+      <li><a href="terminos.html#envio">Política de envío</a></li>
+      <li><a href="terminos.html#garantias">Garantías y devoluciones</a></li>
+    </ul>
   </div>
 </footer>
+<div class="footer-bottom">
+  <p>© 2025 minime lovers · Mini Makeup Colombia · Todos los derechos reservados</p>
+  <div class="footer-badge">🇨🇴 Hecho en Colombia</div>
+</div>
 
 <script>
-  // Sound toggle
-  const vid = document.getElementById('heroVid');
-  const iMute = document.getElementById('iconMute');
-  const iSound = document.getElementById('iconSound');
-  function toggleSound(){
-    vid.muted = !vid.muted;
-    iMute.style.display = vid.muted ? 'block' : 'none';
-    iSound.style.display = vid.muted ? 'none' : 'block';
+const WA = '573124634966';
+
+function togglePayBtns(){
+  const checked = document.getElementById('tcCheck')?.checked;
+  const btnPay = document.getElementById('btnPay');
+  const btnPayWA = document.getElementById('btnPayWA');
+  if(btnPay) btnPay.disabled = !checked;
+  if(btnPayWA) btnPayWA.disabled = !checked;
+}
+
+const products = [
+  {id:1,name:'Mini Drama',shade:'Labial en Polvo',desc:'Perfecto para cuando quieres destacar sin decir una sola palabra.',price:25000,img:'tono_1.JPG',swatch:'#6B1A2E',badge:'Favorita',cat:'labial',slug:'mini-drama'},
+  {id:2,name:'Sweet Sunset',shade:'Labial en Polvo',desc:'Un toque cálido y alegre, como el atardecer que nunca pasa de moda.',price:25000,img:'tono_2.JPG',swatch:'#C4503A',badge:'',cat:'labial',slug:'sweet-sunset'},
+  {id:3,name:'Blush Crush',shade:'Labial en Polvo',desc:'Romántico y fresco, el color ideal para un look tierno pero seguro.',price:25000,img:'tono_3.JPG',swatch:'#C4406A',badge:'',cat:'labial',slug:'blush-crush'},
+  {id:4,name:'Latte Kiss',shade:'Labial en Polvo',desc:'Natural, suave y elegante: el nude que combina con todo.',price:25000,img:'tono_4.JPG',swatch:'#8B5A3A',badge:'',cat:'labial',slug:'latte-kiss'},
+  {id:5,name:'Pink Whisper',shade:'Labial en Polvo',desc:'Sutil, femenino y encantador, como un secreto bonito en tus labios.',price:25000,img:'tono_5.JPG',swatch:'#D4607A',badge:'Nuevo',cat:'labial',slug:'pink-whisper'},
+  {id:6,name:'Tiny Flame',shade:'Labial en Polvo',desc:'Intenso y atrevido, el toque mini que deja una gran impresión.',price:25000,img:'tono_6.JPG',swatch:'#8B1A2E',badge:'Nuevo',cat:'labial',slug:'tiny-flame'},
+  {id:7,name:'Bolso Mini — Blanco',shade:'Cuero croco · Herrajes dorados',desc:'Elegante y atemporal. El blanco que eleva cualquier outfit al instante.',price:45000,img:'bolso_blanco.JPG',swatch:'#F5F0EB',badge:'',cat:'bolso',slug:'bolso-blanco'},
+  {id:8,name:'Bolso Mini — Negro',shade:'Cuero croco · Herrajes dorados',desc:'Clásico e infaltable. El negro que va con todo y dura para siempre.',price:45000,img:'bolso_negro.JPG',swatch:'#1a1a1a',badge:'',cat:'bolso',slug:'bolso-negro'},
+  {id:9,name:'Bolso Mini — Rojo',shade:'Cuero croco · Herrajes dorados',desc:'Audaz y apasionado. Para la que no tiene miedo de ser el centro de atención.',price:45000,img:'bolso_rojo.JPG',swatch:'#9B1B1B',badge:'',cat:'bolso',slug:'bolso-rojo'},
+  {id:10,name:'Bolso Mini — Rosa',shade:'Cuero croco perlado · Herrajes plateados',desc:'Femenino, brillante y único. El bolso que hace que todo el mundo pregunte dónde lo compraste.',price:45000,img:'bolso_rosa.JPG',swatch:'#D4A0B0',badge:'Especial',cat:'bolso',slug:'bolso-rosa'},
+  {id:11,name:'Kit 4 Tonos',shade:'Mini Drama · Sweet Sunset · Blush Crush · Latte Kiss',desc:'Los 4 clásicos que toda minimee necesita. Un tono para cada momento del día.',price:90000,img:'4_tonos.JPG',swatch:'#B8003E',badge:'Popular',cat:'kit',slug:'kit-4-tonos'},
+  {id:12,name:'Kit 6 Tonos',shade:'Colección completa',desc:'Todos los tonos, todas las opciones. Para la que quiere tenerlo todo.',price:130000,img:'6_tonos.JPG',swatch:'#8B1A3A',badge:'',cat:'kit',slug:'kit-6-tonos'},
+  {id:13,name:'Kit Bolso + 1 Tono',shade:'Bolso mini + 1 tono a elegir',desc:'Tu bolso favorito con el retoque perfecto. Elige tu tono y llévatelo todo junto.',price:60000,img:'kit_1.JPG',swatch:'#D4005A',badge:'',cat:'kit',slug:'kit-bolso-1-tono'},
+  {id:14,name:'Kit Bolso + 2 Tonos',shade:'Bolso mini + 2 tonos a elegir',desc:'Dos tonos para dos versiones tuyas. El kit para la que siempre está lista para retocar.',price:80000,img:'kit_2.JPG',swatch:'#C8004E',badge:'',cat:'kit',slug:'kit-bolso-2-tonos'},
+  {id:15,name:'Kit Bolso + 4 Tonos',shade:'Bolso mini + 4 tonos a elegir',desc:'La combinación perfecta para llevar tu makeup siempre contigo con estilo.',price:120000,img:'kit_4.JPG',swatch:'#B8003E',badge:'Mejor valor',cat:'kit',slug:'kit-bolso-4-tonos'},
+  {id:16,name:'Kit Bolso + 6 Tonos',shade:'Bolso mini + colección completa',desc:'El kit definitivo. Todos los tonos y tu bolso en una sola decisión increíble.',price:165000,img:'kit_6.JPG',swatch:'#8B1A3A',badge:'',cat:'kit',slug:'kit-bolso-6-tonos'},
+];
+
+let cart = JSON.parse(localStorage.getItem('minime_cart') || '[]');
+const fmt=n=>'$'+n.toLocaleString('es-CO');
+
+
+let currentModalProduct = null;
+let selectedTones = [];
+let selectedBolso = '';
+let maxTones = 0;
+let needsBolso = false;
+
+// How many tones each product needs
+const tonesNeeded = {11:4, 12:6, 13:1, 14:2, 15:4, 16:6};
+// Which products include a bolso selection
+const hasBolso = {13:true, 14:true, 15:true, 16:true};
+
+function openModal(productId){
+  const p = products.find(x=>x.id===productId);
+  if(!p) return;
+  currentModalProduct = p;
+  selectedTones = [];
+  selectedBolso = '';
+  maxTones = tonesNeeded[productId] || 0;
+  needsBolso = hasBolso[productId] || false;
+
+  document.getElementById('modalTitle').textContent = p.name;
+  document.getElementById('toneCount').textContent = '0';
+  document.getElementById('toneMax').textContent = maxTones;
+  document.querySelectorAll('.tone-opt').forEach(t=>{t.classList.remove('selected','disabled')});
+  document.querySelectorAll('.bolso-opt').forEach(b=>b.classList.remove('selected'));
+  document.getElementById('modalSummary').textContent = '';
+  document.getElementById('btnModalAdd').disabled = true;
+  document.getElementById('btnModalAdd').textContent = 'Selecciona tus opciones';
+
+  document.getElementById('toneSection').style.display = maxTones > 0 ? 'block' : 'none';
+  document.getElementById('bolsoSection').style.display = needsBolso ? 'block' : 'none';
+
+  document.getElementById('modalOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(){
+  document.getElementById('modalOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function closeModalOutside(e){
+  if(e.target === document.getElementById('modalOverlay')) closeModal();
+}
+
+function selectTone(el){
+  const tone = el.dataset.tone;
+  const name = el.dataset.name;
+  if(el.classList.contains('disabled')) return;
+  if(el.classList.contains('selected')){
+    el.classList.remove('selected');
+    selectedTones = selectedTones.filter(t=>t.tone!==tone);
+  } else {
+    if(maxTones > 0 && selectedTones.length >= maxTones) return;
+    el.classList.add('selected');
+    selectedTones.push({tone, name});
+  }
+  document.getElementById('toneCount').textContent = selectedTones.length;
+  if(maxTones > 0 && selectedTones.length >= maxTones){
+    document.querySelectorAll('.tone-opt:not(.selected)').forEach(t=>t.classList.add('disabled'));
+  } else {
+    document.querySelectorAll('.tone-opt').forEach(t=>t.classList.remove('disabled'));
+  }
+  updateModalBtn();
+}
+
+function selectBolso(el){
+  document.querySelectorAll('.bolso-opt').forEach(b=>b.classList.remove('selected'));
+  el.classList.add('selected');
+  selectedBolso = el.dataset.color;
+  updateModalBtn();
+}
+
+function updateModalBtn(){
+  const tonesOk = maxTones === 0 || selectedTones.length === maxTones;
+  const bolsoOk = !needsBolso || selectedBolso !== '';
+  const btn = document.getElementById('btnModalAdd');
+  if(tonesOk && bolsoOk){
+    btn.disabled = false;
+    let summary = '';
+    if(selectedTones.length) summary += 'Tonos: ' + selectedTones.map(t=>t.name).join(', ');
+    if(selectedBolso) summary += (summary?' · ':'') + 'Bolso ' + selectedBolso;
+    document.getElementById('modalSummary').textContent = summary;
+    btn.textContent = 'Agregar al carrito — ' + fmt(currentModalProduct.price);
+  } else {
+    btn.disabled = true;
+    let missing = [];
+    if(maxTones > 0 && selectedTones.length < maxTones) missing.push((maxTones - selectedTones.length) + ' tono' + (maxTones-selectedTones.length>1?'s':'')+' más');
+    if(needsBolso && !selectedBolso) missing.push('color de bolso');
+    btn.textContent = missing.length ? 'Falta elegir ' + missing.join(' y ') : 'Agregar al carrito — ' + fmt(currentModalProduct.price);
+  }
+}
+
+function addModalToCart(){
+  if(!currentModalProduct) return;
+  const shade = [
+    selectedTones.length ? 'Tonos: ' + selectedTones.map(t=>t.name).join(', ') : '',
+    selectedBolso ? 'Bolso: ' + selectedBolso : ''
+  ].filter(Boolean).join(' · ') || currentModalProduct.shade;
+
+  const cartItem = {
+    ...currentModalProduct,
+    shade,
+    id: currentModalProduct.id + '_' + Date.now()
+  };
+  cart.push({...cartItem, qty:1});
+  updateCart();
+  closeModal();
+  openCart();
+}
+
+
+let currentDetailProduct = null;
+let detailQty = 1;
+
+function openDetail(productId){
+  const p = products.find(x=>x.id===productId);
+  if(!p) return;
+  currentDetailProduct = p;
+  detailQty = 1;
+
+  if(p.slug) window.history.replaceState({}, '', '#' + p.slug);
+
+  document.getElementById('detailImg').src = p.img;
+  document.getElementById('detailImg').alt = p.name;
+  document.getElementById('detailName').textContent = p.name;
+  document.getElementById('detailShade').textContent = p.shade;
+  document.getElementById('detailPrice').textContent = fmt(p.price);
+  document.getElementById('detailDesc').textContent = p.desc;
+  document.getElementById('detailQty').textContent = 1;
+
+  const badge = document.getElementById('detailBadge');
+  if(p.badge){ badge.textContent = p.badge; badge.style.display = 'inline-block'; }
+  else { badge.style.display = 'none'; }
+
+  const addBtn = document.getElementById('btnDetailAdd');
+  if(p.cat === 'kit'){
+    addBtn.textContent = 'Personalizar y agregar';
+    addBtn.onclick = () => { closeDetail(); openModal(p.id); };
+  } else if(p.cat === 'bolso'){
+    addBtn.textContent = 'Agregar al carrito — ' + fmt(p.price);
+    addBtn.onclick = addDetailToCart;
+  } else {
+    addBtn.textContent = 'Agregar al carrito — ' + fmt(p.price);
+    addBtn.onclick = addDetailToCart;
   }
 
-  // Reveal on scroll
-  const reveals = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver(entries=>{
-    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}});
-  },{threshold:0.08});
-  reveals.forEach(r=>io.observe(r));
+  document.getElementById('detailPanel').classList.add('open');
+  document.getElementById('detailOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
 
-  // Gallery slider
-  const galleryState = {};
-  function slideGallery(id, dir) {
-    const container = document.getElementById(id);
-    const imgs = container.querySelectorAll('img');
-    if (!galleryState[id]) galleryState[id] = 0;
-    galleryState[id] = (galleryState[id] + dir + imgs.length) % imgs.length;
-    container.style.transform = `translateX(-${galleryState[id] * 100}%)`;
-    updateDots(id, imgs.length);
+function closeDetail(){
+  document.getElementById('detailPanel').classList.remove('open');
+  document.getElementById('detailOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+  window.history.replaceState({}, '', window.location.pathname);
+}
+
+function changeDetailQty(d){
+  detailQty = Math.max(1, detailQty + d);
+  document.getElementById('detailQty').textContent = detailQty;
+  if(currentDetailProduct && currentDetailProduct.cat === 'labial'){
+    document.getElementById('btnDetailAdd').textContent = 'Agregar al carrito — ' + fmt(currentDetailProduct.price * detailQty);
   }
-  function updateDots(id, total) {
-    const dotsEl = document.getElementById('dots-' + id);
-    if (!dotsEl) return;
-    dotsEl.querySelectorAll('.g-dot').forEach((d, i) => {
-      d.classList.toggle('active', i === (galleryState[id] || 0));
+}
+
+function addDetailToCart(){
+  if(!currentDetailProduct) return;
+  const ex = cart.find(x=>String(x.id)===String(currentDetailProduct.id));
+  if(ex) ex.qty += detailQty;
+  else cart.push({...currentDetailProduct, qty: detailQty});
+  updateCart();
+  closeDetail();
+  openCart();
+}
+
+
+const SHEETS_URL = '/.netlify/functions/log-pedido';
+
+async function sendConfirmationEmail(nombre, email, productos, total, ciudad, direccion){
+  if(!email) return;
+  try {
+    await emailjs.send('minime_service', 'template_s319duc', {
+      nombre,
+      email,
+      productos,
+      total,
+      ciudad,
+      direccion
     });
+    console.log('Email enviado a', email);
+  } catch(e){
+    console.log('Email error:', e);
   }
-  function initGalleries() {
-    document.querySelectorAll('.prod-imgs').forEach(container => {
-      const id = container.id;
-      const imgs = container.querySelectorAll('img');
-      galleryState[id] = 0;
-      const dotsEl = document.getElementById('dots-' + id);
-      if (dotsEl) {
-        dotsEl.innerHTML = '';
-        imgs.forEach((_, i) => {
-          const dot = document.createElement('span');
-          dot.className = 'g-dot' + (i === 0 ? ' active' : '');
-          dot.onclick = () => { galleryState[id] = i; container.style.transform = `translateX(-${i*100}%)`; updateDots(id, imgs.length); };
-          dotsEl.appendChild(dot);
+}
+
+async function sendConfirmationWA(nombre, phone, productos, total, ciudad){
+  if(!phone) return;
+  const msg = `¡Hola ${nombre}! 💄 Tu pedido en minime lovers está confirmado:\n\n${productos}\n\nTotal: ${total}\nCiudad: ${ciudad}\n\n¡Gracias por tu compra! Pronto te contactamos para coordinar el envío. 🌸`;
+  window.open(`https://wa.me/57${phone.replace(/\D/g,'')}?text=${encodeURIComponent(msg)}`, '_blank');
+}
+
+async function logPedido(metodo){
+  try{
+    const items = cart.map(i=>`${i.name} - ${i.shade} x${i.qty}`).join(' | ');
+    const subtotal = cart.reduce((s,i)=>s+i.price*i.qty,0);
+    const cityVal = document.getElementById('citySelect')?.value||'';
+    const cityText = document.getElementById('citySelect')?.options[document.getElementById('citySelect')?.selectedIndex]?.text||'';
+    const data = {
+      fecha: new Date().toLocaleString('es-CO'),
+      nombre: document.getElementById('nameInput')?.value||'',
+      telefono: document.getElementById('phoneInput')?.value||'',
+      ciudad: cityText,
+      direccion: (document.getElementById('addressInput')?.value||'') + (document.getElementById('barrioInput')?.value ? ' — ' + document.getElementById('barrioInput').value : ''),
+      productos: items,
+      total: '$'+subtotal.toLocaleString('es-CO'),
+      envio: shippingCost===0?'Gratis':'$'+shippingCost.toLocaleString('es-CO'),
+      metodo: metodo
+    };
+    await fetch(SHEETS_URL, {
+      method:'POST',
+      mode:'no-cors',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify(data)
+    });
+  } catch(e){
+    console.log('Sheets log error:', e);
+  }
+}
+
+function renderProducts(){
+    document.getElementById('pGrid').innerHTML=products.map((p,i)=>`
+    <div class="p-card reveal d${(i%4)+1}" data-cat="${p.cat}" onclick="openDetail(${p.id})" style="cursor:pointer">
+      <div class="p-img">
+        <img src="${p.img}" alt="${p.shade}" loading="lazy">
+        ${p.badge?`<span class="p-badge">${p.badge}</span>`:''}
+        <button class="p-add" onclick="event.stopPropagation();${p.cat==='kit'?'openModal('+p.id+')':'addToCart('+p.id+')'}">+</button>
+      </div>
+      <div class="p-name">${p.name}</div>
+      <div class="p-shade">${p.shade}</div>
+      <div class="p-desc" style="font-size:12px;color:var(--muted);line-height:1.55;margin-bottom:10px;font-weight:300">${p.desc}</div>
+      <div class="p-row">
+        <span class="p-price">${fmt(p.price)}</span>
+        <span class="p-swatch" style="background:${p.swatch}"></span>
+      </div>
+    </div>`).join('');
+  initReveal();
+}
+
+function filterCat(cat){
+  document.querySelectorAll('.cat-tab').forEach(t=>t.classList.remove('active'));
+  event.target.classList.add('active');
+  document.querySelectorAll('.p-card').forEach(card=>{
+    if(cat==='all' || card.dataset.cat===cat){
+      card.classList.remove('hidden');
+    } else {
+      card.classList.add('hidden');
+    }
+  });
+}
+
+function addToCart(id){
+  const p=products.find(x=>x.id===id),ex=cart.find(x=>x.id===id);
+  if(ex)ex.qty++;else cart.push({...p,qty:1});
+  updateCart();openCart();
+}
+
+function addKit(){
+  const ex=cart.find(x=>x.id===99);
+  if(ex)ex.qty++;
+  else cart.push({id:15,name:'Kit Bolso + 4 Tonos',shade:'',price:130000,img:'4_tonos.JPG',swatch:'#B8003E',qty:1});
+  updateCart();openCart();
+}
+
+function removeItem(id){cart=cart.filter(x=>String(x.id)!==String(id));updateCart();}
+
+function changeQty(id,d){
+  const i=cart.find(x=>String(x.id)===String(id));
+  if(!i)return;
+  i.qty=Math.max(0,i.qty+d);
+  if(i.qty<=0)removeItem(id);else updateCart();
+}
+
+let shippingCost = 0;
+let shippingLabel = '';
+const FREE_SHIPPING_THRESHOLD = 120000;
+
+function getBaseShipping(v){
+  if(v === 'bogota') return 10000;
+  if(v === 'principal') return 15000;
+  if(v === 'otro') return 20000;
+  return 0;
+}
+
+function updateShipping(){
+  const sel = document.getElementById('citySelect');
+  const v = sel.value;
+  const cityName = sel.options[sel.selectedIndex]?.text?.split(' —')[0] || '';
+  if(v === 'bogota'){ shippingLabel = 'Bogotá'; }
+  else if(v === 'principal'){ shippingLabel = cityName; }
+  else if(v === 'otro'){ shippingLabel = cityName; }
+  else { shippingLabel = ''; }
+
+  // Dynamic address placeholder
+  const addrInput = document.getElementById('addressInput');
+  const hint = document.getElementById('addressHint');
+  if(v === 'bogota' || v === 'principal'){
+    addrInput.placeholder = 'Ej: Calle 116 # 77b-42, Apto 301';
+    if(hint) hint.textContent = '💡 Usa el formato: Calle/Carrera/Diagonal + número # número-número';
+  } else if(v === 'otro'){
+    addrInput.placeholder = 'Ej: Barrio La Esperanza, casa rosada frente a la cancha';
+    if(hint) hint.textContent = '💡 Puedes describir tu dirección libremente — entre más detalle mejor';
+  } else {
+    addrInput.placeholder = 'Ej: Calle 116 # 77b-42';
+    if(hint) hint.textContent = '';
+  }
+  updateCart();
+}
+
+function updateCart(){
+  localStorage.setItem('minime_cart', JSON.stringify(cart));
+  const subtotal=cart.reduce((s,i)=>s+i.price*i.qty,0);
+  const qty=cart.reduce((s,i)=>s+i.qty,0);
+
+  // Free shipping only if subtotal >= 120k (any city) OR no shipping needed
+  const cityVal = document.getElementById('citySelect')?.value || '';
+  const baseShip = getBaseShipping(cityVal);
+  const freeByAmount = subtotal >= FREE_SHIPPING_THRESHOLD && cityVal !== '';
+  shippingCost = freeByAmount ? 0 : baseShip;
+  const freeShipping = freeByAmount || (cityVal === 'bogota' && baseShip === 0);
+
+  const total = subtotal + shippingCost;
+
+  document.getElementById('cSubtotal').textContent=fmt(subtotal);
+  document.getElementById('cTotal').textContent=fmt(total);
+
+  // Show free shipping banner when close or already free
+  const banner = document.getElementById('freeShipBanner');
+  if(banner){
+    if(freeByAmount){
+      banner.textContent = '🎉 ¡Envío gratis aplicado! Tu pedido supera $120.000';
+      banner.style.color = '#0a7c3e';
+      banner.style.display = 'block';
+    } else if(subtotal > 0 && subtotal < FREE_SHIPPING_THRESHOLD && cityVal){
+      const diff = FREE_SHIPPING_THRESHOLD - subtotal;
+      banner.textContent = `¡Te faltan ${fmt(diff)} para envío gratis! 🚚`;
+      banner.style.color = 'var(--hot)';
+      banner.style.display = 'block';
+    } else {
+      banner.style.display = 'none';
+    }
+  }
+
+  const shRow = document.getElementById('shippingRow');
+  if(cityVal){
+    shRow.style.display='flex';
+    if(freeShipping){
+      document.getElementById('cShipping').textContent = cityVal === 'bogota' ? 'Gratis 🎉' : 'Gratis 🎉 +$120k';
+    } else {
+      document.getElementById('cShipping').textContent = fmt(shippingCost);
+    }
+  } else {
+    shRow.style.display='none';
+  }
+
+  const b=document.getElementById('cBadge');
+  b.textContent=qty;b.classList.toggle('show',qty>0);
+  const body=document.getElementById('cBody');
+  if(!cart.length){
+    body.innerHTML='<div class="cart-empty-state"><div class="empty-icon">🛍️</div><p>Tu carrito está vacío</p></div>';return;
+  }
+  body.innerHTML=cart.map(i=>{
+    const safeId = String(i.id).replace(/[^a-zA-Z0-9_-]/g,'_');
+    return `
+    <div class="cart-item" data-id="${i.id}">
+      <div class="cart-item-img"><img src="${i.img}" alt="${i.shade}"></div>
+      <div class="cart-item-info">
+        <div class="cart-item-name">${i.name}</div>
+        <div class="cart-item-shade">${i.shade}</div>
+        <div class="cart-item-price">${fmt(i.price)}</div>
+        <div class="qty-row">
+          <button class="qty-btn" data-action="minus" data-id="${i.id}">−</button>
+          <span class="qty-n">${i.qty}</span>
+          <button class="qty-btn" data-action="plus" data-id="${i.id}">+</button>
+        </div>
+      </div>
+      <button class="rm-btn" data-action="remove" data-id="${i.id}">✕</button>
+    </div>`;
+  }).join('');
+}
+
+// Event delegation for cart buttons
+document.getElementById('cBody').addEventListener('click', function(e){
+  const btn = e.target.closest('[data-action]');
+  if(!btn) return;
+  const id = btn.dataset.id;
+  const action = btn.dataset.action;
+  if(action === 'plus') changeQty(id, 1);
+  else if(action === 'minus') changeQty(id, -1);
+  else if(action === 'remove') removeItem(id);
+});
+
+function openCart(){document.getElementById('cDrawer').classList.add('open');document.getElementById('cOverlay').classList.add('open')}
+function closeCart(){document.getElementById('cDrawer').classList.remove('open');document.getElementById('cOverlay').classList.remove('open')}
+async function payMP(){
+  if(!cart.length)return;
+  const cityVal = document.getElementById('citySelect').value;
+  const address = document.getElementById('addressInput').value.trim();
+  const name = document.getElementById('nameInput').value.trim();
+  const phone = document.getElementById('phoneInput').value.trim();
+  if(!cityVal){ alert('Por favor selecciona tu ciudad.'); return; }
+  if(!name){ alert('Por favor ingresa tu nombre completo.'); return; }
+  if(!phone){ alert('Por favor ingresa tu teléfono.'); return; }
+  if(!address){ alert('Por favor ingresa tu dirección de entrega.'); return; }
+  const btn = document.getElementById('btnPay');
+  btn.textContent = 'Cargando...';
+  btn.disabled = true;
+
+  const subtotal = cart.reduce((s,i)=>s+i.price*i.qty,0);
+  const total = subtotal + shippingCost;
+  const description = `Pedido minime lovers - ${cart.length} producto${cart.length !== 1 ? 's' : ''}`;
+
+  try {
+    const res = await fetch('/.netlify/functions/crear-preferencia', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ total, description })
+    });
+    const data = await res.json();
+    if(data.error){ throw new Error(data.error); }
+    if(data.orderId && data.signature && data.apiKey){
+      // Store order info for confirmation after redirect
+      const orderInfo = {
+        nombre: name,
+        phone: phone,
+        email: document.getElementById('emailInput')?.value || '',
+        productos: cart.map(i=>`${i.name} x${i.qty}`).join(', '),
+        total: fmt(total),
+        ciudad: shippingLabel,
+        direccion: address,
+        envio: shippingCost === 0 ? 'Gratis' : fmt(shippingCost)
+      };
+      localStorage.setItem('minime_last_order', JSON.stringify(orderInfo));
+      await loadBoldSDK();
+      const boldApiKey = data.apiKey;
+      const checkout = new BoldCheckout({
+        orderId: data.orderId,
+        currency: 'COP',
+        amount: data.amount,
+        apiKey: boldApiKey,
+        integritySignature: data.signature,
+        description: description,
+        redirectionUrl: 'https://minime.com.co/?pago=exitoso',
+        customerData: JSON.stringify({
+          fullName: name,
+          phone: phone,
+          dialCode: '+57'
+        }),
+        billingAddress: JSON.stringify({
+          address: address,
+          city: shippingLabel,
+          country: 'CO'
+        })
+      });
+      btn.textContent = 'Pagar con Bold';
+      btn.disabled = false;
+      checkout.open();
+    } else {
+      throw new Error('Respuesta inválida del servidor');
+    }
+  } catch(e) {
+    console.error('Bold error:', e);
+    btn.textContent = 'Pagar con Bold';
+    btn.disabled = false;
+    alert('Hubo un error al procesar el pago. Intenta por WhatsApp. (' + e.message + ')');
+  }
+}
+
+function loadBoldSDK(){
+  return new Promise((resolve, reject) => {
+    if(window.BoldCheckout){ resolve(); return; }
+    const existing = document.querySelector('script[src="https://checkout.bold.co/library/boldPaymentButton.js"]');
+    if(existing){
+      window.addEventListener('boldCheckoutLoaded', resolve, {once:true});
+      window.addEventListener('boldCheckoutLoadFailed', reject, {once:true});
+      return;
+    }
+    const s = document.createElement('script');
+    s.src = 'https://checkout.bold.co/library/boldPaymentButton.js';
+    s.onload = () => { window.dispatchEvent(new Event('boldCheckoutLoaded')); resolve(); };
+    s.onerror = () => { window.dispatchEvent(new Event('boldCheckoutLoadFailed')); reject(new Error('No se pudo cargar Bold SDK')); };
+    document.head.appendChild(s);
+  });
+}
+function payWA(){
+  if(!cart.length)return;
+  const lines=cart.map(i=>`• ${i.name} - ${i.shade} x${i.qty} — ${fmt(i.price*i.qty)}`).join('\n');
+  const total=cart.reduce((s,i)=>s+i.price*i.qty,0);
+  const address = document.getElementById('addressInput')?.value || '';
+  const barrio = document.getElementById('barrioInput')?.value || '';
+  const name = document.getElementById('nameInput')?.value || '';
+  const phone = document.getElementById('phoneInput')?.value || '';
+  const city = document.getElementById('citySelect')?.options[document.getElementById('citySelect')?.selectedIndex]?.text?.split(' —')[0] || '';
+  let msg = `¡Hola minime lovers! 💄 Quiero hacer este pedido:\n\n${lines}\n\nTotal: ${fmt(total)}`;
+  if(name) msg += `\n\n👤 Nombre: ${name}`;
+  if(phone) msg += `\n📱 Teléfono: ${phone}`;
+  if(city) msg += `\n🏙️ Ciudad: ${city}`;
+  if(address) msg += `\n📍 Dirección: ${address}`;
+  if(barrio) msg += `\n🏘️ Barrio/Ref: ${barrio}`;
+  logPedido('WhatsApp');
+  window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`,'_blank');
+}
+function contactWA(){window.open(`https://wa.me/${WA}?text=${encodeURIComponent('¡Hola minimee! Me gustaría conocer más sobre sus productos 💄')}`,'_blank')}
+
+window.addEventListener('scroll',()=>{
+  document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>60);
+  const bg=document.getElementById('heroBg');
+  if(bg)bg.style.transform=`translateY(${window.scrollY*.22}px) scale(1)`;
+});
+
+window.addEventListener('load',()=>document.getElementById('heroBg').classList.add('ready'));
+
+function initReveal(){
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}});
+  },{threshold:.1});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+}
+
+function setTonoFondo(el){
+  document.querySelectorAll('.tono-tag').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+  const c1=el.dataset.c1, c2=el.dataset.c2, c3=el.dataset.c3;
+  const sec=document.getElementById('tonos-piel');
+  if(sec) sec.style.background=`linear-gradient(135deg,${c1} 0%,${c2} 50%,${c3} 100%)`;
+}
+
+renderProducts();
+initReveal();
+updateCart();
+
+// Auto-open product from URL hash e.g. minime.com.co/#sweet-sunset
+(function(){
+  const hash = window.location.hash.replace('#','');
+  if(hash && !['nosotras','productos','testimonios','contacto','tonos-piel'].includes(hash)){
+    const p = products.find(x=>x.slug===hash);
+    if(p) setTimeout(()=>openDetail(p.id), 400);
+  }
+})();
+
+// Tonos-piel slide-in animation
+(function(){
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); }
+    });
+  }, {threshold: 0.2});
+  const img = document.getElementById('tonosPielImg');
+  const txt = document.getElementById('tonosPielText');
+  if(img) obs.observe(img);
+  if(txt) obs.observe(txt);
+})();
+
+// Check if returning from successful Bold payment
+(async function(){
+  const params = new URLSearchParams(window.location.search);
+  if(params.get('pago') === 'exitoso'){
+    // Show success banner
+    const banner = document.createElement('div');
+    banner.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:9999;background:#0a7c3e;color:#fff;text-align:center;padding:18px;font-family:"DM Sans",sans-serif;font-size:14px;font-weight:500;';
+    banner.innerHTML = '🎉 ¡Pago exitoso! Gracias por tu compra en minime lovers. Te contactaremos pronto. <button onclick="this.parentElement.remove()" style="margin-left:16px;background:rgba(255,255,255,.3);border:none;color:#fff;padding:4px 12px;border-radius:20px;cursor:pointer;font-family:inherit">✕</button>';
+    document.body.prepend(banner);
+    // Send confirmations and register confirmed purchase
+    try {
+      const order = JSON.parse(localStorage.getItem('minime_last_order') || '{}');
+      if(order.nombre){
+        // Register in Google Sheets only NOW (confirmed payment)
+        await fetch('/.netlify/functions/log-pedido', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({
+            fecha: new Date().toLocaleString('es-CO'),
+            nombre: order.nombre,
+            telefono: order.phone,
+            ciudad: order.ciudad,
+            direccion: order.direccion,
+            productos: order.productos,
+            total: order.total,
+            envio: order.envio || '',
+            metodo: 'Bold ✅ Confirmado'
+          })
         });
+        // Send email confirmation
+        if(order.email) sendConfirmationEmail(order.nombre, order.email, order.productos, order.total, order.ciudad, order.direccion);
+        // Send WhatsApp confirmation
+        if(order.phone) sendConfirmationWA(order.nombre, order.phone, order.productos, order.total, order.ciudad);
+        localStorage.removeItem('minime_last_order');
+        cart = [];
+        localStorage.removeItem('minime_cart');
+        updateCart();
       }
-    });
+    } catch(e){ console.log('Confirmation error:', e); }
+    // Remove param from URL
+    window.history.replaceState({}, '', '/');
   }
-  // Filter tabs
-  function filterCat(cat) {
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-    event.target.classList.add('active');
-    document.querySelectorAll('.prod-card').forEach(card => {
-      if (cat === 'all' || card.dataset.cat === cat) {
-        card.classList.remove('hidden');
-      } else {
-        card.classList.add('hidden');
-      }
-    });
-  }
-  initGalleries();
-
+})();
 </script>
 </body>
 </html>

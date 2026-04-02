@@ -206,6 +206,79 @@ footer{background:var(--dark);color:#86868b;padding:3rem 2.5rem 1rem}
 .footer-bottom a{color:#86868b;text-decoration:none}
 .footer-bottom a:hover{color:#f5f5f7;text-decoration:underline}
 
+
+/* ── CATALOG ── */
+.tab-btn{
+  font-family:var(--body);font-size:0.8rem;font-weight:500;
+  padding:0.45rem 1rem;border-radius:980px;
+  border:1.5px solid var(--border);background:#fff;
+  color:var(--mid);cursor:pointer;transition:all .2s;white-space:nowrap;
+}
+.tab-btn:hover{border-color:var(--blue);color:var(--blue)}
+.tab-btn.active{background:var(--blue);color:#fff;border-color:var(--blue)}
+.prod-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1.5rem;
+}
+.prod-card{
+  background:#fff;border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 2px 12px rgba(0,0,0,0.06);
+  transition:transform .25s,box-shadow .25s;
+}
+.prod-card:hover{transform:translateY(-4px);box-shadow:0 8px 32px rgba(0,0,0,0.11)}
+.prod-card.hidden{display:none}
+/* gallery */
+.prod-gallery{position:relative;aspect-ratio:1/1;overflow:hidden;background:#f5f5f7}
+.prod-imgs{display:flex;height:100%;transition:transform .35s ease}
+.prod-imgs img{min-width:100%;height:100%;object-fit:cover;flex-shrink:0}
+.g-prev,.g-next{
+  position:absolute;top:50%;transform:translateY(-50%);
+  background:rgba(255,255,255,0.85);border:none;
+  width:30px;height:30px;border-radius:50%;
+  cursor:pointer;font-size:0.9rem;
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;transition:opacity .2s;z-index:2;
+  backdrop-filter:blur(4px);
+}
+.prod-gallery:hover .g-prev,.prod-gallery:hover .g-next{opacity:1}
+.g-prev{left:0.6rem}.g-next{right:0.6rem}
+.g-dots{
+  position:absolute;bottom:0.6rem;left:50%;transform:translateX(-50%);
+  display:flex;gap:4px;
+}
+.g-dot{
+  width:5px;height:5px;border-radius:50%;
+  background:rgba(255,255,255,0.5);transition:background .2s;cursor:pointer;
+}
+.g-dot.active{background:#fff}
+/* prod info */
+.prod-info{padding:1.2rem 1.4rem 1.4rem}
+.prod-name{font-family:var(--font);font-size:1.05rem;font-weight:600;margin-bottom:0.6rem;letter-spacing:-0.01em}
+.prod-specs{display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:1rem}
+.spec-chip{
+  font-size:0.72rem;font-weight:500;
+  padding:0.25rem 0.6rem;border-radius:980px;
+  background:var(--bg);color:var(--mid);
+}
+.prod-btn{
+  display:block;text-align:center;
+  background:var(--blue);color:#fff;
+  border-radius:980px;padding:0.6rem 1rem;
+  font-size:0.82rem;font-weight:500;
+  text-decoration:none;transition:background .2s;
+  font-family:var(--body);
+}
+.prod-btn:hover{background:var(--blue-hover)}
+@media(max-width:900px){
+  .prod-grid{grid-template-columns:repeat(2,1fr);gap:1rem}
+  .cat-tabs{gap:0.4rem}
+}
+@media(max-width:500px){
+  .prod-grid{grid-template-columns:1fr}
+}
+
 /* REVEAL */
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
 .reveal.visible{opacity:1;transform:none}
@@ -495,6 +568,322 @@ footer{background:var(--dark);color:#86868b;padding:3rem 2.5rem 1rem}
   </div>
 </div>
 
+
+<!-- ═══ CATÁLOGO DE PRODUCTOS ═══ -->
+<section id="catalogo" style="background:var(--bg);padding:5rem 0 6rem">
+  <div style="max-width:1200px;margin:0 auto;padding:0 2.5rem">
+    <p class="section-sub reveal" style="color:var(--blue);font-weight:500;font-size:0.8rem;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:0.5rem">Catálogo</p>
+    <h2 class="section-title reveal" style="margin-bottom:0.4rem">Nuestro stock <span style="color:var(--blue)">disponible.</span></h2>
+    <p class="section-sub reveal">Todos los equipos son usados/reacondicionados · Garantía incluida · Envío a todo Colombia</p>
+
+    <!-- FILTER TABS -->
+    <div class="cat-tabs reveal" style="display:flex;gap:0.5rem;flex-wrap:wrap;margin:2.5rem 0 2rem">
+      <button class="tab-btn active" onclick="filterCat('all')">Todos</button>
+      <button class="tab-btn" onclick="filterCat('iphone11')">iPhone 11</button>
+      <button class="tab-btn" onclick="filterCat('iphone12')">iPhone 12</button>
+      <button class="tab-btn" onclick="filterCat('iphone13')">iPhone 13</button>
+      <button class="tab-btn" onclick="filterCat('iphone13pro')">iPhone 13 Pro</button>
+      <button class="tab-btn" onclick="filterCat('iphone13promax')">iPhone 13 Pro Max</button>
+      <button class="tab-btn" onclick="filterCat('iphone14')">iPhone 14</button>
+      <button class="tab-btn" onclick="filterCat('iphone15')">iPhone 15</button>
+      <button class="tab-btn" onclick="filterCat('iphone15pro')">iPhone 15 Pro</button>
+      <button class="tab-btn" onclick="filterCat('iphone15promax')">iPhone 15 Pro Max</button>
+      <button class="tab-btn" onclick="filterCat('iphone16')">iPhone 16</button>
+      <button class="tab-btn" onclick="filterCat('iphone17pro')">iPhone 17 Pro</button>
+      <button class="tab-btn" onclick="filterCat('iphone17promax')">iPhone 17 Pro Max</button>
+    </div>
+
+    <!-- PRODUCT GRID -->
+    <div class="prod-grid" id="prodGrid">
+
+      <!-- iPhone 11 -->
+      <div class="prod-card" data-cat="iphone11">
+        <div class="prod-gallery">
+          <div class="prod-imgs" id="g-ip11">
+            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085433/iphone11b_nzkyuu.jpg" alt="iPhone 11">
+            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085434/iphone11c_s6lj0p.jpg" alt="iPhone 11">
+            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085434/iphone11e_iw2neb.jpg" alt="iPhone 11">
+            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085434/iphone11A_fiouzc.jpg" alt="iPhone 11">
+            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085440/iphone11d_q3lwkf.jpg" alt="iPhone 11">
+          </div>
+          <button class="g-prev" onclick="slideGallery('g-ip11',-1)">&#8592;</button>
+          <button class="g-next" onclick="slideGallery('g-ip11',1)">&#8594;</button>
+          <div class="g-dots" id="dots-g-ip11"></div>
+        </div>
+        <div class="prod-info">
+          <h3 class="prod-name">iPhone 11</h3>
+          <div class="prod-specs">
+            <span class="spec-chip">128 GB</span>
+            <span class="spec-chip">🔋 90%</span>
+            <span class="spec-chip">Reacondicionado</span>
+          </div>
+          <a href="https://www.instagram.com/tuiphone.co/" target="_blank" class="prod-btn">Consultar precio</a>
+        </div>
+      </div>
+
+      <!-- iPhone 12 -->
+      <div class="prod-card" data-cat="iphone12">
+        <div class="prod-gallery">
+          <div class="prod-imgs" id="g-ip12">
+            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085463/iphone12A_ckb7jp.jpg" alt="iPhone 12">
+            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085465/iphone12b_ixkvzx.jpg" alt="iPhone 12">
+            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085465/iphone12c_yp53n2.jpg" alt="iPhone 12">
+            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085494/iphone12d_elzeru.jpg" alt="iPhone 12">
+          </div>
+          <button class="g-prev" onclick="slideGallery('g-ip12',-1)">&#8592;</button>
+          <button class="g-next" onclick="slideGallery('g-ip12',1)">&#8594;</button>
+          <div class="g-dots" id="dots-g-ip12"></div>
+        </div>
+        <div class="prod-info">
+          <h3 class="prod-name">iPhone 12</h3>
+          <div class="prod-specs">
+            <span class="spec-chip">128 GB</span>
+            <span class="spec-chip">🔋 90%</span>
+            <span class="spec-chip">Reacondicionado</span>
+          </div>
+          <a href="https://www.instagram.com/tuiphone.co/" target="_blank" class="prod-btn">Consultar precio</a>
+        </div>
+      </div>
+
+      <!-- iPhone 13 -->
+      <div class="prod-card" data-cat="iphone13">
+        <div class="prod-gallery">
+          <div class="prod-imgs" id="g-ip13">
+            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085509/iphone13A_gng9uv.jpg" alt="iPhone 13">
+            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085510/iphone13b_zutsgx.jpg" alt="iPhone 13">
+            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085511/iphone13c_g7afjg.jpg" alt="iPhone 13">
+            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085511/iphone13e_p5mzp0.jpg" alt="iPhone 13">
+            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085535/iphone13d_fnfa8c.jpg" alt="iPhone 13">
+          </div>
+          <button class="g-prev" onclick="slideGallery('g-ip13',-1)">&#8592;</button>
+          <button class="g-next" onclick="slideGallery('g-ip13',1)">&#8594;</button>
+          <div class="g-dots" id="dots-g-ip13"></div>
+        </div>
+        <div class="prod-info">
+          <h3 class="prod-name">iPhone 13</h3>
+          <div class="prod-specs">
+            <span class="spec-chip">128 GB</span>
+            <span class="spec-chip">🔋 90%</span>
+            <span class="spec-chip">Reacondicionado</span>
+          </div>
+          <a href="https://www.instagram.com/tuiphone.co/" target="_blank" class="prod-btn">Consultar precio</a>
+        </div>
+      </div>
+
+      <!-- iPhone 13 Pro -->
+      <div class="prod-card" data-cat="iphone13pro">
+        <div class="prod-gallery">
+          <div class="prod-imgs" id="g-ip13p">
+            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085554/iphone13pA_l4yauw.jpg" alt="iPhone 13 Pro">
+            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085553/iphone13pb_foiruo.jpg" alt="iPhone 13 Pro">
+            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085553/iphone13pc_q6lu2j.jpg" alt="iPhone 13 Pro">
+            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085561/iphone13pd_til5vn.jpg" alt="iPhone 13 Pro">
+          </div>
+          <button class="g-prev" onclick="slideGallery('g-ip13p',-1)">&#8592;</button>
+          <button class="g-next" onclick="slideGallery('g-ip13p',1)">&#8594;</button>
+          <div class="g-dots" id="dots-g-ip13p"></div>
+        </div>
+        <div class="prod-info">
+          <h3 class="prod-name">iPhone 13 Pro</h3>
+          <div class="prod-specs">
+            <span class="spec-chip">128 GB</span>
+            <span class="spec-chip">🔋 90%</span>
+            <span class="spec-chip">Reacondicionado</span>
+          </div>
+          <a href="https://www.instagram.com/tuiphone.co/" target="_blank" class="prod-btn">Consultar precio</a>
+        </div>
+      </div>
+
+      <!-- iPhone 13 Pro Max -->
+      <div class="prod-card" data-cat="iphone13promax">
+        <div class="prod-gallery">
+          <div class="prod-imgs" id="g-ip13pm">
+            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085593/iphone13pma_zixhaq.jpg" alt="iPhone 13 Pro Max">
+            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085595/iphone13pmb_qva2n2.jpg" alt="iPhone 13 Pro Max">
+            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085596/iphone13pmc_evm0om.jpg" alt="iPhone 13 Pro Max">
+            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085598/iphone13pme_xbsita.jpg" alt="iPhone 13 Pro Max">
+            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085623/iphone13pmd_dqrgah.jpg" alt="iPhone 13 Pro Max">
+          </div>
+          <button class="g-prev" onclick="slideGallery('g-ip13pm',-1)">&#8592;</button>
+          <button class="g-next" onclick="slideGallery('g-ip13pm',1)">&#8594;</button>
+          <div class="g-dots" id="dots-g-ip13pm"></div>
+        </div>
+        <div class="prod-info">
+          <h3 class="prod-name">iPhone 13 Pro Max</h3>
+          <div class="prod-specs">
+            <span class="spec-chip">128 GB</span>
+            <span class="spec-chip">🔋 90%</span>
+            <span class="spec-chip">Reacondicionado</span>
+          </div>
+          <a href="https://www.instagram.com/tuiphone.co/" target="_blank" class="prod-btn">Consultar precio</a>
+        </div>
+      </div>
+
+      <!-- iPhone 14 -->
+      <div class="prod-card" data-cat="iphone14">
+        <div class="prod-gallery">
+          <div class="prod-imgs" id="g-ip14">
+            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085638/iphone14A_fyp75f.jpg" alt="iPhone 14">
+            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085640/iphone14b_u0maip.jpg" alt="iPhone 14">
+            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085641/iphone14c_wp76zr.jpg" alt="iPhone 14">
+            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085645/iphone14e_yy9gvh.jpg" alt="iPhone 14">
+            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085648/iphone14d_jxrqzx.jpg" alt="iPhone 14">
+          </div>
+          <button class="g-prev" onclick="slideGallery('g-ip14',-1)">&#8592;</button>
+          <button class="g-next" onclick="slideGallery('g-ip14',1)">&#8594;</button>
+          <div class="g-dots" id="dots-g-ip14"></div>
+        </div>
+        <div class="prod-info">
+          <h3 class="prod-name">iPhone 14</h3>
+          <div class="prod-specs">
+            <span class="spec-chip">128 GB</span>
+            <span class="spec-chip">🔋 90%</span>
+            <span class="spec-chip">Reacondicionado</span>
+          </div>
+          <a href="https://www.instagram.com/tuiphone.co/" target="_blank" class="prod-btn">Consultar precio</a>
+        </div>
+      </div>
+
+      <!-- iPhone 15 -->
+      <div class="prod-card" data-cat="iphone15">
+        <div class="prod-gallery">
+          <div class="prod-imgs" id="g-ip15">
+            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085673/iphone15a_tqucvh.jpg" alt="iPhone 15">
+            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085673/iphone15b_nfvhil.jpg" alt="iPhone 15">
+            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085675/iphone15c_nfwfyr.jpg" alt="iPhone 15">
+            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085676/iphone15e_scdegj.jpg" alt="iPhone 15">
+            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085716/iphone15d_myyhkd.jpg" alt="iPhone 15">
+          </div>
+          <button class="g-prev" onclick="slideGallery('g-ip15',-1)">&#8592;</button>
+          <button class="g-next" onclick="slideGallery('g-ip15',1)">&#8594;</button>
+          <div class="g-dots" id="dots-g-ip15"></div>
+        </div>
+        <div class="prod-info">
+          <h3 class="prod-name">iPhone 15</h3>
+          <div class="prod-specs">
+            <span class="spec-chip">128 GB</span>
+            <span class="spec-chip">🔋 90%</span>
+            <span class="spec-chip">Reacondicionado</span>
+          </div>
+          <a href="https://www.instagram.com/tuiphone.co/" target="_blank" class="prod-btn">Consultar precio</a>
+        </div>
+      </div>
+
+      <!-- iPhone 15 Pro -->
+      <div class="prod-card" data-cat="iphone15pro">
+        <div class="prod-gallery">
+          <div class="prod-imgs" id="g-ip15p">
+            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085730/iphone15pa_sgqjfq.jpg" alt="iPhone 15 Pro">
+            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085731/iphone15pb_aiquyq.jpg" alt="iPhone 15 Pro">
+            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085732/iphone15pc_jsgpcs.jpg" alt="iPhone 15 Pro">
+            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085734/iphone15pe_rluvot.jpg" alt="iPhone 15 Pro">
+            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085747/iphone15pd_xm0gb9.jpg" alt="iPhone 15 Pro">
+          </div>
+          <button class="g-prev" onclick="slideGallery('g-ip15p',-1)">&#8592;</button>
+          <button class="g-next" onclick="slideGallery('g-ip15p',1)">&#8594;</button>
+          <div class="g-dots" id="dots-g-ip15p"></div>
+        </div>
+        <div class="prod-info">
+          <h3 class="prod-name">iPhone 15 Pro</h3>
+          <div class="prod-specs">
+            <span class="spec-chip">128 GB</span>
+            <span class="spec-chip">🔋 90%</span>
+            <span class="spec-chip">Reacondicionado</span>
+          </div>
+          <a href="https://www.instagram.com/tuiphone.co/" target="_blank" class="prod-btn">Consultar precio</a>
+        </div>
+      </div>
+
+      <!-- iPhone 15 Pro Max -->
+      <div class="prod-card" data-cat="iphone15promax">
+        <div class="prod-gallery">
+          <div class="prod-imgs" id="g-ip15pm">
+            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085772/iphone15pma_nqlqyg.jpg" alt="iPhone 15 Pro Max">
+            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085775/iphone15pmc_sihhxw.jpg" alt="iPhone 15 Pro Max">
+            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085777/iphone15pme_yjlt58.jpg" alt="iPhone 15 Pro Max">
+            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085787/iphone15pmd_aokv5e.jpg" alt="iPhone 15 Pro Max">
+          </div>
+          <button class="g-prev" onclick="slideGallery('g-ip15pm',-1)">&#8592;</button>
+          <button class="g-next" onclick="slideGallery('g-ip15pm',1)">&#8594;</button>
+          <div class="g-dots" id="dots-g-ip15pm"></div>
+        </div>
+        <div class="prod-info">
+          <h3 class="prod-name">iPhone 15 Pro Max</h3>
+          <div class="prod-specs">
+            <span class="spec-chip">128 GB</span>
+            <span class="spec-chip">🔋 90%</span>
+            <span class="spec-chip">Reacondicionado</span>
+          </div>
+          <a href="https://www.instagram.com/tuiphone.co/" target="_blank" class="prod-btn">Consultar precio</a>
+        </div>
+      </div>
+
+      <!-- iPhone 16 -->
+      <div class="prod-card" data-cat="iphone16">
+        <div class="prod-gallery">
+          <div class="prod-imgs" id="g-ip16">
+            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085843/iphone16a_wsqih0.jpg" alt="iPhone 16">
+            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085845/iphone16b_pq3b9l.jpg" alt="iPhone 16">
+            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085846/iphone16c_k8ysuw.jpg" alt="iPhone 16">
+            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085854/iphone16d_whdfab.jpg" alt="iPhone 16">
+          </div>
+          <button class="g-prev" onclick="slideGallery('g-ip16',-1)">&#8592;</button>
+          <button class="g-next" onclick="slideGallery('g-ip16',1)">&#8594;</button>
+          <div class="g-dots" id="dots-g-ip16"></div>
+        </div>
+        <div class="prod-info">
+          <h3 class="prod-name">iPhone 16</h3>
+          <div class="prod-specs">
+            <span class="spec-chip">128 GB</span>
+            <span class="spec-chip">🔋 90%</span>
+            <span class="spec-chip">Reacondicionado</span>
+          </div>
+          <a href="https://www.instagram.com/tuiphone.co/" target="_blank" class="prod-btn">Consultar precio</a>
+        </div>
+      </div>
+
+      <!-- iPhone 17 Pro -->
+      <div class="prod-card" data-cat="iphone17pro">
+        <div class="prod-gallery">
+          <div class="prod-imgs" id="g-ip17p">
+            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085879/iphone17pa_eizbwv.jpg" alt="iPhone 17 Pro">
+          </div>
+          <div class="g-dots" id="dots-g-ip17p"></div>
+        </div>
+        <div class="prod-info">
+          <h3 class="prod-name">iPhone 17 Pro</h3>
+          <div class="prod-specs">
+            <span class="spec-chip">256 GB</span>
+            <span class="spec-chip">🔋 100%</span>
+            <span class="spec-chip">Reacondicionado</span>
+          </div>
+          <a href="https://www.instagram.com/tuiphone.co/" target="_blank" class="prod-btn">Consultar precio</a>
+        </div>
+      </div>
+
+      <!-- iPhone 17 Pro Max -->
+      <div class="prod-card" data-cat="iphone17promax">
+        <div class="prod-gallery">
+          <div class="prod-imgs" id="g-ip17pm">
+            <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085881/iphone17pb_klitly.jpg" alt="iPhone 17 Pro Max">
+          </div>
+          <div class="g-dots" id="dots-g-ip17pm"></div>
+        </div>
+        <div class="prod-info">
+          <h3 class="prod-name">iPhone 17 Pro Max</h3>
+          <div class="prod-specs">
+            <span class="spec-chip">256 GB</span>
+            <span class="spec-chip">🔋 100%</span>
+            <span class="spec-chip">Reacondicionado</span>
+          </div>
+          <a href="https://www.instagram.com/tuiphone.co/" target="_blank" class="prod-btn">Consultar precio</a>
+        </div>
+      </div>
+
+    </div><!-- /prod-grid -->
+  </div>
+</section>
+
 <!-- WHY US -->
 <div class="why-section">
   <h2 class="section-title reveal">¿Por qué TuiPhone?</h2>
@@ -641,6 +1030,55 @@ footer{background:var(--dark);color:#86868b;padding:3rem 2.5rem 1rem}
     entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}});
   },{threshold:0.08});
   reveals.forEach(r=>io.observe(r));
+
+  // Gallery slider
+  const galleryState = {};
+  function slideGallery(id, dir) {
+    const container = document.getElementById(id);
+    const imgs = container.querySelectorAll('img');
+    if (!galleryState[id]) galleryState[id] = 0;
+    galleryState[id] = (galleryState[id] + dir + imgs.length) % imgs.length;
+    container.style.transform = `translateX(-${galleryState[id] * 100}%)`;
+    updateDots(id, imgs.length);
+  }
+  function updateDots(id, total) {
+    const dotsEl = document.getElementById('dots-' + id);
+    if (!dotsEl) return;
+    dotsEl.querySelectorAll('.g-dot').forEach((d, i) => {
+      d.classList.toggle('active', i === (galleryState[id] || 0));
+    });
+  }
+  function initGalleries() {
+    document.querySelectorAll('.prod-imgs').forEach(container => {
+      const id = container.id;
+      const imgs = container.querySelectorAll('img');
+      galleryState[id] = 0;
+      const dotsEl = document.getElementById('dots-' + id);
+      if (dotsEl) {
+        dotsEl.innerHTML = '';
+        imgs.forEach((_, i) => {
+          const dot = document.createElement('span');
+          dot.className = 'g-dot' + (i === 0 ? ' active' : '');
+          dot.onclick = () => { galleryState[id] = i; container.style.transform = `translateX(-${i*100}%)`; updateDots(id, imgs.length); };
+          dotsEl.appendChild(dot);
+        });
+      }
+    });
+  }
+  // Filter tabs
+  function filterCat(cat) {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    event.target.classList.add('active');
+    document.querySelectorAll('.prod-card').forEach(card => {
+      if (cat === 'all' || card.dataset.cat === cat) {
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+  }
+  initGalleries();
+
 </script>
 </body>
 </html>

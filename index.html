@@ -208,6 +208,109 @@ footer{background:var(--dark);color:#86868b;padding:3rem 2.5rem 1rem}
 
 
 
+
+/* ── LIGHTBOX ── */
+.lightbox{
+  position:fixed;inset:0;z-index:9999;
+  background:rgba(0,0,0,0.95);
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;pointer-events:none;transition:opacity .3s;
+}
+.lightbox.open{opacity:1;pointer-events:all}
+.lightbox video{
+  max-height:90vh;max-width:90vw;
+  border-radius:12px;
+  outline:none;
+}
+.lightbox-close{
+  position:absolute;top:1.2rem;right:1.5rem;
+  background:none;border:none;color:#fff;
+  font-size:2rem;cursor:pointer;
+  opacity:0.7;transition:opacity .2s;line-height:1;
+}
+.lightbox-close:hover{opacity:1}
+
+/* ── STORIES ── */
+.stories-sec{background:#fff;padding:5rem 0 6rem}
+.stories-header{max-width:1200px;margin:0 auto;padding:0 2.5rem 2.5rem}
+.stories-track-wrap{
+  position:relative;
+  max-width:1200px;margin:0 auto;padding:0 2.5rem;
+  overflow:hidden;
+}
+.stories-track{
+  display:flex;gap:1rem;
+  transition:transform .4s ease;
+}
+.story-item{
+  flex:0 0 calc(16.66% - 0.85rem);
+  border-radius:16px;overflow:hidden;
+  aspect-ratio:9/16;
+  cursor:pointer;position:relative;
+  background:#f5f5f7;
+  transition:transform .25s;
+}
+.story-item:hover{transform:scale(1.03)}
+.story-item img{width:100%;height:100%;object-fit:cover}
+.story-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(0,0,0,0.5) 0%,transparent 60%);
+}
+/* nav arrows */
+.stories-prev,.stories-next{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:38px;height:38px;border-radius:50%;
+  background:rgba(255,255,255,0.9);
+  border:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1rem;z-index:3;
+  box-shadow:0 2px 12px rgba(0,0,0,0.15);
+  transition:background .2s;
+}
+.stories-prev:hover,.stories-next:hover{background:#fff}
+.stories-prev{left:0.5rem}
+.stories-next{right:0.5rem}
+
+/* story lightbox */
+.story-lb{
+  position:fixed;inset:0;z-index:9998;
+  background:rgba(0,0,0,0.92);
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;pointer-events:none;transition:opacity .3s;
+}
+.story-lb.open{opacity:1;pointer-events:all}
+.story-lb-img{
+  max-height:92vh;max-width:92vw;
+  border-radius:16px;object-fit:contain;
+}
+.story-lb-close{
+  position:absolute;top:1.2rem;right:1.5rem;
+  background:none;border:none;color:#fff;
+  font-size:2rem;cursor:pointer;opacity:0.7;
+  transition:opacity .2s;line-height:1;
+}
+.story-lb-close:hover{opacity:1}
+.story-lb-prev,.story-lb-next{
+  position:absolute;top:50%;transform:translateY(-50%);
+  background:rgba(255,255,255,0.15);border:none;
+  color:#fff;font-size:1.5rem;
+  width:44px;height:44px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;transition:background .2s;
+}
+.story-lb-prev:hover,.story-lb-next:hover{background:rgba(255,255,255,0.3)}
+.story-lb-prev{left:1.5rem}
+.story-lb-next{right:1.5rem}
+
+@media(max-width:900px){
+  .story-item{flex:0 0 calc(33.33% - 0.67rem)}
+  .stories-track-wrap{padding:0 1.2rem}
+  .stories-header{padding:0 1.2rem 2rem}
+}
+@media(max-width:500px){
+  .story-item{flex:0 0 calc(50% - 0.5rem)}
+}
+
 /* ── CLIENTES FELICES ── */
 .clientes-sec{background:var(--dark);padding:5rem 0 6rem;overflow:hidden}
 .clientes-header{max-width:1200px;margin:0 auto;padding:0 2.5rem 3rem}
@@ -1084,6 +1187,61 @@ footer{background:var(--dark);color:#86868b;padding:3rem 2.5rem 1rem}
 </div>
 
 
+
+<!-- ═══ HISTORIAS DE ENTREGAS ═══ -->
+<section class="stories-sec" id="entregas">
+  <div class="stories-header">
+    <p class="section-sub reveal" style="color:var(--blue);font-weight:500;font-size:0.8rem;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:0.5rem">Día a día</p>
+    <h2 class="section-title reveal" style="margin-bottom:0.4rem">Cada entrega,<br><span style="color:var(--blue)">una sonrisa.</span></h2>
+    <p class="section-sub reveal">Esto es lo que pasa cuando tu iPhone llega a tu puerta.</p>
+  </div>
+  <div class="stories-track-wrap reveal">
+    <button class="stories-prev" onclick="slideStories(-1)">&#8592;</button>
+    <div class="stories-track" id="storiesTrack">
+      <!-- photos will be added here -->
+      <div class="story-item" onclick="openStoryLb(0)">
+        <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085388/WhatsApp_Image_2026-04-01_at_6.03.54_PM_rses6n.jpg" alt="Entrega">
+        <div class="story-overlay"></div>
+      </div>
+      <div class="story-item" onclick="openStoryLb(1)">
+        <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085363/watchsa_mwfb7c.jpg" alt="Entrega">
+        <div class="story-overlay"></div>
+      </div>
+      <div class="story-item" onclick="openStoryLb(2)">
+        <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085362/watchb_cdqqjj.jpg" alt="Entrega">
+        <div class="story-overlay"></div>
+      </div>
+      <div class="story-item" onclick="openStoryLb(3)">
+        <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085388/ipada_pfryhl.jpg" alt="Entrega">
+        <div class="story-overlay"></div>
+      </div>
+      <div class="story-item" onclick="openStoryLb(4)">
+        <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085902/Macbookneo_x7ojkt.jpg" alt="Entrega">
+        <div class="story-overlay"></div>
+      </div>
+      <div class="story-item" onclick="openStoryLb(5)">
+        <img src="https://res.cloudinary.com/ddozaur5c/image/upload/v1775085953/Macbookneob_b6s8gh.jpg" alt="Entrega">
+        <div class="story-overlay"></div>
+      </div>
+    </div>
+    <button class="stories-next" onclick="slideStories(1)">&#8594;</button>
+  </div>
+</section>
+
+<!-- LIGHTBOX video -->
+<div class="lightbox" id="videoLightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">&#215;</button>
+  <video id="lbVideo" controls playsinline></video>
+</div>
+
+<!-- STORY LIGHTBOX -->
+<div class="story-lb" id="storyLb" onclick="closeStoryLb()">
+  <button class="story-lb-close" onclick="closeStoryLb()">&#215;</button>
+  <button class="story-lb-prev" onclick="event.stopPropagation();navStoryLb(-1)">&#8592;</button>
+  <img class="story-lb-img" id="storyLbImg" src="" alt="">
+  <button class="story-lb-next" onclick="event.stopPropagation();navStoryLb(1)">&#8594;</button>
+</div>
+
 <!-- ═══ CLIENTES FELICES ═══ -->
 <section class="clientes-sec">
   <div class="clientes-header">
@@ -1093,7 +1251,7 @@ footer{background:var(--dark);color:#86868b;padding:3rem 2.5rem 1rem}
   </div>
   <div class="clientes-grid">
 
-    <div class="cliente-vid reveal">
+    <div class="cliente-vid" onclick="openVideoLb('https://res.cloudinary.com/ddozaur5c/video/upload/v1775158246/Este_a%C3%B1o_vivimos_cada_entrega_con_ilusi%C3%B3n_cada_mensaje_con_emoci%C3%B3n_y_cada_agradecimiento_com_fy4vvv.mp4')" style="cursor:pointer"" onclick="openVideoLb('https://res.cloudinary.com/ddozaur5c/video/upload/v1775158257/Las_mejores_decisiones_no_hacen_ruido_se_sienten._sebastiancarva_no_buscaba_solo_cambiar_d_odb5ht.mp4')" style="cursor:pointer"" onclick="openVideoLb('https://res.cloudinary.com/ddozaur5c/video/upload/v1775158261/No_s%C3%B3lo_entregamos_tecnolog%C3%ADa_entregamos_confianza_Gracias_yurivargas1_por_dejar_tu_e_mlzbyd.mp4')" style="cursor:pointer"" onclick="openVideoLb('https://res.cloudinary.com/ddozaur5c/video/upload/v1775158903/As%C3%AD_de_f%C3%A1cil_es_obtener_el_iPhone_de_tus_sue%C3%B1os_%EF%B8%8F_Est%C3%A1s_a_un_solo_clic_de_distancia_par_q2qkjx.mp4')" style="cursor:pointer"" onclick="openVideoLb('https://res.cloudinary.com/ddozaur5c/video/upload/v1775158908/Tu_iPhone_ha_llegado_a_su_destino_No_hay_nada_m%C3%A1s_satisfactorio_que_recibir_tu_iPhone_a_dom_gxishv.mp4')" style="cursor:pointer" reveal">
       <video autoplay loop muted playsinline>
         <source src="https://res.cloudinary.com/ddozaur5c/video/upload/v1775158908/Tu_iPhone_ha_llegado_a_su_destino_No_hay_nada_m%C3%A1s_satisfactorio_que_recibir_tu_iPhone_a_dom_gxishv.mp4" type="video/mp4">
       </video>
